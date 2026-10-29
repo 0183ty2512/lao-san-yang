@@ -69,3 +69,11 @@
 完成后设置 Repository variable `MAIL_ENABLED` 为 `true`。当前默认关闭，避免凭据不全反复失败。手动执行工作流可指定day 1—50；手动重试会再次发送，发信成功后不要重复运行。
 
 邮件附完整Markdown文件和GitHub阅读链接。邮件正文不执行数学脚本；公式需在GitHub或Obsidian阅读视图中查看。源资料含未审校与疑题标记，本任务保留这些限制；专题选题为关键词辅助整理，仍宜按个人错题调整。生成脚本依赖PyMuPDF和原始PDF，发信脚本仅使用Python标准库。
+
+## 网页版与 Gmail 定时发送
+
+网页入口：https://0183ty2512.github.io/lao-san-yang/
+
+每日独立网页：D01.html 至 D50.html。使用同站点托管的 MathJax 3.2.2 SVG 渲染公式，支持手机浏览和MD下载。通过 `python scripts/build_web.py` 更新网页后，将仓库 docs 文件夹提交到main即可部署。
+
+现使用 Codex 聊天定时任务调用 Gmail 插件，每天北京时间10:30发送当日网页链接与MD附件，截止2026-12-17。原GitHub Actions SMTP方案仍保持关闭，防止重复发送。Gmail插件凭据不会传递到GitHub Actions。
