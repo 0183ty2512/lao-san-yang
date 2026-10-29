@@ -1,0 +1,33 @@
+name: Daily atmospheric science lesson
+on:
+  schedule:
+    - cron: '30 2 * * *'
+  workflow_dispatch:
+    inputs:
+      day:
+        description: 'Day 1-50; empty means today; manual reruns send again'
+        required: false
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: daily-study-mail
+  cancel-in-progress: false
+jobs:
+  send:
+    if: vars.MAIL_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Send current lesson
+        env:
+          DAY: ${{ inputs.day }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+        run: python '50日任务/scripts/send_daily.py'
