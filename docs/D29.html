@@ -1,0 +1,341 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>位温、稳定度、干湿绝热、对流条件</title><link rel="stylesheet" href="style.css"><script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'}};</script><script defer src="mathjax/tex-svg.js"></script></head><body><header><a href="index.html">大气科学 · 50日复习</a><nav><a href="D28.html">← 上一天</a><a href="md/D29.md" download>下载 MD</a><a href="D30.html">下一天 →</a></nav></header><main><article><h1>D29 · 位温、稳定度、干湿绝热、对流条件</h1>
+<p>日期：2026-11-26｜建议投入：4小时｜动力40% · 天气40% · 物理20%</p>
+<blockquote>
+<p>本学习包依据原50日PDF与仓库学习资料整理。参考答案不是官方评分标准；未完成学科审校及缺题标记均保留。公式采用 GitHub 数学 Markdown，请在 GitHub 正文或 Obsidian 阅读视图打开。</p>
+</blockquote>
+<h2>今日目标与记忆标准</h2>
+<p>闭卷说清概念、适用条件、符号与单位；推导必须写出起始方程、近似及关键步骤。先答题，再展开核对。</p>
+<h2>四小时执行</h2>
+<ol>
+<li>20分钟：回忆此前第1、3、7、14天的重点，尚未开始的日期跳过。</li>
+<li>80分钟：逐题闭卷提取，核对以下简答与来源。</li>
+<li>70分钟：精选5题完整书写。名词解释90秒、简答7分钟、论述12分钟为训练目标。</li>
+<li>40分钟：把本日知识按“假设→方程→物理机制→天气表现”串成2—4条知识链。</li>
+<li>30分钟：记录遗漏点、用时与次日/3日/7日/14日复习日期。</li>
+</ol>
+<h2>逐题回忆与简答</h2>
+<h3>2022-四-1</h3>
+<p>位温的定义</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2022.md#L957">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2022.md">原始年度题干</a></p>
+<p><strong>审校状态：已逐题复核（按所列模型与条件）。</strong></p>
+<p><strong>针对本题的考场作答版（非官方评分标准）：</strong></p>
+<p>位温是干空气块经可逆干绝热过程移至规定参考气压$p_0$时的温度，常取$p_0=1000\ \mathrm{hPa}$；单位K，$\theta=T(p_0/p)^{R_d/c_p}$。</p>
+<blockquote>
+<p>推导题须保留必要推演，简答与论述须按小问展开；精简版只用于回忆作答主线。</p>
+</blockquote>
+<h3>2004_1-三-整题</h3>
+<p>叙述稳定度的基本概念，并举出一个常见的大气现象说明不稳定的作用。</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2004_1.md#L304">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2004_1.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>
+<p>微小位移 $\xi$ 若满足 $\ddot\xi+N^2\xi=0$，在 $N^2&gt;0$ 时解为 $A\cos Nt+B\sin Nt$，为有回复力的线性振荡；$N^2&lt;0$ 时解含指数增长，表示静力不稳定。</p>
+</li>
+<li>
+<p>干大气 $N^2=(g/\theta)d\theta/dz$。位温随高度增大为干静力稳定，等位温为中性，随高度减小为不稳定。这是对单个小气块竖直位移的判据。</p>
+</li>
+<li>
+<p>饱和上升时潜热释放使湿绝热直减率 $\Gamma_m&lt;\Gamma_d$。若环境直减率满足 $\Gamma_m&lt;\Gamma&lt;\Gamma_d$，未饱和气块稳定而饱和气块不稳定，称条件不稳定。</p>
+</li>
+<li>
+<p>位势（对流）不稳定针对整层抬升：$d\theta_e/dz&lt;0$（按教材也用假相当位温 $\theta_{se}$）时，抬升至饱和后低层更暖湿、释放更多潜热，整层可转为不稳定；位势稳定度可写成 $\partial\theta_e/\partial z$，在 $p$ 坐标符号相反。</p>
+</li>
+<li>
+<p>条件不稳定与位势不稳定并非同义，原题若写“条件（位势）不稳定”应分别说明。常见应用是雷暴：先由抬升克服抑制，气块达到自由对流高度后释放不稳定能量，并非有不稳定层结就必然立刻降雨。</p>
+</li>
+</ol>
+<h3>2000-三-1</h3>
+<p>什么叫假相当位温$\theta_{se}$？在夏季天气分析中为何常用它取代位温$\theta$？其优越性是什么？</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2000.md#L439">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2000.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>湿位温及相当位温：</strong> 假相当位温按先干绝热至饱和、再假绝热使水汽凝结移出、最后干绝热至参考气压定义，综合温度与水汽潜热信息。夏季适于追踪暖湿气团和分析位势稳定度；假绝热有凝结物移出，不能当成封闭可逆过程。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>
+<p>干位温只表示干绝热压缩膨胀后的热力状态；夏季水汽多，凝结潜热显著，相同干位温的气块可有很不相同的对流潜能。</p>
+</li>
+<li>
+<p>假相当位温 $\theta_{se}$ 的概念定义：气块先干绝热抬升到凝结高度，再沿假绝热过程抬升，凝结物立即移出，直至水汽基本凝结完，再把剩余干空气沿干绝热线移到参考气压时的温度。它把温度、气压和水汽能量综合在一起。</p>
+</li>
+<li>
+<p>近似表达常写 $\theta_e\approx\theta\exp[L_vq_v/(c_pT_L)]$，$T_L$ 为凝结温度；精确教材公式可能还有干空气分压和热容修正。水汽越多，一般相当位温越高，适合追踪暖湿气团、梅雨锋和位势稳定度。</p>
+</li>
+</ol>
+<h3>1999-二-2</h3>
+<p>位势稳定度的定义及其表示式。</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/1999.md#L207">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/1999.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>位势不稳定：</strong> 位势不稳定针对整层抬升，常以 $\partial\theta_e/\partial z&lt;0$ 或教材的假相当位温梯度判断。整层抬升饱和后可转为不稳定。它不同于单气块条件不稳定 $\Gamma_m&lt;\Gamma&lt;\Gamma_d$，两者不能简单当同义词。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>
+<p>干大气 $N^2=(g/\theta)d\theta/dz$。位温随高度增大为干静力稳定，等位温为中性，随高度减小为不稳定。这是对单个小气块竖直位移的判据。</p>
+</li>
+<li>
+<p>饱和上升时潜热释放使湿绝热直减率 $\Gamma_m&lt;\Gamma_d$。若环境直减率满足 $\Gamma_m&lt;\Gamma&lt;\Gamma_d$，未饱和气块稳定而饱和气块不稳定，称条件不稳定。</p>
+</li>
+<li>
+<p>位势（对流）不稳定针对整层抬升：$d\theta_e/dz&lt;0$（按教材也用假相当位温 $\theta_{se}$）时，抬升至饱和后低层更暖湿、释放更多潜热，整层可转为不稳定；位势稳定度可写成 $\partial\theta_e/\partial z$，在 $p$ 坐标符号相反。</p>
+</li>
+<li>
+<p>条件不稳定与位势不稳定并非同义，原题若写“条件（位势）不稳定”应分别说明。常见应用是雷暴：先由抬升克服抑制，气块达到自由对流高度后释放不稳定能量，并非有不稳定层结就必然立刻降雨。</p>
+</li>
+</ol>
+<h2>原卷第三部分</h2>
+<p>回答问题</p>
+<h3>1992-二-3</h3>
+<p>假相当位温</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/1992.md#L296">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/1992.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>湿位温及相当位温：</strong> 假相当位温按先干绝热至饱和、再假绝热使水汽凝结移出、最后干绝热至参考气压定义，综合温度与水汽潜热信息。夏季适于追踪暖湿气团和分析位势稳定度；假绝热有凝结物移出，不能当成封闭可逆过程。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>
+<p>干位温只表示干绝热压缩膨胀后的热力状态；夏季水汽多，凝结潜热显著，相同干位温的气块可有很不相同的对流潜能。</p>
+</li>
+<li>
+<p>假相当位温 $\theta_{se}$ 的概念定义：气块先干绝热抬升到凝结高度，再沿假绝热过程抬升，凝结物立即移出，直至水汽基本凝结完，再把剩余干空气沿干绝热线移到参考气压时的温度。它把温度、气压和水汽能量综合在一起。</p>
+</li>
+<li>
+<p>近似表达常写 $\theta_e\approx\theta\exp[L_vq_v/(c_pT_L)]$，$T_L$ 为凝结温度；精确教材公式可能还有干空气分压和热容修正。水汽越多，一般相当位温越高，适合追踪暖湿气团、梅雨锋和位势稳定度。</p>
+</li>
+</ol>
+<h3>1990-一-3</h3>
+<p>假相当位温随高度减小时大气处于<strong>对流不稳定</strong>状态，东北低压对应的高空急流为<strong>极锋急流</strong>。</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/1990.md#L87">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/1990.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>位势不稳定：</strong> 位势不稳定针对整层抬升，常以 $\partial\theta_e/\partial z&lt;0$ 或教材的假相当位温梯度判断。整层抬升饱和后可转为不稳定。它不同于单气块条件不稳定 $\Gamma_m&lt;\Gamma&lt;\Gamma_d$，两者不能简单当同义词。</p>
+<p><strong>高空急流：</strong> 高空急流是对流层上部狭长强风带，横向和垂直切变强。极锋急流与斜压锋区相关，副热带急流还受低纬角动量输送影响；冬强偏南、夏弱偏北。急流加减速与曲率引起非地转次级环流，可影响下方上升和气旋发展。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<p><strong>原记录填空值：</strong> 对流不稳定；极锋急流。下文核对其物理含义；出现修改意见时，以修改后的说明为准。</p>
+<ol>
+<li>
+<p>干大气 $N^2=(g/\theta)d\theta/dz$。位温随高度增大为干静力稳定，等位温为中性，随高度减小为不稳定。这是对单个小气块竖直位移的判据。</p>
+</li>
+<li>
+<p>饱和上升时潜热释放使湿绝热直减率 $\Gamma_m&lt;\Gamma_d$。若环境直减率满足 $\Gamma_m&lt;\Gamma&lt;\Gamma_d$，未饱和气块稳定而饱和气块不稳定，称条件不稳定。</p>
+</li>
+<li>
+<p>位势（对流）不稳定针对整层抬升：$d\theta_e/dz&lt;0$（按教材也用假相当位温 $\theta_{se}$）时，抬升至饱和后低层更暖湿、释放更多潜热，整层可转为不稳定；位势稳定度可写成 $\partial\theta_e/\partial z$，在 $p$ 坐标符号相反。</p>
+</li>
+<li>
+<p>条件不稳定与位势不稳定并非同义，原题若写“条件（位势）不稳定”应分别说明。常见应用是雷暴：先由抬升克服抑制，气块达到自由对流高度后释放不稳定能量，并非有不稳定层结就必然立刻降雨。</p>
+</li>
+<li>
+<p>急流是狭长的强风带，横向和竖直风切变显著，急流轴是局地最大风速的位置。高空西风急流位于对流层上部，冬季更强、更偏南；夏季整体偏北、减弱。东亚日本附近冬季急流可很强，题中 70—80 m/s 是典型量级而非上限。</p>
+</li>
+<li>
+<p>极锋急流与中纬度锋区斜压性相联系；副热带急流还与低纬向极运动的角动量输送和热成风共同有关。强南北温度梯度通过热成风使西风随高度增强；不能只归因于地面风向上复制。</p>
+</li>
+<li>
+<p>急流入口、出口的加减速和曲率导致非地转次级环流，局部辐散有利于下方上升和气旋发展；简单直急流象限规则只在相应理想条件下适用。</p>
+</li>
+</ol>
+<h3>2022-四-3</h3>
+<p>根据第二问结果，利用干绝热过程推导位温在干绝热状况下的表达式。</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2022.md#L1064">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2022.md">原始年度题干</a></p>
+<p><strong>审校状态：已逐题复核（按所列模型与条件）。</strong></p>
+<p><strong>针对本题的考场作答版（非官方评分标准）：</strong></p>
+<p>干绝热时$c_pdT-\alpha dp=0$，代入$\alpha=R_dT/p$，得$dT/T=(R_d/c_p)dp/p$。从$(T,p)$积到$(\theta,p_0)$，得$\ln(\theta/T)=(R_d/c_p)\ln(p_0/p)$，故$\theta=T(p_0/p)^{R_d/c_p}$。</p>
+<blockquote>
+<p>推导题须保留必要推演，简答与论述须按小问展开；精简版只用于回忆作答主线。</p>
+</blockquote>
+<h3>2003_1-一-5</h3>
+<p>位温</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2003_1.md#L201">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2003_1.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>位温：</strong> 位温是气块干绝热移至参考气压 $p_0$ 的温度。由 $c_p dT-RTdp/p=0$ 积分得 $\theta=T(p_0/p)^{R/c_p}$，单位K。理想干绝热时沿气块守恒，有加热时 $D\ln\theta/Dt=Q/(c_pT)$。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li><strong>定义。</strong> 位温是干空气块沿干绝热线移到参考气压 $p_0$ 时的温度，通常取 $p_0=1000\ \mathrm{hPa}$。</li>
+<li><strong>从第一定律出发。</strong> 干绝热时 $c_p\,dT-\alpha\,dp=0$。由 $\alpha=RT/p$，得 $dT/T=(R/c_p)dp/p$。</li>
+<li><strong>积分。</strong> 记 $\kappa=R/c_p$，从 $(p,T)$ 积分到 $(p_0,\theta)$：$\ln(\theta/T)=\kappa\ln(p_0/p)$。</li>
+<li><strong>结果。</strong> $\boxed{\theta=T(p_0/p)^\kappa}$。干绝热运动中 $D\theta/Dt=0$；有潜热释放或其他加热时，不能直接假定干位温守恒。位温单位为 K。</li>
+</ol>
+<h3>2002-二-7</h3>
+<p>位温：$\theta = T \left( \frac{p_0}{p} \right)^{R/c_p}$</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2002.md#L236">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2002.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>位温：</strong> 位温是气块干绝热移至参考气压 $p_0$ 的温度。由 $c_p dT-RTdp/p=0$ 积分得 $\theta=T(p_0/p)^{R/c_p}$，单位K。理想干绝热时沿气块守恒，有加热时 $D\ln\theta/Dt=Q/(c_pT)$。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li><strong>定义。</strong> 位温是干空气块沿干绝热线移到参考气压 $p_0$ 时的温度，通常取 $p_0=1000\ \mathrm{hPa}$。</li>
+<li><strong>从第一定律出发。</strong> 干绝热时 $c_p\,dT-\alpha\,dp=0$。由 $\alpha=RT/p$，得 $dT/T=(R/c_p)dp/p$。</li>
+<li><strong>积分。</strong> 记 $\kappa=R/c_p$，从 $(p,T)$ 积分到 $(p_0,\theta)$：$\ln(\theta/T)=\kappa\ln(p_0/p)$。</li>
+<li><strong>结果。</strong> $\boxed{\theta=T(p_0/p)^\kappa}$。干绝热运动中 $D\theta/Dt=0$；有潜热释放或其他加热时，不能直接假定干位温守恒。位温单位为 K。</li>
+</ol>
+<h3>2001-二-5</h3>
+<p>位温</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2001.md#L364">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2001.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>位温：</strong> 位温是气块干绝热移至参考气压 $p_0$ 的温度。由 $c_p dT-RTdp/p=0$ 积分得 $\theta=T(p_0/p)^{R/c_p}$，单位K。理想干绝热时沿气块守恒，有加热时 $D\ln\theta/Dt=Q/(c_pT)$。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li><strong>定义。</strong> 位温是干空气块沿干绝热线移到参考气压 $p_0$ 时的温度，通常取 $p_0=1000\ \mathrm{hPa}$。</li>
+<li><strong>从第一定律出发。</strong> 干绝热时 $c_p\,dT-\alpha\,dp=0$。由 $\alpha=RT/p$，得 $dT/T=(R/c_p)dp/p$。</li>
+<li><strong>积分。</strong> 记 $\kappa=R/c_p$，从 $(p,T)$ 积分到 $(p_0,\theta)$：$\ln(\theta/T)=\kappa\ln(p_0/p)$。</li>
+<li><strong>结果。</strong> $\boxed{\theta=T(p_0/p)^\kappa}$。干绝热运动中 $D\theta/Dt=0$；有潜热释放或其他加热时，不能直接假定干位温守恒。位温单位为 K。</li>
+</ol>
+<h2>原卷第三部分</h2>
+<p>给出锋区附近的气压场、风场、温度场的基本特征，并给出其垂直结构图。</p>
+<h3>1996-三-4</h3>
+<p>位温</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/1996.md#L500">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/1996.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>位温：</strong> 位温是气块干绝热移至参考气压 $p_0$ 的温度。由 $c_p dT-RTdp/p=0$ 积分得 $\theta=T(p_0/p)^{R/c_p}$，单位K。理想干绝热时沿气块守恒，有加热时 $D\ln\theta/Dt=Q/(c_pT)$。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li><strong>定义。</strong> 位温是干空气块沿干绝热线移到参考气压 $p_0$ 时的温度，通常取 $p_0=1000\ \mathrm{hPa}$。</li>
+<li><strong>从第一定律出发。</strong> 干绝热时 $c_p\,dT-\alpha\,dp=0$。由 $\alpha=RT/p$，得 $dT/T=(R/c_p)dp/p$。</li>
+<li><strong>积分。</strong> 记 $\kappa=R/c_p$，从 $(p,T)$ 积分到 $(p_0,\theta)$：$\ln(\theta/T)=\kappa\ln(p_0/p)$。</li>
+<li><strong>结果。</strong> $\boxed{\theta=T(p_0/p)^\kappa}$。干绝热运动中 $D\theta/Dt=0$；有潜热释放或其他加热时，不能直接假定干位温守恒。位温单位为 K。</li>
+</ol>
+<h2>原卷第四部分</h2>
+<p>回答问题</p>
+<h3>1989-二-2</h3>
+<p>位温</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/1989.md#L200">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/1989.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>位温：</strong> 位温是气块干绝热移至参考气压 $p_0$ 的温度。由 $c_p dT-RTdp/p=0$ 积分得 $\theta=T(p_0/p)^{R/c_p}$，单位K。理想干绝热时沿气块守恒，有加热时 $D\ln\theta/Dt=Q/(c_pT)$。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li><strong>定义。</strong> 位温是干空气块沿干绝热线移到参考气压 $p_0$ 时的温度，通常取 $p_0=1000\ \mathrm{hPa}$。</li>
+<li><strong>从第一定律出发。</strong> 干绝热时 $c_p\,dT-\alpha\,dp=0$。由 $\alpha=RT/p$，得 $dT/T=(R/c_p)dp/p$。</li>
+<li><strong>积分。</strong> 记 $\kappa=R/c_p$，从 $(p,T)$ 积分到 $(p_0,\theta)$：$\ln(\theta/T)=\kappa\ln(p_0/p)$。</li>
+<li><strong>结果。</strong> $\boxed{\theta=T(p_0/p)^\kappa}$。干绝热运动中 $D\theta/Dt=0$；有潜热释放或其他加热时，不能直接假定干位温守恒。位温单位为 K。</li>
+</ol>
+<h2>精选完整解析与公式推导</h2>
+<p>以下保留资料中的条件、步骤和审校信息。先完成手写，再核对。</p>
+<h3>2022-四-3 · 完整解答</h3>
+<p>根据第二问结果，利用干绝热过程推导位温在干绝热状况下的表达式。</p>
+<p><strong>修改意见（2026-10-04）：</strong></p>
+<p>原公式正确但积分较简略；补变量分离、定积分上下限、指数化及守恒验证，不再与第一小问共用整段答案。</p>
+<p><strong>核对依据：</strong> <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1/%E5%A4%A7%E6%B0%94%E8%BF%90%E5%8A%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B%E7%BB%84/%E7%83%AD%E5%8A%9B%E5%AD%A6%E8%83%BD%E9%87%8F%E6%96%B9%E7%A8%8B%E5%8F%8A%E5%85%B6%E5%9C%A8%E7%90%83%E5%9D%90%E6%A0%87%E7%B3%BB%E5%92%8C%E5%B1%80%E5%9C%B0%E7%9B%B4%E8%A7%92%E5%9D%90%E6%A0%87%E7%B3%BB%E4%B8%AD%E7%9A%84%E8%A1%A8%E8%BF%B0.md">热力学能量方程及其在球坐标系和局地直角坐标系中的表述</a>。本地资料为学习笔记，不视作官方标准答案；冲突处依据下列方程推导与量纲检查作出判断。</p>
+<p><strong>复核后详细解答：</strong></p>
+<ol>
+<li><strong>采用第二问结果。</strong> 对定组成理想干空气、常$c_p,R_d$，可逆干绝热过程$\dot Q=0$，故$c_pDT/Dt-\alpha Dp/Dt=0$，沿路径写成$c_p\,dT=\alpha\,dp$。</li>
+<li><strong>消去比容。</strong> 状态方程给$\alpha=R_dT/p$，代入：$c_p\,dT=(R_dT/p)\,dp$。</li>
+<li><strong>变量分离。</strong> 因$T&gt;0,p&gt;0$，两边除以$c_pT$，得$dT/T=(R_d/c_p)dp/p$。记$\kappa=R_d/c_p$。</li>
+<li><strong>按定义选择积分终点。</strong> 从当前状态$(T,p)$沿同一干绝热线移至$(\theta,p_0)$：
+$$\int_T^\theta\frac{dT&#x27;}{T&#x27;}=\kappa\int_p^{p_0}\frac{dp&#x27;}{p&#x27;}.$$
+积分后$\ln\theta-\ln T=\kappa(\ln p_0-\ln p)$，等价于$\ln(\theta/T)=\kappa\ln(p_0/p)$。</li>
+<li><strong>指数化。</strong> 两边取指数：$\theta/T=(p_0/p)^\kappa$，所以
+$$\boxed{\theta=T\left(\frac{p_0}{p}\right)^{R_d/c_p}}.$$</li>
+<li><strong>验证守恒。</strong> 对$\ln\theta=\ln T-\kappa\ln p+\kappa\ln p_0$求物质导数，固定$p_0$使最后一项导数为零；第一、二项由干绝热关系抵消，得$D\ln\theta/Dt=0$，即$D\theta/Dt=0$。若$p=p_0$，公式还应给$\theta=T$，与定义一致。</li>
+</ol>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2022.md#L1064">核对原文</a></p>
+<h3>1990-一-3 · 完整解答</h3>
+<p>假相当位温随高度减小时大气处于<strong>对流不稳定</strong>状态，东北低压对应的高空急流为<strong>极锋急流</strong>。</p>
+<p><strong>原记录填空值：</strong> 对流不稳定；极锋急流。下文核对其物理含义；出现修改意见时，以修改后的说明为准。</p>
+<ol>
+<li>
+<p>干大气 $N^2=(g/\theta)d\theta/dz$。位温随高度增大为干静力稳定，等位温为中性，随高度减小为不稳定。这是对单个小气块竖直位移的判据。</p>
+</li>
+<li>
+<p>饱和上升时潜热释放使湿绝热直减率 $\Gamma_m&lt;\Gamma_d$。若环境直减率满足 $\Gamma_m&lt;\Gamma&lt;\Gamma_d$，未饱和气块稳定而饱和气块不稳定，称条件不稳定。</p>
+</li>
+<li>
+<p>位势（对流）不稳定针对整层抬升：$d\theta_e/dz&lt;0$（按教材也用假相当位温 $\theta_{se}$）时，抬升至饱和后低层更暖湿、释放更多潜热，整层可转为不稳定；位势稳定度可写成 $\partial\theta_e/\partial z$，在 $p$ 坐标符号相反。</p>
+</li>
+<li>
+<p>条件不稳定与位势不稳定并非同义，原题若写“条件（位势）不稳定”应分别说明。常见应用是雷暴：先由抬升克服抑制，气块达到自由对流高度后释放不稳定能量，并非有不稳定层结就必然立刻降雨。</p>
+</li>
+<li>
+<p>急流是狭长的强风带，横向和竖直风切变显著，急流轴是局地最大风速的位置。高空西风急流位于对流层上部，冬季更强、更偏南；夏季整体偏北、减弱。东亚日本附近冬季急流可很强，题中 70—80 m/s 是典型量级而非上限。</p>
+</li>
+<li>
+<p>极锋急流与中纬度锋区斜压性相联系；副热带急流还与低纬向极运动的角动量输送和热成风共同有关。强南北温度梯度通过热成风使西风随高度增强；不能只归因于地面风向上复制。</p>
+</li>
+<li>
+<p>急流入口、出口的加减速和曲率导致非地转次级环流，局部辐散有利于下方上升和气旋发展；简单直急流象限规则只在相应理想条件下适用。</p>
+</li>
+</ol>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/1990.md#L87">核对原文</a></p>
+<h3>2004_1-三-整题 · 完整解答</h3>
+<p>叙述稳定度的基本概念，并举出一个常见的大气现象说明不稳定的作用。</p>
+<ol>
+<li>
+<p>微小位移 $\xi$ 若满足 $\ddot\xi+N^2\xi=0$，在 $N^2&gt;0$ 时解为 $A\cos Nt+B\sin Nt$，为有回复力的线性振荡；$N^2&lt;0$ 时解含指数增长，表示静力不稳定。</p>
+</li>
+<li>
+<p>干大气 $N^2=(g/\theta)d\theta/dz$。位温随高度增大为干静力稳定，等位温为中性，随高度减小为不稳定。这是对单个小气块竖直位移的判据。</p>
+</li>
+<li>
+<p>饱和上升时潜热释放使湿绝热直减率 $\Gamma_m&lt;\Gamma_d$。若环境直减率满足 $\Gamma_m&lt;\Gamma&lt;\Gamma_d$，未饱和气块稳定而饱和气块不稳定，称条件不稳定。</p>
+</li>
+<li>
+<p>位势（对流）不稳定针对整层抬升：$d\theta_e/dz&lt;0$（按教材也用假相当位温 $\theta_{se}$）时，抬升至饱和后低层更暖湿、释放更多潜热，整层可转为不稳定；位势稳定度可写成 $\partial\theta_e/\partial z$，在 $p$ 坐标符号相反。</p>
+</li>
+<li>
+<p>条件不稳定与位势不稳定并非同义，原题若写“条件（位势）不稳定”应分别说明。常见应用是雷暴：先由抬升克服抑制，气块达到自由对流高度后释放不稳定能量，并非有不稳定层结就必然立刻降雨。</p>
+</li>
+</ol>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2004_1.md#L304">核对原文</a></p>
+<h3>2022-四-1 · 完整解答</h3>
+<p>位温的定义</p>
+<p><strong>修改意见（2026-10-04）：</strong></p>
+<p>原答案正确；按第一小问突出定义和参考气压，不把第三问的推导混作本问必答内容。</p>
+<p><strong>核对依据：</strong> <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1/%E5%A4%A7%E6%B0%94%E8%BF%90%E5%8A%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B%E7%BB%84/%E7%83%AD%E5%8A%9B%E5%AD%A6%E8%83%BD%E9%87%8F%E6%96%B9%E7%A8%8B%E5%8F%8A%E5%85%B6%E5%9C%A8%E7%90%83%E5%9D%90%E6%A0%87%E7%B3%BB%E5%92%8C%E5%B1%80%E5%9C%B0%E7%9B%B4%E8%A7%92%E5%9D%90%E6%A0%87%E7%B3%BB%E4%B8%AD%E7%9A%84%E8%A1%A8%E8%BF%B0.md">热力学能量方程及其在球坐标系和局地直角坐标系中的表述</a>。本地资料为学习笔记，不视作官方标准答案；冲突处依据下列方程推导与量纲检查作出判断。</p>
+<p><strong>复核后详细解答：</strong></p>
+<ol>
+<li>位温$\theta$定义为干空气块经可逆干绝热过程移到参考气压$p_0$时所具有的温度。通常$p_0=1000\ \mathrm{hPa}$，它是固定参考值，不是气块当前的地面气压。</li>
+<li>定组成理想干空气、常比热近似下，$\theta=T(p_0/p)^{R_d/c_p}$，$T$和$\theta$均用K，压力比两端单位一致。推导见本大题第三小问。</li>
+<li>位温消除了理想干绝热压缩或膨胀引起的温度变化：沿干绝热路径温度可变而位温不变。水汽凝结加热、辐射或混合存在时，不能一般地令干位温守恒。未饱和湿空气常采用干空气常数近似计算，需明确这是近似。</li>
+</ol>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2022.md#L957">核对原文</a></p>
+<h3>1999-二-2 · 完整解答</h3>
+<p>位势稳定度的定义及其表示式。</p>
+<ol>
+<li>
+<p>干大气 $N^2=(g/\theta)d\theta/dz$。位温随高度增大为干静力稳定，等位温为中性，随高度减小为不稳定。这是对单个小气块竖直位移的判据。</p>
+</li>
+<li>
+<p>饱和上升时潜热释放使湿绝热直减率 $\Gamma_m&lt;\Gamma_d$。若环境直减率满足 $\Gamma_m&lt;\Gamma&lt;\Gamma_d$，未饱和气块稳定而饱和气块不稳定，称条件不稳定。</p>
+</li>
+<li>
+<p>位势（对流）不稳定针对整层抬升：$d\theta_e/dz&lt;0$（按教材也用假相当位温 $\theta_{se}$）时，抬升至饱和后低层更暖湿、释放更多潜热，整层可转为不稳定；位势稳定度可写成 $\partial\theta_e/\partial z$，在 $p$ 坐标符号相反。</p>
+</li>
+<li>
+<p>条件不稳定与位势不稳定并非同义，原题若写“条件（位势）不稳定”应分别说明。常见应用是雷暴：先由抬升克服抑制，气块达到自由对流高度后释放不稳定能量，并非有不稳定层结就必然立刻降雨。</p>
+</li>
+</ol>
+<h2>原卷第三部分</h2>
+<p>回答问题</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/1999.md#L207">核对原文</a></p>
+<h2>当日验收</h2>
+<ul>
+<li>[ ] 本日每题均完成至少一次闭卷提取。</li>
+<li>[ ] 精选题写清假设、符号与中间步骤；无漏负号、下标和单位。</li>
+<li>[ ] 能用自己的话解释至少两条跨章节联系。</li>
+<li>[ ] 错题记录包含题号、错因、修正答案及下一次复习日期。</li>
+</ul></article></main><footer>学习整理版 · 非官方评分标准 · 来源见各题链接</footer></body></html>

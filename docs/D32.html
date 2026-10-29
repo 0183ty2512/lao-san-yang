@@ -1,0 +1,297 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rossby波、重力波、相速群速、频散推导</title><link rel="stylesheet" href="style.css"><script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'}};</script><script defer src="mathjax/tex-svg.js"></script></head><body><header><a href="index.html">大气科学 · 50日复习</a><nav><a href="D31.html">← 上一天</a><a href="md/D32.md" download>下载 MD</a><a href="D33.html">下一天 →</a></nav></header><main><article><h1>D32 · Rossby波、重力波、相速群速、频散推导</h1>
+<p>日期：2026-11-29｜建议投入：4小时｜动力40% · 天气40% · 物理20%</p>
+<blockquote>
+<p>本学习包依据原50日PDF与仓库学习资料整理。参考答案不是官方评分标准；未完成学科审校及缺题标记均保留。公式采用 GitHub 数学 Markdown，请在 GitHub 正文或 Obsidian 阅读视图打开。</p>
+</blockquote>
+<h2>今日目标与记忆标准</h2>
+<p>闭卷说清概念、适用条件、符号与单位；推导必须写出起始方程、近似及关键步骤。先答题，再展开核对。</p>
+<h2>四小时执行</h2>
+<ol>
+<li>20分钟：回忆此前第1、3、7、14天的重点，尚未开始的日期跳过。</li>
+<li>80分钟：逐题闭卷提取，核对以下简答与来源。</li>
+<li>70分钟：精选5题完整书写。名词解释90秒、简答7分钟、论述12分钟为训练目标。</li>
+<li>40分钟：把本日知识按“假设→方程→物理机制→天气表现”串成2—4条知识链。</li>
+<li>30分钟：记录遗漏点、用时与次日/3日/7日/14日复习日期。</li>
+</ol>
+<h2>逐题回忆与简答</h2>
+<h3>2023-二-2</h3>
+<p>赤道地区有哪些特有波动，阐述其特征。</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2023.md#L543">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2023.md">原始年度题干</a></p>
+<p><strong>审校状态：已逐题复核（按所列模型与条件）。</strong></p>
+<p><strong>针对本题的考场作答版（非官方评分标准）：</strong></p>
+<p>赤道特有束缚模态包括开尔文波、赤道罗斯贝波、混合罗斯贝—重力波和赤道惯性重力波。静止基本态中开尔文波东传且$v=0$，罗斯贝波低频西传；混合波兼具涡旋与重力特征，惯性重力波有东西传快分支。</p>
+<blockquote>
+<p>推导题须保留必要推演，简答与论述须按小问展开；精简版只用于回忆作答主线。</p>
+</blockquote>
+<h3>2022-二-1</h3>
+<p>热带波动开尔文的基本特征</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2022.md#L496">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2022.md">原始年度题干</a></p>
+<p><strong>审校状态：已逐题复核（按所列模型与条件）。</strong></p>
+<p><strong>针对本题的考场作答版（非官方评分标准）：</strong></p>
+<p>理想赤道浅水开尔文波$v=0$，纬向为重力波传播、经向为地转平衡。远离赤道有界选择东传支$\omega=ck$，$c=\sqrt{gH}$，相速群速相等；振幅$\propto e^{-\beta y^2/(2c)}$，束缚尺度$L_e=\sqrt{c/\beta}$。</p>
+<blockquote>
+<p>推导题须保留必要推演，简答与论述须按小问展开；精简版只用于回忆作答主线。</p>
+</blockquote>
+<h3>2021-三-4</h3>
+<p>利用浅水方程组，线性化推导纬向传播的重力惯性外波频率方程、相速度和群速度的数学表达式。</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2021.md#L713">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2021.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>惯性重力外波的频散、相速与群速：</strong> 静止均匀层、常数f、纬向线性浅水波满足 $\omega^2=f^2+gHk^2$。代入平面波后先保留零频平衡模态，再求传播支；$c_p=\omega/k$，$c_g=gHk/\omega$，$c_pc_g=gH$，有均匀基本流时先作多普勒频移。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>由静力平衡 $p=p_s+\rho_0g(h-z)$ 得水平压力梯度 $-g\nabla h$；对不可压缩连续方程沿深度积分，并用底面无穿透和自由面运动学边界，得 $h_t+(hu)_x+(hv)_y=0$。</li>
+<li>在静止、均匀深度 $H$ 上令 $h=H+\eta$，忽略扰动乘积，纬向传播时 $\partial_y=0$，方程为 $u_t-fv=-g\eta_x$、$v_t+fu=0$、$\eta_t+Hu_x=0$。</li>
+<li>设 $(u,v,\eta)=(\hat u,\hat v,\hat\eta)e^{i(kx-\omega t)}$，得到 $-i\omega\hat u-f\hat v=-ikg\hat\eta$、$-i\omega\hat v+f\hat u=0$、$-i\omega\hat\eta+ikH\hat u=0$。</li>
+<li>对 $\omega\ne0$，后两式给出 $\hat v=-if\hat u/\omega$、$\hat\eta=kH\hat u/\omega$。代入首式，再乘 $i\omega$：$(\omega^2-f^2)\hat u=gHk^2\hat u$。</li>
+<li>非零振幅要求 $\boxed{\omega^2=f^2+gHk^2}$。完整行列式还含 $\omega=0$ 的平衡模态，它不是传播的惯性重力波，消元时不能忘记说明。</li>
+<li>两个传播分支为 $\omega_\pm=\pm\sqrt{f^2+gHk^2}$。对 $k\ne0$，相速度 $\boxed{c_p=\omega/k}$；微分得到 $\boxed{c_g=d\omega/dk=gHk/\omega}$。</li>
+<li>两者乘积 $c_pc_g=gH$。若 $f\ne0$，相速与群速不同，有频散；$f\to0$ 时两者均趋于相应方向的 $\sqrt{gH}$。二维时把 $k^2$ 改为 $k^2+l^2$，群速度向量为 $gH(k,l)/\omega$。均匀基本流 $U$ 情形用内禀频率 $\omega-kU$ 替换 $\omega$。</li>
+</ol>
+<h2>原卷第四部分</h2>
+<p>推导题</p>
+<h3>2021-四-整题</h3>
+<p>浅水方程组：
+$$
+\left\{ \begin{aligned} \frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} + v \frac{\partial u}{\partial y} - f v &amp;= -g \frac{\partial h}{\partial x} \\ \frac{\partial v}{\partial t} + u \frac{\partial v}{\partial x} + v \frac{\partial v}{\partial y} + f u &amp;= -g \frac{\partial h}{\partial y} \\ \frac{\partial h}{\partial t} + \frac{\partial (h u)}{\partial x} + \frac{\partial (h v)}{\partial y} &amp;= 0 \\ \end{aligned} \right.
+$$</p>
+<p>用 $v = v&#x27;$，$u = u&#x27;$，$h = H_0 + h&#x27;$（$H_0$ 是常数）</p>
+<p>线性化后推导纬向传播的重力惯性外波频率方程、相速度和群速度的数学表达式。</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2021.md#L759">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2021.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>惯性重力外波的频散、相速与群速：</strong> 静止均匀层、常数f、纬向线性浅水波满足 $\omega^2=f^2+gHk^2$。代入平面波后先保留零频平衡模态，再求传播支；$c_p=\omega/k$，$c_g=gHk/\omega$，$c_pc_g=gH$，有均匀基本流时先作多普勒频移。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>由静力平衡 $p=p_s+\rho_0g(h-z)$ 得水平压力梯度 $-g\nabla h$；对不可压缩连续方程沿深度积分，并用底面无穿透和自由面运动学边界，得 $h_t+(hu)_x+(hv)_y=0$。</li>
+<li>在静止、均匀深度 $H$ 上令 $h=H+\eta$，忽略扰动乘积，纬向传播时 $\partial_y=0$，方程为 $u_t-fv=-g\eta_x$、$v_t+fu=0$、$\eta_t+Hu_x=0$。</li>
+<li>设 $(u,v,\eta)=(\hat u,\hat v,\hat\eta)e^{i(kx-\omega t)}$，得到 $-i\omega\hat u-f\hat v=-ikg\hat\eta$、$-i\omega\hat v+f\hat u=0$、$-i\omega\hat\eta+ikH\hat u=0$。</li>
+<li>对 $\omega\ne0$，后两式给出 $\hat v=-if\hat u/\omega$、$\hat\eta=kH\hat u/\omega$。代入首式，再乘 $i\omega$：$(\omega^2-f^2)\hat u=gHk^2\hat u$。</li>
+<li>非零振幅要求 $\boxed{\omega^2=f^2+gHk^2}$。完整行列式还含 $\omega=0$ 的平衡模态，它不是传播的惯性重力波，消元时不能忘记说明。</li>
+<li>两个传播分支为 $\omega_\pm=\pm\sqrt{f^2+gHk^2}$。对 $k\ne0$，相速度 $\boxed{c_p=\omega/k}$；微分得到 $\boxed{c_g=d\omega/dk=gHk/\omega}$。</li>
+<li>两者乘积 $c_pc_g=gH$。若 $f\ne0$，相速与群速不同，有频散；$f\to0$ 时两者均趋于相应方向的 $\sqrt{gH}$。二维时把 $k^2$ 改为 $k^2+l^2$，群速度向量为 $gH(k,l)/\omega$。均匀基本流 $U$ 情形用内禀频率 $\omega-kU$ 替换 $\omega$。</li>
+</ol>
+<h3>2020-二-6</h3>
+<p>试叙述赤道地区波动的主要性质（开尔文波和罗斯贝波 - 重力混合波）</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2020.md#L608">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2020.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>赤道波动：</strong> 赤道β平面存在开尔文波、赤道罗斯贝波、混合罗斯贝—重力波和惯性重力波。开尔文波东传、经向风为零且赤道束缚；罗斯贝模态内禀相速向西；混合波兼有涡旋与重力特征。实际云雨还依赖湿对流耦合。</p>
+<p><strong>赤道开尔文波：</strong> 赤道开尔文波在基本浅水模态中 $v=0$，$\omega=ck$，$c=\sqrt{gH}$；纬向重力传播、经向近地转平衡共同使振幅按 $e^{-\beta y^2/(2c)}$ 束缚。满足远离赤道有界的分支向东传播。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>赤道附近 $f\approx\beta y$，科氏参数变号使若干波动被束缚在赤道附近。主要模态有赤道开尔文波、赤道罗斯贝波、混合罗斯贝—重力波及赤道惯性重力波。线性理论描述它们的动力骨架，实际云雨还受湿对流耦合。</li>
+<li><strong>赤道开尔文波。</strong> 取浅水等效波速 $c=\sqrt{gH}$，令 $v=0$。纬向动量与连续方程给 $u_t=-g\eta_x$、$\eta_t=-Hu_x$，组合得 $u_{tt}=c^2u_{xx}$，故 $\omega=\pm ck$。</li>
+<li>经向动量给 $\beta yu=-g\eta_y$。东传支有 $u=g\eta/c$，故 $\eta_y=-(\beta y/c)\eta$，积分得 $\eta\propto\exp[-\beta y^2/(2c)]$；西传支随远离赤道增长，不能满足有界条件。因此开尔文波为东传、近非频散，$u,\eta$ 关于赤道对称，$v=0$，束缚尺度 $L_e=\sqrt{c/\beta}$。</li>
+<li><strong>混合波。</strong> 兼具涡旋性与重力回复特征，经向风不为零；标准 $n=0$ 物理解可写 $\omega=ck/2+\sqrt{c^2k^2/4+\beta c}$（连同实场的共轭分支）。负波数一侧相速向西，群速可向东，不能把它当成单纯非频散东传波。</li>
+<li><strong>赤道罗斯贝波。</strong> 主要受位涡梯度约束，内禀相速向西，常表现为赤道两侧成对的涡旋；重力波分支较快，以辐散、质量场振荡显著。</li>
+<li>沿岸开尔文波与赤道开尔文波应区分：前者靠边界无穿透与地转横向平衡束缚，离岸按 $e^{-y/L_D}$ 衰减，$L_D=c/|f|$；北半球沿传播方向海岸在右侧。赤道波无需实体岸界。</li>
+</ol>
+<h2>原卷第三部分</h2>
+<p>论述题（每小题 5 分，共 3 小题，共 15 分）</p>
+<h3>2013-一-3</h3>
+<p>开尔文波</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2013.md#L94">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2013.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>赤道附近 $f\approx\beta y$，科氏参数变号使若干波动被束缚在赤道附近。主要模态有赤道开尔文波、赤道罗斯贝波、混合罗斯贝—重力波及赤道惯性重力波。线性理论描述它们的动力骨架，实际云雨还受湿对流耦合。</li>
+<li><strong>赤道开尔文波。</strong> 取浅水等效波速 $c=\sqrt{gH}$，令 $v=0$。纬向动量与连续方程给 $u_t=-g\eta_x$、$\eta_t=-Hu_x$，组合得 $u_{tt}=c^2u_{xx}$，故 $\omega=\pm ck$。</li>
+<li>经向动量给 $\beta yu=-g\eta_y$。东传支有 $u=g\eta/c$，故 $\eta_y=-(\beta y/c)\eta$，积分得 $\eta\propto\exp[-\beta y^2/(2c)]$；西传支随远离赤道增长，不能满足有界条件。因此开尔文波为东传、近非频散，$u,\eta$ 关于赤道对称，$v=0$，束缚尺度 $L_e=\sqrt{c/\beta}$。</li>
+<li><strong>混合波。</strong> 兼具涡旋性与重力回复特征，经向风不为零；标准 $n=0$ 物理解可写 $\omega=ck/2+\sqrt{c^2k^2/4+\beta c}$（连同实场的共轭分支）。负波数一侧相速向西，群速可向东，不能把它当成单纯非频散东传波。</li>
+<li><strong>赤道罗斯贝波。</strong> 主要受位涡梯度约束，内禀相速向西，常表现为赤道两侧成对的涡旋；重力波分支较快，以辐散、质量场振荡显著。</li>
+<li>沿岸开尔文波与赤道开尔文波应区分：前者靠边界无穿透与地转横向平衡束缚，离岸按 $e^{-y/L_D}$ 衰减，$L_D=c/|f|$；北半球沿传播方向海岸在右侧。赤道波无需实体岸界。</li>
+</ol>
+<h3>2012-二-4</h3>
+<p>什么是地转偏差及其对大气演变的影响。</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2012.md#L359">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2012.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>非地转风：</strong> 地转偏差 $\mathbf V_a=\mathbf V-\mathbf V_g$。减去地转平衡得 $D\mathbf V/Dt+f\mathbf k\times\mathbf V_a=\mathbf F$。它虽小却承担辐合辐散和次级环流，联系质量场、垂直运动与天气演变。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>地转偏差（非地转风）为 $\mathbf V_a=\mathbf V-\mathbf V_g$。水平动量方程写为 $D\mathbf V/Dt+f\mathbf k\times\mathbf V=-\nabla_p\Phi+\mathbf F$。</li>
+<li>减去地转平衡后 $D\mathbf V/Dt+f\mathbf k\times\mathbf V_a=\mathbf F$。左乘 $\mathbf k\times$，利用水平向量恒等式 $\mathbf k\times(\mathbf k\times\mathbf V_a)=-\mathbf V_a$，得到 $\mathbf V_a=\mathbf k\times(D\mathbf V/Dt-\mathbf F)/f$。</li>
+<li>地转风在 $f$ 平面无辐散，非地转风虽小却控制辐合辐散，由连续方程驱动垂直运动，从而改变质量场和温度场。这使天气系统能够发展，不能把地转近似理解为整个运动绝对静止。</li>
+<li>地转适应是初始风压不平衡激发惯性重力波，快速传播带走不平衡部分，剩余流趋近地转平衡的过程。比较水平尺度 $L$ 与变形半径 $L_D=c/|f|$：$L\gg L_D$ 时较偏向风适应压力，$L\ll L_D$ 时较偏向压力适应风。</li>
+<li>斜压适应需分解不同竖直模态，每个模态具有自己的等效波速和变形半径；内模态通常较慢。结果受位涡、总质量、边界及初始条件共同限制，并非摩擦把所有风消耗为零。</li>
+</ol>
+<h2>原卷第三部分</h2>
+<p>公式推导</p>
+<h3>2011-一-6</h3>
+<p>地转适应过程</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2011.md#L196">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2011.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>地转适应：</strong> 地转适应是风压不平衡激发惯性重力波，传播带走不平衡部分，剩余趋向平衡的过程。以变形半径 $L_D=c/|f|$ 比较尺度；斜压大气不同竖直模态各有自己的 $c$ 与 $L_D$，需同时满足位涡及边界约束。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>地转偏差（非地转风）为 $\mathbf V_a=\mathbf V-\mathbf V_g$。水平动量方程写为 $D\mathbf V/Dt+f\mathbf k\times\mathbf V=-\nabla_p\Phi+\mathbf F$。</li>
+<li>减去地转平衡后 $D\mathbf V/Dt+f\mathbf k\times\mathbf V_a=\mathbf F$。左乘 $\mathbf k\times$，利用水平向量恒等式 $\mathbf k\times(\mathbf k\times\mathbf V_a)=-\mathbf V_a$，得到 $\mathbf V_a=\mathbf k\times(D\mathbf V/Dt-\mathbf F)/f$。</li>
+<li>地转风在 $f$ 平面无辐散，非地转风虽小却控制辐合辐散，由连续方程驱动垂直运动，从而改变质量场和温度场。这使天气系统能够发展，不能把地转近似理解为整个运动绝对静止。</li>
+<li>地转适应是初始风压不平衡激发惯性重力波，快速传播带走不平衡部分，剩余流趋近地转平衡的过程。比较水平尺度 $L$ 与变形半径 $L_D=c/|f|$：$L\gg L_D$ 时较偏向风适应压力，$L\ll L_D$ 时较偏向压力适应风。</li>
+<li>斜压适应需分解不同竖直模态，每个模态具有自己的等效波速和变形半径；内模态通常较慢。结果受位涡、总质量、边界及初始条件共同限制，并非摩擦把所有风消耗为零。</li>
+</ol>
+<h2>原卷第二部分</h2>
+<p>简答题</p>
+<h3>2011-二-4</h3>
+<p>罗斯贝数的表达式是什么？如何用罗斯贝数区分大气大尺度运动过程的两个阶段？</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2011.md#L364">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2011.md">原始年度题干</a></p>
+<p><strong>审校状态：已按设问复核。</strong></p>
+<p><strong>针对本题的精简作答：</strong></p>
+<p>先写Ro=U/(|f|L)，再写时间数1/(|f|T)。快适应局地惯性可重要，慢演变两者小才近地转；T=L/U时两数才相等。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<h3>2011-三-整题</h3>
+<p>如下浅水扰动方程组中，取 $f = f_0$，并设扰动与 y 无关，推导出重力惯性外波的相速和群速：
+$$
+\left\{ \begin{aligned} \frac{\partial u}{\partial t} - f_0 v &amp;= -g \frac{\partial h}{\partial x} \\ \frac{\partial v}{\partial t} + f_0 u &amp;= -g \frac{\partial h}{\partial y} \\ \frac{\partial h}{\partial t} + H_0 \left( \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} \right) &amp;= 0 \\ \end{aligned} \right.
+$$</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2011.md#L408">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2011.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>惯性重力外波的频散、相速与群速：</strong> 静止均匀层、常数f、纬向线性浅水波满足 $\omega^2=f^2+gHk^2$。代入平面波后先保留零频平衡模态，再求传播支；$c_p=\omega/k$，$c_g=gHk/\omega$，$c_pc_g=gH$，有均匀基本流时先作多普勒频移。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>由静力平衡 $p=p_s+\rho_0g(h-z)$ 得水平压力梯度 $-g\nabla h$；对不可压缩连续方程沿深度积分，并用底面无穿透和自由面运动学边界，得 $h_t+(hu)_x+(hv)_y=0$。</li>
+<li>在静止、均匀深度 $H$ 上令 $h=H+\eta$，忽略扰动乘积，纬向传播时 $\partial_y=0$，方程为 $u_t-fv=-g\eta_x$、$v_t+fu=0$、$\eta_t+Hu_x=0$。</li>
+<li>设 $(u,v,\eta)=(\hat u,\hat v,\hat\eta)e^{i(kx-\omega t)}$，得到 $-i\omega\hat u-f\hat v=-ikg\hat\eta$、$-i\omega\hat v+f\hat u=0$、$-i\omega\hat\eta+ikH\hat u=0$。</li>
+<li>对 $\omega\ne0$，后两式给出 $\hat v=-if\hat u/\omega$、$\hat\eta=kH\hat u/\omega$。代入首式，再乘 $i\omega$：$(\omega^2-f^2)\hat u=gHk^2\hat u$。</li>
+<li>非零振幅要求 $\boxed{\omega^2=f^2+gHk^2}$。完整行列式还含 $\omega=0$ 的平衡模态，它不是传播的惯性重力波，消元时不能忘记说明。</li>
+<li>两个传播分支为 $\omega_\pm=\pm\sqrt{f^2+gHk^2}$。对 $k\ne0$，相速度 $\boxed{c_p=\omega/k}$；微分得到 $\boxed{c_g=d\omega/dk=gHk/\omega}$。</li>
+<li>两者乘积 $c_pc_g=gH$。若 $f\ne0$，相速与群速不同，有频散；$f\to0$ 时两者均趋于相应方向的 $\sqrt{gH}$。二维时把 $k^2$ 改为 $k^2+l^2$，群速度向量为 $gH(k,l)/\omega$。均匀基本流 $U$ 情形用内禀频率 $\omega-kU$ 替换 $\omega$。</li>
+</ol>
+<h2>原卷第四部分</h2>
+<p>论述题</p>
+<h3>2010-一-1</h3>
+<p>什么是地转偏差？写出其表达式并简要说明其对大气运动演变的作用。</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2010.md#L11">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2010.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>非地转风：</strong> 地转偏差 $\mathbf V_a=\mathbf V-\mathbf V_g$。减去地转平衡得 $D\mathbf V/Dt+f\mathbf k\times\mathbf V_a=\mathbf F$。它虽小却承担辐合辐散和次级环流，联系质量场、垂直运动与天气演变。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>地转偏差（非地转风）为 $\mathbf V_a=\mathbf V-\mathbf V_g$。水平动量方程写为 $D\mathbf V/Dt+f\mathbf k\times\mathbf V=-\nabla_p\Phi+\mathbf F$。</li>
+<li>减去地转平衡后 $D\mathbf V/Dt+f\mathbf k\times\mathbf V_a=\mathbf F$。左乘 $\mathbf k\times$，利用水平向量恒等式 $\mathbf k\times(\mathbf k\times\mathbf V_a)=-\mathbf V_a$，得到 $\mathbf V_a=\mathbf k\times(D\mathbf V/Dt-\mathbf F)/f$。</li>
+<li>地转风在 $f$ 平面无辐散，非地转风虽小却控制辐合辐散，由连续方程驱动垂直运动，从而改变质量场和温度场。这使天气系统能够发展，不能把地转近似理解为整个运动绝对静止。</li>
+<li>地转适应是初始风压不平衡激发惯性重力波，快速传播带走不平衡部分，剩余流趋近地转平衡的过程。比较水平尺度 $L$ 与变形半径 $L_D=c/|f|$：$L\gg L_D$ 时较偏向风适应压力，$L\ll L_D$ 时较偏向压力适应风。</li>
+<li>斜压适应需分解不同竖直模态，每个模态具有自己的等效波速和变形半径；内模态通常较慢。结果受位涡、总质量、边界及初始条件共同限制，并非摩擦把所有风消耗为零。</li>
+</ol>
+<h3>2010-一-4</h3>
+<p>斜压地转适应过程有何特点（即斜压地转适应过程的一般性质）</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2010.md#L129">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2010.md">原始年度题干</a></p>
+<p><strong>审校状态：已按设问复核。</strong></p>
+<p><strong>针对本题的精简作答：</strong></p>
+<p>不平衡激发惯性重力波；斜压问题有多个竖直模态和各自变形半径；比较L与各模态变形尺度；最终满足地转、热成风及位涡边界约束。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<h2>精选完整解析与公式推导</h2>
+<p>以下保留资料中的条件、步骤和审校信息。先完成手写，再核对。</p>
+<h3>2023-二-2 · 完整解答</h3>
+<p>赤道地区有哪些特有波动，阐述其特征。</p>
+<p><strong>修改意见（2026-10-07，第四批）：</strong></p>
+<p>按赤道束缚模态比较传播、结构和回复机制；保留开尔文波的有界性推导。</p>
+<p><strong>核对依据：</strong> <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1/%E4%BD%8E%E7%BA%AC%E5%BA%A6%E5%A4%A7%E6%B0%94%E5%8A%A8%E5%8A%9B%E5%AD%A6/%E7%83%AD%E5%B8%A6%E6%B3%A2%E5%8A%A8.md">热带波动</a>。本地资料为学习笔记，不视作官方标准答案；冲突处依据下列物理条件、方程推导和所列外部依据判断。</p>
+<p><strong>复核后详细解答：</strong></p>
+<ol>
+<li><strong>共同模型。</strong> 赤道β平面取$f=\beta y$，静止均匀浅水基本态、等效波速$c=\sqrt{gH}$，位势扰动$\phi=g\eta$。方程为$u_t-\beta yv=-\phi_x$、$v_t+\beta yu=-\phi_y$、$\phi_t+c^2(u_x+v_y)=0$。要求扰动远离赤道衰减，形成赤道束缚模态；束缚尺度为$L_e=\sqrt{c/\beta}$。</li>
+<li><strong>开尔文波推导。</strong> 令$v=0$，首、末两式成为$u_t=-\phi_x$、$\phi_t=-c^2u_x$。第一式再对时间求导并代入第二式：$u_{tt}=c^2u_{xx}$。对$e^{i(kx-\omega t)}$模态，$\omega^2=c^2k^2$。</li>
+<li><strong>选择东传支。</strong> 东传$\omega=ck$时由$\omega u=k\phi$得$\phi=cu$；经向平衡$\beta yu=-\phi_y$给$\phi_y=-(\beta y/c)\phi$。分离变量积分，$\ln\phi=-\beta y^2/(2c)+C$，故$\phi\propto e^{-y^2/(2L_e^2)}$。西传支反得正指数，远离赤道发散而被排除。东传支$u,\phi$关于赤道对称，$v=0$，相速与群速均为$c$。</li>
+<li><strong>赤道罗斯贝波。</strong> 位涡梯度提供主要回复，频率较低，相对静止基本态向西传播；最低对称模态常表现为赤道两侧成对旋转环流。不同经向模态有不同节点，不能将所有模态都画成完全同一双涡结构。它有频散，相速与群速不同。</li>
+<li><strong>混合罗斯贝—重力波。</strong> 最低阶$n=0$模态兼具重力与涡旋特征；经向风关于赤道对称、在赤道不为零，纬向风和位势扰动反对称。用允许正负$k$的正频率表示，物理分支为$\omega=ck/2+\sqrt{c^2k^2/4+\beta c}$；$k&lt;0$部分的相速向西，而其群速度向东，显示波形和能量传播不同。实场还须包含共轭分量，不能把符号不同的表示当成两种独立物理结论。</li>
+<li><strong>赤道惯性重力波。</strong> 较高频模态有东传和西传分支，水平辐散与质量场振荡突出，重力和旋转共同参与回复；相对罗斯贝慢波通常更快。</li>
+<li><strong>实际天气。</strong> 湿对流可耦合这些动力模态，使低层辐合与云雨异常有组织传播；加热、基本风和阻尼改变相速及结构。MJO不能直接等同于无对流浅水开尔文波；沿岸开尔文波则靠岸界束缚，也不是本题的赤道模态。</li>
+</ol>
+<p>模型与模态核对<a href="https://2022.ictp.it/sites/default/files/%5Bteaching-materials%5D/lecture_notes_climate_units_section6.pdf">ICTP赤道波动讲义</a>。</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2023.md#L543">核对原文</a></p>
+<h3>2022-二-1 · 完整解答</h3>
+<p>热带波动开尔文的基本特征</p>
+<p><strong>修改意见（2026-10-04）：</strong></p>
+<p>原答案混入混合波和罗斯贝波的大段内容；改为只围绕赤道开尔文波，并补有界条件选择东传支的完整过程。参考笔记的束缚尺度漏外层平方根，已核正。</p>
+<p><strong>核对依据：</strong> <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1/%E4%BD%8E%E7%BA%AC%E5%BA%A6%E5%A4%A7%E6%B0%94%E5%8A%A8%E5%8A%9B%E5%AD%A6/%E7%83%AD%E5%B8%A6%E6%B3%A2%E5%8A%A8.md">热带波动</a>。本地资料为学习笔记，不视作官方标准答案；冲突处依据下列方程推导与量纲检查作出判断。</p>
+<p><strong>复核后详细解答：</strong></p>
+<ol>
+<li><strong>模型与定义。</strong> 赤道附近取$f=\beta y$、$\beta&gt;0$，静止基本态的线性浅水模型深度为$H$；对大气竖直模态，$H$可理解为等效深度。赤道开尔文模态的经向速度$v=0$。</li>
+<li><strong>保留三个约束。</strong> 令自由面位移为$\eta$，有$u_t=-g\eta_x$、$\beta yu=-g\eta_y$、$\eta_t+Hu_x=0$。第一、三式描述纬向重力传播，第二式是经向平衡，不能因$v=0$就把经向方程丢掉。</li>
+<li><strong>求纬向波速。</strong> 第一式对时间求导，第三式对$x$求导后代入：$u_{tt}=-g\eta_{xt}=gHu_{xx}$。令$u,\eta\propto e^{i(kx-\omega t)}$，得$-\omega^2u=-gHk^2u$，所以$\omega=\pm ck$，$c=\sqrt{gH}&gt;0$。</li>
+<li><strong>东传支的束缚。</strong> 纬向动量式给$\omega u=kg\eta$；取$\omega=ck$，则$u=g\eta/c$。代入经向式，$\eta_y=-(\beta y/c)\eta$。分离变量、从赤道积分：
+$$\ln\frac{\eta(y)}{\eta(0)}=-\frac{\beta}{c}\int_0^y y&#x27;\,dy&#x27;=-\frac{\beta y^2}{2c},$$
+故$\eta(y)=\eta(0)e^{-\beta y^2/(2c)}$，$u$也按相同规律衰减。</li>
+<li><strong>排除西传支。</strong> 若$\omega=-ck$，则$u=-g\eta/c$，经向式给$\eta_y=(\beta y/c)\eta$，解随$|y|$指数增大。要求远离赤道振幅有界，只能舍去该非零西传解，因此物理解东传。</li>
+<li><strong>结构与频散。</strong> $u,\eta$关于赤道对称，东传支二者同相，$v=0$。令包络为$e^{-y^2/(2L_e^2)}$，比较系数得到$L_e=\sqrt{c/\beta}$。$c/\beta$单位是$\mathrm{m^2}$，需开平方才是长度；参考笔记若写$\sqrt{gH}/\beta$作为长度，量纲不对。理想模型中$c_p=\omega/k=c$、$c_g=d\omega/dk=c$，非频散。</li>
+<li><strong>实际天气联系。</strong> 大气中的湿对流耦合开尔文波可组织东移云雨，其等效波速和热力结构受湿过程影响；不应把干浅水波的每个结论无条件用于实际对流，也不应把它与MJO直接当同义词。</li>
+</ol>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2022.md#L496">核对原文</a></p>
+<h3>2021-三-4 · 完整解答</h3>
+<p>利用浅水方程组，线性化推导纬向传播的重力惯性外波频率方程、相速度和群速度的数学表达式。</p>
+<ol>
+<li>由静力平衡 $p=p_s+\rho_0g(h-z)$ 得水平压力梯度 $-g\nabla h$；对不可压缩连续方程沿深度积分，并用底面无穿透和自由面运动学边界，得 $h_t+(hu)_x+(hv)_y=0$。</li>
+<li>在静止、均匀深度 $H$ 上令 $h=H+\eta$，忽略扰动乘积，纬向传播时 $\partial_y=0$，方程为 $u_t-fv=-g\eta_x$、$v_t+fu=0$、$\eta_t+Hu_x=0$。</li>
+<li>设 $(u,v,\eta)=(\hat u,\hat v,\hat\eta)e^{i(kx-\omega t)}$，得到 $-i\omega\hat u-f\hat v=-ikg\hat\eta$、$-i\omega\hat v+f\hat u=0$、$-i\omega\hat\eta+ikH\hat u=0$。</li>
+<li>对 $\omega\ne0$，后两式给出 $\hat v=-if\hat u/\omega$、$\hat\eta=kH\hat u/\omega$。代入首式，再乘 $i\omega$：$(\omega^2-f^2)\hat u=gHk^2\hat u$。</li>
+<li>非零振幅要求 $\boxed{\omega^2=f^2+gHk^2}$。完整行列式还含 $\omega=0$ 的平衡模态，它不是传播的惯性重力波，消元时不能忘记说明。</li>
+<li>两个传播分支为 $\omega_\pm=\pm\sqrt{f^2+gHk^2}$。对 $k\ne0$，相速度 $\boxed{c_p=\omega/k}$；微分得到 $\boxed{c_g=d\omega/dk=gHk/\omega}$。</li>
+<li>两者乘积 $c_pc_g=gH$。若 $f\ne0$，相速与群速不同，有频散；$f\to0$ 时两者均趋于相应方向的 $\sqrt{gH}$。二维时把 $k^2$ 改为 $k^2+l^2$，群速度向量为 $gH(k,l)/\omega$。均匀基本流 $U$ 情形用内禀频率 $\omega-kU$ 替换 $\omega$。</li>
+</ol>
+<h2>原卷第四部分</h2>
+<p>推导题</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2021.md#L713">核对原文</a></p>
+<h3>2011-三-整题 · 完整解答</h3>
+<p>如下浅水扰动方程组中，取 $f = f_0$，并设扰动与 y 无关，推导出重力惯性外波的相速和群速：
+$$
+\left\{ \begin{aligned} \frac{\partial u}{\partial t} - f_0 v &amp;= -g \frac{\partial h}{\partial x} \\ \frac{\partial v}{\partial t} + f_0 u &amp;= -g \frac{\partial h}{\partial y} \\ \frac{\partial h}{\partial t} + H_0 \left( \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} \right) &amp;= 0 \\ \end{aligned} \right.
+$$</p>
+<ol>
+<li>由静力平衡 $p=p_s+\rho_0g(h-z)$ 得水平压力梯度 $-g\nabla h$；对不可压缩连续方程沿深度积分，并用底面无穿透和自由面运动学边界，得 $h_t+(hu)_x+(hv)_y=0$。</li>
+<li>在静止、均匀深度 $H$ 上令 $h=H+\eta$，忽略扰动乘积，纬向传播时 $\partial_y=0$，方程为 $u_t-fv=-g\eta_x$、$v_t+fu=0$、$\eta_t+Hu_x=0$。</li>
+<li>设 $(u,v,\eta)=(\hat u,\hat v,\hat\eta)e^{i(kx-\omega t)}$，得到 $-i\omega\hat u-f\hat v=-ikg\hat\eta$、$-i\omega\hat v+f\hat u=0$、$-i\omega\hat\eta+ikH\hat u=0$。</li>
+<li>对 $\omega\ne0$，后两式给出 $\hat v=-if\hat u/\omega$、$\hat\eta=kH\hat u/\omega$。代入首式，再乘 $i\omega$：$(\omega^2-f^2)\hat u=gHk^2\hat u$。</li>
+<li>非零振幅要求 $\boxed{\omega^2=f^2+gHk^2}$。完整行列式还含 $\omega=0$ 的平衡模态，它不是传播的惯性重力波，消元时不能忘记说明。</li>
+<li>两个传播分支为 $\omega_\pm=\pm\sqrt{f^2+gHk^2}$。对 $k\ne0$，相速度 $\boxed{c_p=\omega/k}$；微分得到 $\boxed{c_g=d\omega/dk=gHk/\omega}$。</li>
+<li>两者乘积 $c_pc_g=gH$。若 $f\ne0$，相速与群速不同，有频散；$f\to0$ 时两者均趋于相应方向的 $\sqrt{gH}$。二维时把 $k^2$ 改为 $k^2+l^2$，群速度向量为 $gH(k,l)/\omega$。均匀基本流 $U$ 情形用内禀频率 $\omega-kU$ 替换 $\omega$。</li>
+</ol>
+<h2>原卷第四部分</h2>
+<p>论述题</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2011.md#L408">核对原文</a></p>
+<h3>2021-四-整题 · 完整解答</h3>
+<p>浅水方程组：
+$$
+\left\{ \begin{aligned} \frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} + v \frac{\partial u}{\partial y} - f v &amp;= -g \frac{\partial h}{\partial x} \\ \frac{\partial v}{\partial t} + u \frac{\partial v}{\partial x} + v \frac{\partial v}{\partial y} + f u &amp;= -g \frac{\partial h}{\partial y} \\ \frac{\partial h}{\partial t} + \frac{\partial (h u)}{\partial x} + \frac{\partial (h v)}{\partial y} &amp;= 0 \\ \end{aligned} \right.
+$$</p>
+<p>用 $v = v&#x27;$，$u = u&#x27;$，$h = H_0 + h&#x27;$（$H_0$ 是常数）</p>
+<p>线性化后推导纬向传播的重力惯性外波频率方程、相速度和群速度的数学表达式。</p>
+<ol>
+<li>由静力平衡 $p=p_s+\rho_0g(h-z)$ 得水平压力梯度 $-g\nabla h$；对不可压缩连续方程沿深度积分，并用底面无穿透和自由面运动学边界，得 $h_t+(hu)_x+(hv)_y=0$。</li>
+<li>在静止、均匀深度 $H$ 上令 $h=H+\eta$，忽略扰动乘积，纬向传播时 $\partial_y=0$，方程为 $u_t-fv=-g\eta_x$、$v_t+fu=0$、$\eta_t+Hu_x=0$。</li>
+<li>设 $(u,v,\eta)=(\hat u,\hat v,\hat\eta)e^{i(kx-\omega t)}$，得到 $-i\omega\hat u-f\hat v=-ikg\hat\eta$、$-i\omega\hat v+f\hat u=0$、$-i\omega\hat\eta+ikH\hat u=0$。</li>
+<li>对 $\omega\ne0$，后两式给出 $\hat v=-if\hat u/\omega$、$\hat\eta=kH\hat u/\omega$。代入首式，再乘 $i\omega$：$(\omega^2-f^2)\hat u=gHk^2\hat u$。</li>
+<li>非零振幅要求 $\boxed{\omega^2=f^2+gHk^2}$。完整行列式还含 $\omega=0$ 的平衡模态，它不是传播的惯性重力波，消元时不能忘记说明。</li>
+<li>两个传播分支为 $\omega_\pm=\pm\sqrt{f^2+gHk^2}$。对 $k\ne0$，相速度 $\boxed{c_p=\omega/k}$；微分得到 $\boxed{c_g=d\omega/dk=gHk/\omega}$。</li>
+<li>两者乘积 $c_pc_g=gH$。若 $f\ne0$，相速与群速不同，有频散；$f\to0$ 时两者均趋于相应方向的 $\sqrt{gH}$。二维时把 $k^2$ 改为 $k^2+l^2$，群速度向量为 $gH(k,l)/\omega$。均匀基本流 $U$ 情形用内禀频率 $\omega-kU$ 替换 $\omega$。</li>
+</ol>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2021.md#L759">核对原文</a></p>
+<h2>当日验收</h2>
+<ul>
+<li>[ ] 本日每题均完成至少一次闭卷提取。</li>
+<li>[ ] 精选题写清假设、符号与中间步骤；无漏负号、下标和单位。</li>
+<li>[ ] 能用自己的话解释至少两条跨章节联系。</li>
+<li>[ ] 错题记录包含题号、错因、修正答案及下一次复习日期。</li>
+</ul></article></main><footer>学习整理版 · 非官方评分标准 · 来源见各题链接</footer></body></html>

@@ -1,0 +1,280 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>湍流、混合长、Ekman层、理查森数</title><link rel="stylesheet" href="style.css"><script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'}};</script><script defer src="mathjax/tex-svg.js"></script></head><body><header><a href="index.html">大气科学 · 50日复习</a><nav><a href="D36.html">← 上一天</a><a href="md/D37.md" download>下载 MD</a><a href="D38.html">下一天 →</a></nav></header><main><article><h1>D37 · 湍流、混合长、Ekman层、理查森数</h1>
+<p>日期：2026-12-04｜建议投入：4小时｜动力40% · 天气40% · 物理20%</p>
+<blockquote>
+<p>本学习包依据原50日PDF与仓库学习资料整理。参考答案不是官方评分标准；未完成学科审校及缺题标记均保留。公式采用 GitHub 数学 Markdown，请在 GitHub 正文或 Obsidian 阅读视图打开。</p>
+</blockquote>
+<h2>今日目标与记忆标准</h2>
+<p>闭卷说清概念、适用条件、符号与单位；推导必须写出起始方程、近似及关键步骤。先答题，再展开核对。</p>
+<h2>四小时执行</h2>
+<ol>
+<li>20分钟：回忆此前第1、3、7、14天的重点，尚未开始的日期跳过。</li>
+<li>80分钟：逐题闭卷提取，核对以下简答与来源。</li>
+<li>70分钟：精选5题完整书写。名词解释90秒、简答7分钟、论述12分钟为训练目标。</li>
+<li>40分钟：把本日知识按“假设→方程→物理机制→天气表现”串成2—4条知识链。</li>
+<li>30分钟：记录遗漏点、用时与次日/3日/7日/14日复习日期。</li>
+</ol>
+<h2>逐题回忆与简答</h2>
+<h3>2025-二-2</h3>
+<p>湍流的特征</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2025.md#L554">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2025.md">原始年度题干</a></p>
+<p><strong>审校状态：已逐题复核（按所列模型与条件）。</strong></p>
+<p><strong>针对本题的考场作答版（非官方评分标准）：</strong></p>
+<p>湍流具有不规则脉动、多尺度三维涡旋、强混合输送、能量级联与黏性耗散，以及间歇性和各向异性；常由切变和不稳定浮力产生，需用统计量描述。</p>
+<blockquote>
+<p>推导题须保留必要推演，简答与论述须按小问展开；精简版只用于回忆作答主线。</p>
+</blockquote>
+<h3>2024-三-1</h3>
+<p>混合长理论定义，在湍流中的运用及缺陷</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2024.md#L794">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2024.md">原始年度题干</a></p>
+<p><strong>审校状态：已逐题复核（按所列模型与条件）。</strong></p>
+<p><strong>针对本题的考场作答版（非官方评分标准）：</strong></p>
+<p>以$u&#x27;\approx-\xi\,dU/dz$估计涡块位移后的速度差，得$\overline{u&#x27;w&#x27;}=-K_mU_z$；令$K_m=l^2|U_z|$，在中性常通量层用$l=\kappa z$积分得到$U=(u_*/\kappa)\ln(z/z_0)$。</p>
+<blockquote>
+<p>推导题须保留必要推演，简答与论述须按小问展开；精简版只用于回忆作答主线。</p>
+</blockquote>
+<h3>2021-一-3</h3>
+<p>理查森数</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2021.md#L91">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2021.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>梯度理查森数 $Ri=N^2/S^2$，其中 $N^2=(g/\bar\theta)\partial_z\bar\theta$，$S^2=(\partial_z\bar u)^2+(\partial_z\bar v)^2$，因此 $Ri$ 无量纲。</li>
+<li>分子代表稳定层结对竖直位移的抑制，分母代表风切变供能。$Ri&lt;0$ 对应干静力不稳定；稳定层结中 $Ri$ 较小时切变更容易维持湍流，较大时浮力抑制较强。</li>
+<li>理想平行、无黏、稳定层结流中，处处 $Ri\ge1/4$ 是相关线性稳定定理的充分条件；局部小于1/4并不保证必然不稳定。真实边界层有非定常、非局地和间歇效应，不能机械使用唯一临界值。</li>
+</ol>
+<h3>2021-二-1</h3>
+<p>简述混合长理论的基本思想和假设</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2021.md#L400">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2021.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>
+<p>雷诺分解 $u=\bar u+u&#x27;$、$w=\bar w+w&#x27;$ 后，平均动量方程出现 $-\partial_z\overline{u&#x27;w&#x27;}$。混合长假设把涡团看作在距离 $l$ 内保留原动量，估计 $u&#x27;\sim-l\bar u_z$，并用 $w&#x27;\sim l|\bar u_z|$，得 $\overline{u&#x27;w&#x27;}=-K_m\bar u_z$、$K_m\sim l^2|\bar u_z|$。</p>
+</li>
+<li>
+<p>中性近地层常取 $l=\kappa z$，常应力 $-\overline{u&#x27;w&#x27;}=u_*^2$ 给 $\bar u_z=u_*/(\kappa z)$，积分为 $\bar u=(u_*/\kappa)\ln(z/z_0)$。局地闭合不能准确描述大涡非局地输送、间歇湍流、强非定常和反梯度通量。</p>
+</li>
+</ol>
+<h3>2018-一-8</h3>
+<p>Ekman 抽吸</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2018.md#L277">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2018.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>埃克曼抽吸：</strong> 边界层摩擦造成水平输送辐合，经质量连续性在层顶形成垂直运动。设偏差风积分输送为 $\mathbf M$，下边界无穿透，则 $w_E=-\nabla_h\cdot\mathbf M$。气旋常对应上升；应力形式公式须先说明应力方向与 $w/\omega$ 约定。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>
+<p>气旋边界层摩擦辐合，经连续性在层顶产生上升，即埃克曼抽吸；反气旋常相反。若 $M$ 为积分边界层偏差输送、下边界 $w=0$，$w_E=-\nabla_h\cdot M$。明确应力为地面对空气的应力 $\boldsymbol\tau_s$，常数 $\rho,f$ 下 $M=-\mathbf k\times\boldsymbol\tau_s/(\rho f)$，故 $w_E=-\operatorname{curl}_z\boldsymbol\tau_s/(\rho f)$；若采用空气对地面应力，符号相反。</p>
+</li>
+<li>
+<p>抽吸将摩擦影响传入内区，使旋转流逐步衰减，称 spin down。理查森数 $Ri=N^2/[(\bar u_z)^2+(\bar v_z)^2]$ 比较稳定层结抑制与切变产湍，不能把常见的 $1/4$ 理论阈值当作所有大气湍流的开关。雷诺数 $Re=UL/\nu$ 衡量惯性与分子黏性；大气通常很大，湍流多尺度、随机且强混合，但仍服从守恒定律。</p>
+</li>
+</ol>
+<h2>原卷第二部分</h2>
+<p>简答题（每题 10 分，共 5 题）</p>
+<h3>2016-二-5</h3>
+<p>简述气旋的 Ekman 抽吸效应。</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2016.md#L476">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2016.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>埃克曼抽吸：</strong> 边界层摩擦造成水平输送辐合，经质量连续性在层顶形成垂直运动。设偏差风积分输送为 $\mathbf M$，下边界无穿透，则 $w_E=-\nabla_h\cdot\mathbf M$。气旋常对应上升；应力形式公式须先说明应力方向与 $w/\omega$ 约定。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>
+<p>气旋边界层摩擦辐合，经连续性在层顶产生上升，即埃克曼抽吸；反气旋常相反。若 $M$ 为积分边界层偏差输送、下边界 $w=0$，$w_E=-\nabla_h\cdot M$。明确应力为地面对空气的应力 $\boldsymbol\tau_s$，常数 $\rho,f$ 下 $M=-\mathbf k\times\boldsymbol\tau_s/(\rho f)$，故 $w_E=-\operatorname{curl}_z\boldsymbol\tau_s/(\rho f)$；若采用空气对地面应力，符号相反。</p>
+</li>
+<li>
+<p>抽吸将摩擦影响传入内区，使旋转流逐步衰减，称 spin down。理查森数 $Ri=N^2/[(\bar u_z)^2+(\bar v_z)^2]$ 比较稳定层结抑制与切变产湍，不能把常见的 $1/4$ 理论阈值当作所有大气湍流的开关。雷诺数 $Re=UL/\nu$ 衡量惯性与分子黏性；大气通常很大，湍流多尺度、随机且强混合，但仍服从守恒定律。</p>
+</li>
+</ol>
+<h2>原卷第三部分</h2>
+<p>论述题</p>
+<h3>2012-一-5</h3>
+<p>Ekman 抽吸</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2012.md#L155">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2012.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>埃克曼抽吸：</strong> 边界层摩擦造成水平输送辐合，经质量连续性在层顶形成垂直运动。设偏差风积分输送为 $\mathbf M$，下边界无穿透，则 $w_E=-\nabla_h\cdot\mathbf M$。气旋常对应上升；应力形式公式须先说明应力方向与 $w/\omega$ 约定。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>
+<p>气旋边界层摩擦辐合，经连续性在层顶产生上升，即埃克曼抽吸；反气旋常相反。若 $M$ 为积分边界层偏差输送、下边界 $w=0$，$w_E=-\nabla_h\cdot M$。明确应力为地面对空气的应力 $\boldsymbol\tau_s$，常数 $\rho,f$ 下 $M=-\mathbf k\times\boldsymbol\tau_s/(\rho f)$，故 $w_E=-\operatorname{curl}_z\boldsymbol\tau_s/(\rho f)$；若采用空气对地面应力，符号相反。</p>
+</li>
+<li>
+<p>抽吸将摩擦影响传入内区，使旋转流逐步衰减，称 spin down。理查森数 $Ri=N^2/[(\bar u_z)^2+(\bar v_z)^2]$ 比较稳定层结抑制与切变产湍，不能把常见的 $1/4$ 理论阈值当作所有大气湍流的开关。雷诺数 $Re=UL/\nu$ 衡量惯性与分子黏性；大气通常很大，湍流多尺度、随机且强混合，但仍服从守恒定律。</p>
+</li>
+</ol>
+<h3>2010-一-5</h3>
+<p>什么是 Ekman 抽吸？什么是 spin down（旋转减弱）？</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2010.md#L171">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2010.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>埃克曼抽吸：</strong> 边界层摩擦造成水平输送辐合，经质量连续性在层顶形成垂直运动。设偏差风积分输送为 $\mathbf M$，下边界无穿透，则 $w_E=-\nabla_h\cdot\mathbf M$。气旋常对应上升；应力形式公式须先说明应力方向与 $w/\omega$ 约定。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>
+<p>气旋边界层摩擦辐合，经连续性在层顶产生上升，即埃克曼抽吸；反气旋常相反。若 $M$ 为积分边界层偏差输送、下边界 $w=0$，$w_E=-\nabla_h\cdot M$。明确应力为地面对空气的应力 $\boldsymbol\tau_s$，常数 $\rho,f$ 下 $M=-\mathbf k\times\boldsymbol\tau_s/(\rho f)$，故 $w_E=-\operatorname{curl}_z\boldsymbol\tau_s/(\rho f)$；若采用空气对地面应力，符号相反。</p>
+</li>
+<li>
+<p>抽吸将摩擦影响传入内区，使旋转流逐步衰减，称 spin down。理查森数 $Ri=N^2/[(\bar u_z)^2+(\bar v_z)^2]$ 比较稳定层结抑制与切变产湍，不能把常见的 $1/4$ 理论阈值当作所有大气湍流的开关。雷诺数 $Re=UL/\nu$ 衡量惯性与分子黏性；大气通常很大，湍流多尺度、随机且强混合，但仍服从守恒定律。</p>
+</li>
+</ol>
+<h2>原卷第二部分</h2>
+<p>假设大气为处于静力平衡状态下的不可压缩流体，上界为自由面，下界为水平刚壁，并考虑地球旋转的影响，这样模式方程便称为浅水方程。</p>
+<h3>2003_1-一-9</h3>
+<p>Ekman 抽吸作用</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2003_1.md#L363">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2003_1.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>埃克曼抽吸：</strong> 边界层摩擦造成水平输送辐合，经质量连续性在层顶形成垂直运动。设偏差风积分输送为 $\mathbf M$，下边界无穿透，则 $w_E=-\nabla_h\cdot\mathbf M$。气旋常对应上升；应力形式公式须先说明应力方向与 $w/\omega$ 约定。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>
+<p>气旋边界层摩擦辐合，经连续性在层顶产生上升，即埃克曼抽吸；反气旋常相反。若 $M$ 为积分边界层偏差输送、下边界 $w=0$，$w_E=-\nabla_h\cdot M$。明确应力为地面对空气的应力 $\boldsymbol\tau_s$，常数 $\rho,f$ 下 $M=-\mathbf k\times\boldsymbol\tau_s/(\rho f)$，故 $w_E=-\operatorname{curl}_z\boldsymbol\tau_s/(\rho f)$；若采用空气对地面应力，符号相反。</p>
+</li>
+<li>
+<p>抽吸将摩擦影响传入内区，使旋转流逐步衰减，称 spin down。理查森数 $Ri=N^2/[(\bar u_z)^2+(\bar v_z)^2]$ 比较稳定层结抑制与切变产湍，不能把常见的 $1/4$ 理论阈值当作所有大气湍流的开关。雷诺数 $Re=UL/\nu$ 衡量惯性与分子黏性；大气通常很大，湍流多尺度、随机且强混合，但仍服从守恒定律。</p>
+</li>
+</ol>
+<h2>原卷第二部分</h2>
+<p>在 60°N 有一气柱，起始时相对涡度等于 0，从地面一直伸展到固定为 10 公里的对流层顶，假如这个气柱移到 30°N 并爬越一个高度为 5 公里的高原，问此气柱当越过高原顶部时的相对涡度与绝对涡度为多少？</p>
+<h3>2026-二-6</h3>
+<p>稳定层结大气行星边界层垂直层及物理意义</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2026.md#L742">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2026.md">原始年度题干</a></p>
+<p><strong>审校状态：内容已复核，指定教材分层口径待核。</strong></p>
+<p><strong>针对本题的考场作答版（非官方评分标准）：</strong></p>
+<p>稳定边界层内浮力抑制湍流，风切变可维持机械湍流。动力上区分近地面层与外层；典型陆地夜间结构为近地稳定层、可能存在的上方残留层及自由大气，低空急流可在稳定层上部或其上方形成。两种分类不可机械合并。</p>
+<blockquote>
+<p>推导题须保留必要推演，简答与论述须按小问展开；精简版只用于回忆作答主线。</p>
+</blockquote>
+<h3>2025-一-8</h3>
+<p>埃克曼层</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2025.md#L348">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2025.md">原始年度题干</a></p>
+<p><strong>审校状态：已逐题复核（按所列模型与条件）。</strong></p>
+<p><strong>针对本题的考场作答版（非官方评分标准）：</strong></p>
+<p>埃克曼层是湍流摩擦、科氏力与气压梯度力共同控制风场的旋转边界层。经典常系数定常模型中，偏差风随高度旋转衰减，标高$\delta_E=\sqrt{2K_m/|f|}$；其值与惯用的$\pi\delta_E$厚度定义不同。</p>
+<blockquote>
+<p>推导题须保留必要推演，简答与论述须按小问展开；精简版只用于回忆作答主线。</p>
+</blockquote>
+<h3>2025-三-2</h3>
+<p>逆温层形成过程，不同逆温层特征</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2025.md#L873">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2025.md">原始年度题干</a></p>
+<p><strong>审校状态：已逐题复核（按所列模型与条件）。</strong></p>
+<p><strong>针对本题的考场作答版（非官方评分标准）：</strong></p>
+<p>逆温满足$dT/dz&gt;0$。辐射逆温来自地面夜间冷却；平流逆温来自暖空气越过冷下垫面；下沉逆温来自稳定层下降压缩、上部较强增温；锋面逆温来自暖空气位于冷空气上方。地形冷池常综合辐射、冷空气汇聚和混合受抑。</p>
+<blockquote>
+<p>推导题须保留必要推演，简答与论述须按小问展开；精简版只用于回忆作答主线。</p>
+</blockquote>
+<h2>精选完整解析与公式推导</h2>
+<p>以下保留资料中的条件、步骤和审校信息。先完成手写，再核对。</p>
+<h3>2024-三-1 · 完整解答</h3>
+<p>混合长理论定义，在湍流中的运用及缺陷</p>
+<p><strong>修改意见（2026-10-05，第三批）：</strong></p>
+<p>从位移守恒、速度扰动、通量闭合逐步导出混合长式和对数风廓线，交代局限。</p>
+<p><strong>核对依据：</strong> <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1/%E5%A4%A7%E6%B0%94%E8%A1%8C%E6%98%9F%E8%BE%B9%E7%95%8C%E5%B1%82/%E6%B7%B7%E5%90%88%E9%95%BF%E7%90%86%E8%AE%BA.md">混合长理论</a>。本地资料为学习笔记，不视作官方标准答案；冲突处依据下列物理条件、方程推导和所列外部依据判断。</p>
+<p><strong>复核后详细解答：</strong></p>
+<ol>
+<li><strong>要解决的问题。</strong> 雷诺分解$u=U+u&#x27;$、$w=\overline w+w&#x27;$后，平均动量方程出现未知相关量$\overline{u&#x27;w&#x27;}$。混合长理论用平均速度梯度估计此湍流通量，是经验的一阶局地闭合。</li>
+<li><strong>位移产生脉动。</strong> 设一团空气从$z-\xi$移到$z$，在混合前近似保留原来的水平动量。相对当地平均风的差为$u&#x27;\approx U(z-\xi)-U(z)$。将第一项在$z$展开：$U(z-\xi)=U(z)-\xi U_z+O(\xi^2)$，忽略高阶项，得$u&#x27;\approx-\xi U_z$。$\xi$是带符号的位移，上移为正。</li>
+<li><strong>通量与符号。</strong> 两边乘$w&#x27;$并取平均：$\overline{u&#x27;w&#x27;}\approx-\overline{w&#x27;\xi}U_z$。定义$K_m=\overline{w&#x27;\xi}$，则$\overline{u&#x27;w&#x27;}=-K_mU_z$。若$U_z&gt;0$，上升气块带来较小动量（$u&#x27;&lt;0,w&#x27;&gt;0$），下沉气块带来较大动量（$u&#x27;&gt;0,w&#x27;&lt;0$），两类都贡献负通量，符合下梯度输送。</li>
+<li><strong>引入混合长。</strong> 用脉动速度量级$|w&#x27;|\sim l|U_z|$，把相关系数及位移统计合入正的有效长度$l$，得到$K_m=l^2|U_z|$。因此
+$$-\overline{u&#x27;w&#x27;}=l^2|U_z|U_z,\qquad\tau= -\rho\overline{u&#x27;w&#x27;}.$$
+这里的$\tau$为常用应力约定；真正向上输送的水平动量通量是$\rho\overline{u&#x27;w&#x27;}$，符号不同。$[K_m]=\mathrm{m^2/s}$。</li>
+<li><strong>中性近地面应用。</strong> 假设水平齐一、近稳态、中性、位于近似常应力层，且平均风随高度增加。定义$u_*^2=-\overline{u&#x27;w&#x27;}$，并取$l=\kappa z$（暂取零位移高度为0），则$u_*^2=\kappa^2z^2(U_z)^2$。因$U_z&gt;0$，取正根：$dU/dz=u_*/(\kappa z)$。</li>
+<li><strong>积分不能跳步。</strong> 从粗糙度长度$z_0$积分到$z$，使用外推条件$U(z_0)=0$：
+$$U(z)-0=\frac{u_*}{\kappa}\int_{z_0}^{z}\frac{dz&#x27;}{z&#x27;}=\frac{u_*}{\kappa}[\ln z&#x27;]_{z_0}^{z}=\frac{u_*}{\kappa}\ln\frac z{z_0}.$$
+这是中性对数风廓线；$z_0$是空气动力粗糙度参数，不等于真实粗糙元的高度。</li>
+<li><strong>其他应用。</strong> 类似梯度闭合可估算热量、水汽输送，如$\overline{w&#x27;\theta&#x27;}=-K_h\partial_z\overline\theta$，但$K_h$未必等于$K_m$。非中性层结需稳定度修正，有植被等情况需考虑零平面位移。</li>
+<li><strong>局限。</strong> $l$必须经验指定；假定输送局地、下梯度，难以表达对流大涡的非局地与反梯度输送；强稳定间歇湍流、复杂地形与快速非定常过程也不满足简单假设。理论给出物理近似，不应把涡团“移动后瞬间混合”当成真实运动的严格分段。</li>
+</ol>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2024.md#L794">核对原文</a></p>
+<h3>2025-三-2 · 完整解答</h3>
+<p>逆温层形成过程，不同逆温层特征</p>
+<p><strong>修改意见（2026-10-05，第三批）：</strong></p>
+<p>更正下沉逆温上下增温顺序，分类型交代形成链和常见高度；等温不算逆温。</p>
+<p><strong>核对依据：</strong> <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%A4%A7%E6%B0%94%E7%89%A9%E7%90%86%E5%AD%A6/%E5%A4%A7%E6%B0%94%E7%83%AD%E5%8A%9B%E5%AD%A6/%E5%BD%A2%E6%88%90%E5%A4%A7%E6%B0%94%E9%80%86%E6%B8%A9%E5%B1%82%E7%9A%84%E5%8E%9F%E5%9B%A0.md">形成大气逆温层的原因</a>。本地资料为学习笔记，不视作官方标准答案；冲突处依据下列物理条件、方程推导和所列外部依据判断。</p>
+<p><strong>复核后详细解答：</strong></p>
+<ol>
+<li><strong>定义与稳定性。</strong> 逆温层中$dT/dz&gt;0$，等温层是$dT/dz=0$，两者应区分。对干空气$\theta=T(p_0/p)^{R_d/c_p}$，利用静力关系得$d\theta/dz=(\theta/T)(dT/dz+g/c_p)$，因此逆温时位温随高度增加，干静力稳定。它抑制浮力垂直混合，不等于任何机制下都不可能有垂直运动。</li>
+<li><strong>辐射逆温。</strong> 晴朗弱风夜间地面净长波冷却，贴地空气通过地气交换先降温，上层较暖，形成常从地面起的浅逆温。日出后地面加热通常从下方消除它；长夜、积雪等可增强冷却，雾或低云也会反馈辐射。</li>
+<li><strong>平流逆温。</strong> 较暖空气流到冷地面、冷海面或冰雪面上，底部接触并向冷表面失热，冷却从下方发展，形成下冷上暖。需要暖平流及冷下垫面组合，往往比单纯夜间辐射逆温更不受昼夜限制；水汽足够时可伴平流雾。</li>
+<li><strong>下沉逆温的物理链。</strong> 反气旋等系统中的空气层下沉增压，按近似干绝热规律增温。若稳定层压缩使上部空气下降距离大于下部，上部绝热增温更多，可增强原有温差、形成高架逆温。不能写成“下部增温更多导致上暖下冷”。</li>
+<li><strong>用两层验证符号。</strong> 初始上、下两气块温度为$T_t,T_b$，下降距离分别$d_t,d_b&gt;0$，近似同一$\Gamma_d$。下沉后$T_t&#x27;=T_t+\Gamma_dd_t$、$T_b&#x27;=T_b+\Gamma_dd_b$，相减得
+$$T_t&#x27;-T_b&#x27;=(T_t-T_b)+\Gamma_d(d_t-d_b).$$
+若$d_t&gt;d_b$，右端第二项为正，可使原先负温差转为正而出现逆温；若两者下降距离一样，只凭整体下沉不能由该模型产生新的上下温差。常见下沉逆温位于边界层上方，可形成盖帽，底层仍可能存在湍流混合。</li>
+<li><strong>锋面逆温。</strong> 在倾斜锋面附近，冷而密的空气位于下方、暖空气位于上方，垂直穿越锋区可见气温随高度增加。它与锋面结构和移动相联系，可为高架层；并非每条温度探空穿越锋区都必有同样强度的逆温。</li>
+<li><strong>地形与湍流过程。</strong> 山谷夜间辐射冷却、坡面冷空气下滑汇聚及通风不良可共同维持谷底冷池。教材若另列湍流逆温，可解释为混合层趋于近干绝热，而层顶混合/夹卷及上下层不同调整形成或加强温度突变；不应声称湍流在任意稳定廓线中必然生成逆温。</li>
+<li><strong>比较记忆。</strong> 辐射型抓“夜间地面先冷”；平流型抓“暖空气经过冷面”；下沉型抓“高架、压缩、上部较强增温”；锋面型抓“冷下暖上”。逆温可积聚污染、限制对流触发，但一旦抬升足够强或盖帽被侵蚀，仍可发生深对流。</li>
+</ol>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2025.md#L873">核对原文</a></p>
+<h3>2025-一-8 · 完整解答</h3>
+<p>埃克曼层</p>
+<p><strong>修改意见（2026-10-04）：</strong></p>
+<p>原方程正确；补定义、假设和标高与惯用厚度的区别。无滑移边界风速为零时风向无定义，45°仅指理想解趋近地面时的方向极限。</p>
+<p><strong>核对依据：</strong> <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1/%E5%A4%A7%E6%B0%94%E8%A1%8C%E6%98%9F%E8%BE%B9%E7%95%8C%E5%B1%82/%E5%9F%83%E5%85%8B%E6%9B%BC%E5%B1%82.md">埃克曼层</a>。本地资料为学习笔记，不视作官方标准答案；冲突处依据下列方程推导与量纲检查作出判断。</p>
+<p><strong>复核后详细解答：</strong></p>
+<ol>
+<li><strong>定义。</strong> 埃克曼层是旋转流体中摩擦影响风场的边界层；大气经典模型中，水平气压梯度力、科氏力及湍流摩擦共同平衡，使实际风随高度趋近地转风。</li>
+<li><strong>模型条件与方程。</strong> 取定常、水平动量平流可忽略、常数$f\ne0$、常涡黏系数$K_m&gt;0$和不随高度改变的地转风：
+$$-f(v-v_g)=K_mu_{zz},\qquad f(u-u_g)=K_mv_{zz}.$$</li>
+<li><strong>解的尺度。</strong> 北半球$f&gt;0$，令$W=(u-u_g)+i(v-v_g)$，两式合并为$K_mW_{zz}=ifW$。试$W\propto e^{rz}$，得$r^2=if/K_m$，所以$r=\pm(1+i)/\delta_E$，其中$\delta_E=\sqrt{2K_m/f}$。取随高度衰减的负号，再用$u(0)=v(0)=0$、上方趋地转，得
+$$W=-(u_g+iv_g)e^{-(1+i)z/\delta_E}.$$</li>
+<li><strong>风廓线。</strong> 若$v_g=0,u_g=U_g&gt;0$，则$u=U_g[1-e^{-z/\delta_E}\cos(z/\delta_E)]$，$v=U_ge^{-z/\delta_E}\sin(z/\delta_E)$。偏差幅度按$e^{-z/\delta_E}$减小，方向随高度旋转。$\delta_E$是衰减标高，$\pi\delta_E$常按首次与地转风同向来定义厚度，两者不要混写。</li>
+<li><strong>地面角度及限制。</strong> 当$z\to0^+$，展开指数与三角函数得$u\approx U_gz/\delta_E$、$v\approx U_gz/\delta_E$，方向极限为45°；恰在无滑移边界$z=0$，风速为零，风向无定义。实际大气的$K_m$、稳定度与时间变化使风廓线偏离此理想解。</li>
+<li><strong>天气意义。</strong> 摩擦使低层风穿越等压线，并可产生水平输送辐合；经连续性在层顶形成垂直运动，联系边界层与自由大气。严格水平均匀的单柱螺线本身无水平辐合，讨论抽吸还需允许背景风随水平位置缓变。</li>
+</ol>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2025.md#L348">核对原文</a></p>
+<h3>2025-二-2 · 完整解答</h3>
+<p>湍流的特征</p>
+<p><strong>修改意见（2026-10-05，第三批）：</strong></p>
+<p>补统计描述和能量来源/耗散，删除大气通用临界Re与Ri绝对判据。</p>
+<p><strong>核对依据：</strong> <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%A4%A7%E6%B0%94%E7%89%A9%E7%90%86%E5%AD%A6/%E5%A4%A7%E6%B0%94%E8%BE%B9%E7%95%8C%E5%B1%82/%E6%B9%8D%E6%B5%81%E5%8F%8A%E5%A4%A7%E6%B0%94%E6%B9%8D%E6%B5%81%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81.md">湍流及大气湍流的基本特征</a>。本地资料为学习笔记，不视作官方标准答案；冲突处依据下列物理条件、方程推导和所列外部依据判断。</p>
+<p><strong>复核后详细解答：</strong></p>
+<ol>
+<li><strong>不规则与统计性。</strong> 大气湍流中速度、温度、水汽等随时间和空间发生复杂脉动。可用$u=\overline u+u&#x27;$且$\overline{u&#x27;}=0$作雷诺分解；随机外观不代表不受动力学规律约束，而是通常以均值、方差、协方差和谱刻画。</li>
+<li><strong>三维、多尺度、涡旋性。</strong> 湍流包含不同尺度的涡旋与强度不同的脉动。单位质量湍流动能$e=\tfrac12(\overline{u&#x27;^2}+\overline{v&#x27;^2}+\overline{w&#x27;^2})$，三项均不能随意省去；强层结、旋转等可使各方向差别显著。</li>
+<li><strong>混合与输送。</strong> 垂直脉动与性质脉动相关时产生通量，如水平动量$\rho\overline{u&#x27;w&#x27;}$、感热$\rho c_p\overline{w&#x27;T&#x27;}$、水汽$\rho\overline{w&#x27;q&#x27;}$。单独$\overline{w&#x27;}=0$不意味着协方差为零，也不意味着没有净湍流输送。</li>
+<li><strong>产生与维持。</strong> 平均风切变可向湍流提供动能，地面加热形成的不稳定浮力也可供能；稳定层结中的浮力通常抑制垂直湍动。存在湍流还需产生、输送与耗散的收支，不能说能量级联本身创造能量。</li>
+<li><strong>级联与耗散。</strong> 普通三维湍流中，能量从含能大涡经非线性相互作用传至小尺度，最后由分子黏性变为内能。大气雷诺数很大不代表分子黏性最终无作用；旋转、层结强时能量传递可更复杂。</li>
+<li><strong>间歇性与各向异性。</strong> 湍流并非时时处处同样强，强稳定边界层尤其可间歇爆发；地面、浮力和切变使统计量依方向不同，不能假定全层各向同性。仅在适当尺度及条件下可采用局地各向同性近似。</li>
+<li><strong>判据边界。</strong> 圆管经验临界雷诺数不是大气通用常数；$Ri=1/4$涉及特定理想化剪切流稳定性定理，也不能改写成真实大气中“超过后湍流完全消失”。本题应列特征并解释，不必增加不适用的绝对阈值。</li>
+</ol>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2025.md#L554">核对原文</a></p>
+<h3>2026-二-6 · 完整解答</h3>
+<p>稳定层结大气行星边界层垂直层及物理意义</p>
+<p><strong>修改意见（2026-10-04）：</strong></p>
+<p>原答案已区分动力与热力分层；现补齐各层的作用、稳定度定义和适用限制。原题未附指定教材分层图，层名口径仍保留待核。</p>
+<p><strong>核对依据：</strong> <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1/%E5%A4%A7%E6%B0%94%E8%A1%8C%E6%98%9F%E8%BE%B9%E7%95%8C%E5%B1%82/%E5%9F%83%E5%85%8B%E6%9B%BC%E5%B1%82.md">埃克曼层</a>。本地资料为学习笔记，不视作官方标准答案；冲突处依据下列方程推导与量纲检查作出判断。</p>
+<p><strong>复核后详细解答：</strong></p>
+<ol>
+<li><strong>先限定稳定层结。</strong> 对未饱和、忽略凝结物载荷的大气，虚位温随高度增加通常表示浮力稳定，$N_v^2=(g/\theta_v)\partial_z\theta_v&gt;0$。气块小幅上移后偏冷偏重，受到向下回复作用，湍流的浮力产生项通常为负；风切变仍可提供湍动能，因此“稳定”不等于“无湍流”。</li>
+<li><strong>近地面层：地气交换的接口。</strong> 最靠近地面的湍流层直接传递动量、热量与水汽；在一定条件下，通量随高度变化较小，可用常通量近似。地面冷却时，向下感热输送较常见。强稳定、间歇湍流时，这一近似也需检验，不能给固定厚度。</li>
+<li><strong>其上外层：旋转与湍流共同调节风。</strong> 科氏作用不可忽略，风随高度转向并向自由大气风过渡；近中性定常情形可用埃克曼模型作理想化描述，稳定层结下涡黏系数随高度和时间变化，不能把常系数螺线当成实测廓线。</li>
+<li><strong>典型陆地夜间的热力结构。</strong> 地表冷却形成较浅的稳定边界层；其上可能是前一日混合层留下的残留层，已与地面交换部分脱耦，不能把整个残留层都当作当前稳定边界层。再上方接自由大气，过渡区高度由具体环境决定。</li>
+<li><strong>低空急流及物理意义。</strong> 日落后上层摩擦减弱，原有非地转风可围绕地转风作惯性调整，出现局地风速极大；切变可再生湍流。稳定层抑制垂直混合，影响近地面冷却、污染物积聚和雾的形成，但结果还取决于风、水汽与辐射。</li>
+</ol>
+<p>以上夜间结构与<a href="https://boundary-layer-meteo.github.io/lectures/14_sbl.html">边界层课程的稳定边界层讲义</a>交叉核对。原题若使用指定教材的层名或图示，应按其口径标注；现有本地资料不足以确认一套唯一的固定层数。</p>
+<h2>原卷第三部分</h2>
+<p>论述题</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2026.md#L742">核对原文</a></p>
+<h2>当日验收</h2>
+<ul>
+<li>[ ] 本日每题均完成至少一次闭卷提取。</li>
+<li>[ ] 精选题写清假设、符号与中间步骤；无漏负号、下标和单位。</li>
+<li>[ ] 能用自己的话解释至少两条跨章节联系。</li>
+<li>[ ] 错题记录包含题号、错因、修正答案及下一次复习日期。</li>
+</ul></article></main><footer>学习整理版 · 非官方评分标准 · 来源见各题链接</footer></body></html>

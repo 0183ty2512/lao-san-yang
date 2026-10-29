@@ -1,0 +1,326 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>动力气象学：核心公式、守恒律、常见推导</title><link rel="stylesheet" href="style.css"><script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'}};</script><script defer src="mathjax/tex-svg.js"></script></head><body><header><a href="index.html">大气科学 · 50日复习</a><nav><a href="D46.html">← 上一天</a><a href="md/D47.md" download>下载 MD</a><a href="D48.html">下一天 →</a></nav></header><main><article><h1>D47 · 动力气象学：核心公式、守恒律、常见推导</h1>
+<p>日期：2026-12-14｜建议投入：4小时｜动力40% · 天气40% · 物理20%</p>
+<blockquote>
+<p>本学习包依据原50日PDF与仓库学习资料整理。参考答案不是官方评分标准；未完成学科审校及缺题标记均保留。公式采用 GitHub 数学 Markdown，请在 GitHub 正文或 Obsidian 阅读视图打开。</p>
+</blockquote>
+<h2>今日目标与记忆标准</h2>
+<p>闭卷说清概念、适用条件、符号与单位；推导必须写出起始方程、近似及关键步骤。先答题，再展开核对。</p>
+<h2>四小时执行</h2>
+<ol>
+<li>20分钟：回忆此前第1、3、7、14天的重点，尚未开始的日期跳过。</li>
+<li>80分钟：逐题闭卷提取，核对以下简答与来源。</li>
+<li>70分钟：精选5题完整书写。名词解释90秒、简答7分钟、论述12分钟为训练目标。</li>
+<li>40分钟：把本日知识按“假设→方程→物理机制→天气表现”串成2—4条知识链。</li>
+<li>30分钟：记录遗漏点、用时与次日/3日/7日/14日复习日期。</li>
+</ol>
+<h2>逐题回忆与简答</h2>
+<h3>2020-四-1</h3>
+<p>给出 P 坐标系的方程，推导坐标系的垂直涡度方程并讨论绝对涡度守恒的条件（以前考过）</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2020.md#L793">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2020.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<p><strong>一、对水平运动方程取旋度。</strong> 高度坐标为
+$$D_tu-fv=-\alpha p_x+F_x,\qquad D_tv+fu=-\alpha p_y+F_y,$$
+其中 $D_t=\partial_t+u\partial_x+v\partial_y+w\partial_z$，$\alpha=1/\rho$。</p>
+<p>对第二式取 $x$ 导数、第一式取 $y$ 导数后相减。用 $\partial_x(D_tv)-\partial_y(D_tu)=D_t\zeta+\zeta(u_x+v_y)+w_xv_z-w_yu_z$，科氏项为 $f(u_x+v_y)+\beta v$，压力项为 $\alpha_yp_x-\alpha_xp_y$，得
+$$D_t\zeta=-(\zeta+f)(u_x+v_y)-\beta v+w_yu_z-w_xv_z+\alpha_yp_x-\alpha_xp_y+\partial_xF_y-\partial_yF_x.$$
+展开成局地变化：水平平流 $-u\zeta_x-v\zeta_y$；竖直平流 $-w\zeta_z$；行星涡度平流 $-\beta v$；伸缩 $-(\zeta+f)D$；倾斜 $w_yu_z-w_xv_z$；斜压 $\alpha_yp_x-\alpha_xp_y$。这是常说的六项，无摩擦时适用；有摩擦另加摩擦旋度。</p>
+<p><strong>二、气压坐标。</strong> 水平压力梯度改为 $-\Phi_x,-\Phi_y$，交叉导数完全抵消；物质导数的竖直部分改为 $\omega\partial_p$。同样操作得到
+$$\boxed{D_t\zeta+\beta v=-(\zeta+f)D+u_p\omega_y-v_p\omega_x+\partial_xF_y-\partial_yF_x}.$$
+其中 $D=u_x+v_y=-\omega_p$。不可把高度坐标的显式斜压项重复放入此式。</p>
+<p><strong>三、绝对涡度是否守恒。</strong> 因 $D_tf=\beta v$，左边就是 $D_t(\zeta+f)$。仅“无摩擦”不足以守恒；还需要右边伸缩、倾斜项消失或总和为零。常用充分条件是水平无辐散、无倾斜效应、无摩擦。相对涡度还随纬度变化，故与绝对涡度守恒不同。</p>
+<h3>2021-三-1</h3>
+<p>用位涡守恒原理说明绝热水平气流越过山脉在背风坡处形成低压槽的原因。</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2021.md#L598">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2021.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>气柱越山与位涡守恒应用：</strong> 浅水柱位涡守恒为 $(\zeta+f)/h=\mathrm{常数}$。固定上界、同纬度时迎风柱压缩导致反气旋性变化，背风柱伸长导致气旋性变化。若纬度改变须重新算 $f$；远下游柱厚完全恢复时不能无条件推断永久留有低槽。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>在绝热、无摩擦、浅水柱近似下 $q=(\zeta+f)/h$ 守恒，故 $(\zeta_1+f_1)/h_1=(\zeta_2+f_2)/h_2$。</li>
+<li>解出 $\zeta_2=(h_2/h_1)(\zeta_1+f_1)-f_2$。若同纬度越过山脉且上界固定，迎风坡柱厚减小，绝对涡度减小，产生反气旋性变化；背风坡柱厚恢复增大，产生气旋性变化，有利于背风槽形成。</li>
+<li>必须说明上界和气柱厚度：若上下边界同时抬升而厚度不变，不能仅凭“越山”推断伸缩。若纬度变化，则还需计入 $f$ 变化。</li>
+<li>理想定常、对称山地、固定纬度模型中，若远下游厚度完全恢复到上游，且没有其他作用，远下游涡度也可恢复。背风坡气旋性涡度倾向并不意味着无条件留下永久低压槽；β效应、路径位移和下游波列可使实际响应更复杂。</li>
+</ol>
+<h3>2025-二-5</h3>
+<p>地转偏差对大气运动的演变作用</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2025.md#L701">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2025.md">原始年度题干</a></p>
+<p><strong>审校状态：已逐题复核（按所列模型与条件）。</strong></p>
+<p><strong>针对本题的考场作答版（非官方评分标准）：</strong></p>
+<p>地转偏差$\mathbf V_a=\mathbf V-\mathbf V_g$满足$\mathbf V_a=\mathbf k\times(D\mathbf V/Dt-\mathbf F)/f$。它联系加速度与摩擦，产生辐合辐散及垂直运动，调整质量、温度场，并使气压梯度力能够做功。</p>
+<blockquote>
+<p>推导题须保留必要推演，简答与论述须按小问展开；精简版只用于回忆作答主线。</p>
+</blockquote>
+<h3>2025-三-3</h3>
+<p>简述罗斯贝波结构特征以及波动和基本流的相互作用过程</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2025.md#L926">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2025.md">原始年度题干</a></p>
+<p><strong>审校状态：已逐题复核（按所列模型与条件）。</strong></p>
+<p><strong>针对本题的考场作答版（非官方评分标准）：</strong></p>
+<p>罗斯贝波以位涡梯度为回复机制，典型呈槽脊和近地转涡旋结构、相对基本流西传且频散；基本流决定平流、折射和稳定性，扰动动量/热量通量又改变平均风温场。中性波不必经历增长衰亡生命史。</p>
+<blockquote>
+<p>推导题须保留必要推演，简答与论述须按小问展开；精简版只用于回忆作答主线。</p>
+</blockquote>
+<h3>2005_1-二-2</h3>
+<p>证明 "浅水模式" 具有位涡度守恒的性质。</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2005_1.md#L329">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2005_1.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>浅水位涡守恒：</strong> 无摩擦浅水连续式 $D_th=-hD$，涡度式 $D_t(\zeta+f)=-(\zeta+f)D$。对 $(\zeta+f)/h$ 用商法则，两项恰好抵消，得到位涡沿气柱守恒。条件包括无质量源汇及模型假设。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<p><strong>第一步：竖直积分。</strong> 设底面 $z=0$，自由面 $z=h(x,y,t)$，均匀密度 $\rho_0$，表面压力固定。由 $p_z=-\rho_0g$ 得 $p=p_s+\rho_0g(h-z)$，所以水平压力梯度力为 $-g\nabla_hh$。采用柱状水平速度，得
+$$D_tu-fv=-gh_x,\qquad D_tv+fu=-gh_y,\qquad D_t=\partial_t+u\partial_x+v\partial_y.$$
+<strong>第二步：连续方程。</strong> 由 $u_x+v_y+w_z=0$ 和 $w(0)=0$，有 $w(h)=-h(u_x+v_y)$。自由面的运动学条件为 $w(h)=h_t+uh_x+vh_y$，两式合并：$D_th=-hD$，其中 $D=u_x+v_y$。这三式构成浅水模式。</p>
+<p><strong>第三步：取旋度。</strong> 对第二个动量方程取 $x$ 导数，减去第一个方程的 $y$ 导数。加速度交叉项产生 $\zeta D$，科氏项产生 $fD+\beta v$，压力梯度交叉导数相消，得 $D_t\zeta+(\zeta+f)D+\beta v=0$。</p>
+<p><strong>第四步：组合成位涡。</strong> 因 $D_tf=\beta v$，有 $D_t(\zeta+f)=-(\zeta+f)D$。于是
+$$D_t\frac{\zeta+f}{h}=\frac{-h(\zeta+f)D-(\zeta+f)(-hD)}{h^2}=0.$$
+因此 $\boxed{q=(\zeta+f)/h\text{ 沿气柱守恒}}$，适用于上述无摩擦、无质量源汇的浅水模型。</p>
+<p><strong>第五步：有基本流时的线性化。</strong> 令 $u=U+u&#x27;$、$v=v&#x27;$、$h=H(y)+h&#x27;$，$U$ 为常数且 $gH_y=-f_0U$。代入后减去基本态，再删去两个扰动量相乘的二阶项，得到
+$$\begin{aligned}(\partial_t+U\partial_x)u&#x27;-f_0v&#x27;&amp;=-gh&#x27;_x,\\(\partial_t+U\partial_x)v&#x27;+f_0u&#x27;&amp;=-gh&#x27;_y,\\(\partial_t+U\partial_x)h&#x27;+H(u&#x27;_x+v&#x27;_y)+H_yv&#x27;&amp;=0.\end{aligned}$$
+相应局地β平面涡度式为 $(\partial_t+U\partial_x)\zeta&#x27;+\beta v&#x27;+f_0D&#x27;=0$。若原题把层厚写成 $H(x)$ 却要求 $H_y$ 平衡，需改正为 $H(y)$ 后才可使用这一基本态。</p>
+<h2>原卷第三部分</h2>
+<p>举例说明大气波动演变中有些哪些动力不稳定机制。</p>
+<h3>2003_1-一-8</h3>
+<p>位涡度</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2003_1.md#L321">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2003_1.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>位涡：</strong> 干绝热、无摩擦条件下，Ertel位涡 $q=(\boldsymbol\omega_a\cdot\nabla\theta)/\rho$ 沿气块守恒。证明时由涡度、连续和位温方程组合，速度梯度项相消，斜压三重积为零；不等于绝对涡度本身守恒。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>取完整无摩擦运动方程的旋度，定义绝对涡度 $\boldsymbol\omega_a=\nabla\times\mathbf V+2\boldsymbol\Omega$，得到
+$$\frac{D\boldsymbol\omega_a}{Dt}=(\boldsymbol\omega_a\cdot\nabla)\mathbf V-\boldsymbol\omega_a\nabla\cdot\mathbf V+\frac{\nabla\rho\times\nabla p}{\rho^2}.$$</li>
+<li>连续方程给 $D\rho/Dt=-\rho\nabla\cdot\mathbf V$。对 $\mathbf B=\boldsymbol\omega_a/\rho$ 用商法则，膨胀项相消：$D\mathbf B/Dt=(\mathbf B\cdot\nabla)\mathbf V+(\nabla\rho\times\nabla p)/\rho^3$。</li>
+<li>绝热时 $D\theta/Dt=0$，对空间求导得 $D(\partial_i\theta)/Dt=-(\partial_iV_j)(\partial_j\theta)$。</li>
+<li>定义 $q=B_i\partial_i\theta$。其物质导数中，速度梯度两项分别为 $B_j\partial_jV_i\partial_i\theta$ 和 $-B_i\partial_iV_j\partial_j\theta$；交换虚指标后恰好相消。</li>
+<li>剩下 $Dq/Dt=(\nabla\rho\times\nabla p)\cdot\nabla\theta/\rho^3$。定组成理想气体的 $\theta=\theta(p,\rho)$，因此 $\nabla\theta$ 是 $\nabla p,\nabla\rho$ 的线性组合，三重积为零。</li>
+<li>故 $\boxed{D[(\boldsymbol\omega_a\cdot\nabla\theta)/\rho]/Dt=0}$，即 Ertel 位涡守恒。条件是绝热、无摩擦及适用的状态关系；用于气柱伸缩、越山响应和气团追踪时要选择与模型一致的位涡形式。浅水模型相应为 $(\zeta+f)/h$。</li>
+</ol>
+<h3>2003_1-四-2</h3>
+<p>证明 "浅水模式" 具有位涡度守恒的性质。</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2003_1.md#L540">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2003_1.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>浅水位涡守恒：</strong> 无摩擦浅水连续式 $D_th=-hD$，涡度式 $D_t(\zeta+f)=-(\zeta+f)D$。对 $(\zeta+f)/h$ 用商法则，两项恰好抵消，得到位涡沿气柱守恒。条件包括无质量源汇及模型假设。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<p><strong>第一步：竖直积分。</strong> 设底面 $z=0$，自由面 $z=h(x,y,t)$，均匀密度 $\rho_0$，表面压力固定。由 $p_z=-\rho_0g$ 得 $p=p_s+\rho_0g(h-z)$，所以水平压力梯度力为 $-g\nabla_hh$。采用柱状水平速度，得
+$$D_tu-fv=-gh_x,\qquad D_tv+fu=-gh_y,\qquad D_t=\partial_t+u\partial_x+v\partial_y.$$
+<strong>第二步：连续方程。</strong> 由 $u_x+v_y+w_z=0$ 和 $w(0)=0$，有 $w(h)=-h(u_x+v_y)$。自由面的运动学条件为 $w(h)=h_t+uh_x+vh_y$，两式合并：$D_th=-hD$，其中 $D=u_x+v_y$。这三式构成浅水模式。</p>
+<p><strong>第三步：取旋度。</strong> 对第二个动量方程取 $x$ 导数，减去第一个方程的 $y$ 导数。加速度交叉项产生 $\zeta D$，科氏项产生 $fD+\beta v$，压力梯度交叉导数相消，得 $D_t\zeta+(\zeta+f)D+\beta v=0$。</p>
+<p><strong>第四步：组合成位涡。</strong> 因 $D_tf=\beta v$，有 $D_t(\zeta+f)=-(\zeta+f)D$。于是
+$$D_t\frac{\zeta+f}{h}=\frac{-h(\zeta+f)D-(\zeta+f)(-hD)}{h^2}=0.$$
+因此 $\boxed{q=(\zeta+f)/h\text{ 沿气柱守恒}}$，适用于上述无摩擦、无质量源汇的浅水模型。</p>
+<p><strong>第五步：有基本流时的线性化。</strong> 令 $u=U+u&#x27;$、$v=v&#x27;$、$h=H(y)+h&#x27;$，$U$ 为常数且 $gH_y=-f_0U$。代入后减去基本态，再删去两个扰动量相乘的二阶项，得到
+$$\begin{aligned}(\partial_t+U\partial_x)u&#x27;-f_0v&#x27;&amp;=-gh&#x27;_x,\\(\partial_t+U\partial_x)v&#x27;+f_0u&#x27;&amp;=-gh&#x27;_y,\\(\partial_t+U\partial_x)h&#x27;+H(u&#x27;_x+v&#x27;_y)+H_yv&#x27;&amp;=0.\end{aligned}$$
+相应局地β平面涡度式为 $(\partial_t+U\partial_x)\zeta&#x27;+\beta v&#x27;+f_0D&#x27;=0$。若原题把层厚写成 $H(x)$ 却要求 $H_y$ 平衡，需改正为 $H(y)$ 后才可使用这一基本态。</p>
+<h3>2023-三-2</h3>
+<p>正压不稳定和斜压不稳定的特征以及区别，简述斜压不稳定波动的空间结构。</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2023.md#L855">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2023.md">原始年度题干</a></p>
+<p><strong>审校状态：已逐题复核（按所列模型与条件）。</strong></p>
+<p><strong>针对本题的考场作答版（非官方评分标准）：</strong></p>
+<p>正压不稳定主要抽取基本流水平切变动能，斜压不稳定主要抽取基本流有效位能。典型北半球西风带成长斜压波高度槽脊随高度向西倾斜，伴向极热输送及暖升冷沉；空间结构、波长及增长率依模型和阶段而变。</p>
+<blockquote>
+<p>推导题须保留必要推演，简答与论述须按小问展开；精简版只用于回忆作答主线。</p>
+</blockquote>
+<h3>2020-二-6</h3>
+<p>试叙述赤道地区波动的主要性质（开尔文波和罗斯贝波 - 重力混合波）</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2020.md#L608">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2020.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>赤道波动：</strong> 赤道β平面存在开尔文波、赤道罗斯贝波、混合罗斯贝—重力波和惯性重力波。开尔文波东传、经向风为零且赤道束缚；罗斯贝模态内禀相速向西；混合波兼有涡旋与重力特征。实际云雨还依赖湿对流耦合。</p>
+<p><strong>赤道开尔文波：</strong> 赤道开尔文波在基本浅水模态中 $v=0$，$\omega=ck$，$c=\sqrt{gH}$；纬向重力传播、经向近地转平衡共同使振幅按 $e^{-\beta y^2/(2c)}$ 束缚。满足远离赤道有界的分支向东传播。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>赤道附近 $f\approx\beta y$，科氏参数变号使若干波动被束缚在赤道附近。主要模态有赤道开尔文波、赤道罗斯贝波、混合罗斯贝—重力波及赤道惯性重力波。线性理论描述它们的动力骨架，实际云雨还受湿对流耦合。</li>
+<li><strong>赤道开尔文波。</strong> 取浅水等效波速 $c=\sqrt{gH}$，令 $v=0$。纬向动量与连续方程给 $u_t=-g\eta_x$、$\eta_t=-Hu_x$，组合得 $u_{tt}=c^2u_{xx}$，故 $\omega=\pm ck$。</li>
+<li>经向动量给 $\beta yu=-g\eta_y$。东传支有 $u=g\eta/c$，故 $\eta_y=-(\beta y/c)\eta$，积分得 $\eta\propto\exp[-\beta y^2/(2c)]$；西传支随远离赤道增长，不能满足有界条件。因此开尔文波为东传、近非频散，$u,\eta$ 关于赤道对称，$v=0$，束缚尺度 $L_e=\sqrt{c/\beta}$。</li>
+<li><strong>混合波。</strong> 兼具涡旋性与重力回复特征，经向风不为零；标准 $n=0$ 物理解可写 $\omega=ck/2+\sqrt{c^2k^2/4+\beta c}$（连同实场的共轭分支）。负波数一侧相速向西，群速可向东，不能把它当成单纯非频散东传波。</li>
+<li><strong>赤道罗斯贝波。</strong> 主要受位涡梯度约束，内禀相速向西，常表现为赤道两侧成对的涡旋；重力波分支较快，以辐散、质量场振荡显著。</li>
+<li>沿岸开尔文波与赤道开尔文波应区分：前者靠边界无穿透与地转横向平衡束缚，离岸按 $e^{-y/L_D}$ 衰减，$L_D=c/|f|$；北半球沿传播方向海岸在右侧。赤道波无需实体岸界。</li>
+</ol>
+<h2>原卷第三部分</h2>
+<p>论述题（每小题 5 分，共 3 小题，共 15 分）</p>
+<h3>2010-一-4</h3>
+<p>斜压地转适应过程有何特点（即斜压地转适应过程的一般性质）</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2010.md#L129">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2010.md">原始年度题干</a></p>
+<p><strong>审校状态：已按设问复核。</strong></p>
+<p><strong>针对本题的精简作答：</strong></p>
+<p>不平衡激发惯性重力波；斜压问题有多个竖直模态和各自变形半径；比较L与各模态变形尺度；最终满足地转、热成风及位涡边界约束。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<h3>2010-二-3</h3>
+<p>若进一步假设扰动速度与 y 无关，求此大气中波动的频率方程，并分别求出所含两种波动频率。</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2010.md#L312">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2010.md">原始年度题干</a></p>
+<p><strong>审校状态：条件解，须核对原题及教材。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>β平面波动方程与频散关系：</strong> 先检查原题动量与涡度方程是否在同一β近似阶次。局地近似下有罗斯贝慢波与惯性重力快波两类，快波有正负频率分支；常数f动量式不能不加说明地与额外βv涡度式同时作为精确方程。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<p><strong>原题修正与范围。</strong> 先将上一问题干的 $H_0(x)$ 更正为 $H_0(y)$，满足 $gH_y=-f_0U$。若 $U\ne0$，层厚有经向梯度，严格的全域常系数平面波假设不成立；以下是在参考纬度冻结系数的局地近似，并保留β的位涡作用。</p>
+<ol>
+<li>设 $s=\omega-kU$ 为内禀频率，$c^2=gH$。用线性涡度、散度及连续式：
+$$-i(s+\beta/k)\hat\zeta+f_0\hat D=0,\quad-is\hat D-f_0\hat\zeta=gk^2\hat h,\quad-is\hat h+H\hat D+H_y\hat v=0.$$
+这里散度方程省略较小β修正；由扰动与 $y$ 无关，$\hat\zeta=ik\hat v$。</li>
+<li>第一式给 $\hat\zeta=-if_0\hat D/(s+\beta/k)$，从而 $\hat v=-f_0\hat D/[k(s+\beta/k)]$。</li>
+<li>连续式给 $\hat h=[H-f_0H_y/(k(s+\beta/k))]\hat D/(is)$。代入散度式并消去振幅，得
+$$\boxed{(s+\beta/k)(s^2-c^2k^2)-f_0^2s+gf_0kH_y=0}.$$</li>
+<li>用 $gH_y=-f_0U$，常数部分为 $-\beta c^2k-f_0^2kU$。低频根忽略 $s^3$ 和 $(\beta/k)s^2$：
+$$s_R\approx-\frac{\beta c^2k+f_0^2kU}{f_0^2+c^2k^2},\qquad \omega_R\approx\frac{c^2k(Uk^2-\beta)}{f_0^2+c^2k^2}.$$</li>
+<li>高频零阶忽略β和基本层厚梯度的慢效应：$s_\pm\approx\pm\sqrt{f_0^2+c^2k^2}$，故 $\omega_\pm\approx kU\pm\sqrt{f_0^2+c^2k^2}$。所谓“两种波动”是罗斯贝慢波与惯性重力快波两类，快波有两个分支。</li>
+<li>若另取 $U=0,H_y=0$，回到静止均匀层局地β平面结果；若取 $\beta=0$ 但仍保留 $H_y$，不能把慢项全部删除，因为基本层厚梯度本身也产生位涡梯度。</li>
+</ol>
+<h2>原卷第三部分</h2>
+<p>简要说明热带扰动发生发展的正压不稳定与第二类条件不稳定的物理机制。</p>
+<h3>2006_1-二-1</h3>
+<p>求出此大气中波动的频率方程。</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2006_1.md#L223">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2006_1.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>β平面波动方程与频散关系：</strong> 先检查原题动量与涡度方程是否在同一β近似阶次。局地近似下有罗斯贝慢波与惯性重力快波两类，快波有正负频率分支；常数f动量式不能不加说明地与额外βv涡度式同时作为精确方程。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<p><strong>先检查方程是否相容。</strong> 原卷若同时给常数 $f_0$ 的两条精确动量方程及额外 $\beta v$ 的涡度方程，前两式取旋度只会得到 $\zeta_t+f_0D=0$。与原涡度式相减便是 $\beta v=0$。所以这四式不能不加说明地作为一般非零 $v$ 波动的精确方程组。</p>
+<p><strong>以下解答采用通常命题意图：局地β平面快慢波近似。</strong> 保留位涡方程中的β效应，在散度方程忽略相对较小的β修正。设传播沿 $x$，$c^2=gH$，得到
+$$\zeta_t+\beta v+f_0D=0,\quad D_t-f_0\zeta=-g h_{xx},\quad h_t+HD=0,\quad \zeta=v_x.$$
+1. 取 $e^{i(kx-\omega t)}$，由 $\zeta=ikv$，得 $v=\zeta/(ik)$；涡度式化为 $-i(\omega+\beta/k)\zeta+f_0D=0$。
+2. 连续式给 $h=HD/(i\omega)$。散度式代入为 $-i\omega D-f_0\zeta=-ic^2k^2D/\omega$，所以 $\zeta=-i(\omega^2-c^2k^2)D/(f_0\omega)$。
+3. 把它代回涡度式，得到 $\boxed{(\omega+\beta/k)(\omega^2-c^2k^2)-f_0^2\omega=0}$，即此套局地近似的一种三次频率方程。
+4. 小β的一阶分析中，慢根满足 $|\omega|\ll\sqrt{f_0^2+c^2k^2}$，忽略相应高阶项得到 $\omega_R\approx-\beta c^2k/(f_0^2+c^2k^2)=-\beta k/(k^2+L_D^{-2})$；快根零阶为 $\omega_\pm\approx\pm\sqrt{f_0^2+c^2k^2}$。
+5. 常见更简化的频率多项式 $\omega[\omega^2-f_0^2-c^2K^2]-\beta c^2k=0$，还删去了此推导中的高频β修正项；不能把不同截断层级的多项式当作完全相同的精确式。
+6. 两类波指慢的罗斯贝波和快的惯性重力波，后者有两个传播分支。前者以行星位涡梯度为恢复机制、偏涡旋性，后者以重力和旋转为回复、辐散与质量振荡明显。严格全球β平面问题须保留 $f(y)$ 并求经向结构，不能假设所有系数全球常数。</p>
+<h2>精选完整解析与公式推导</h2>
+<p>以下保留资料中的条件、步骤和审校信息。先完成手写，再核对。</p>
+<h3>2025-三-3 · 完整解答</h3>
+<p>简述罗斯贝波结构特征以及波动和基本流的相互作用过程</p>
+<p><strong>修改意见（2026-10-07，第四批）：</strong></p>
+<p>先写罗斯贝波恢复机制与结构，再分别讨论基本流影响波及波反馈基本流，补动量预算推导。</p>
+<p><strong>核对依据：</strong> <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1/%E5%A4%A7%E6%B0%94%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%B3%A2%E5%8A%A8/%E7%BD%97%E6%96%AF%E8%B4%9D%E6%B3%A2%E3%80%81%E7%BD%97%E6%96%AF%E8%B4%9D%E6%B3%A2%E7%9A%84%E4%BC%A0%E6%92%AD.md">罗斯贝波、罗斯贝波的传播</a>；<a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1/%E4%B8%8D%E7%A8%B3%E5%AE%9A%E7%90%86%E8%AE%BA/%E6%AD%A3%E5%8E%8B%E5%92%8C%E6%96%9C%E5%8E%8B%E4%B8%8D%E7%A8%B3%E5%AE%9A.md">正压和斜压不稳定</a>；<a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1/%E5%A4%A7%E6%B0%94%E8%83%BD%E9%87%8F%E5%AD%A6/%E5%A4%A7%E6%B0%94%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%83%BD%E9%87%8F%E5%BD%A2%E5%BC%8F%E5%92%8C%E5%B9%B3%E8%A1%A1%E6%96%B9%E7%A8%8B.md">大气中的基本能量形式和平衡方程</a>。本地资料为学习笔记，不视作官方标准答案；冲突处依据下列物理条件、方程推导和所列外部依据判断。</p>
+<p><strong>复核后详细解答：</strong></p>
+<ol>
+<li><strong>恢复机制。</strong> 在无摩擦正压模型中，气块绝对涡度近守恒。向北移时$f$增加，相对涡度须减小；向南则相反。由此形成的涡旋速度反过来推动位移演变，构成罗斯贝波。更一般应以背景位势涡度梯度描述，而不只限于行星β。</li>
+<li><strong>结构与传播。</strong> 取流函数$\psi&#x27;=A\cos(kx+ly-\omega t)$，$u&#x27;=-\psi&#x27;_y$、$v&#x27;=\psi&#x27;_x$，$\zeta&#x27;=\nabla_h^2\psi&#x27;=-(k^2+l^2)\psi&#x27;$，显示槽脊与涡度相联。均匀正压β平面有$\omega=Uk-\beta k/(k^2+l^2)$，因此相对基本流的纬向相速为$-\beta/(k^2+l^2)$，即西传；对地可东移、西移或静止。</li>
+<li><strong>竖直结构不可一概而论。</strong> 正压理想波没有斜压温度结构；相当正压波槽脊可近上下同位。发展中的斜压波常槽轴随高度向西倾斜，并伴向极热输送、暖区上升和冷区下沉；不能把这种倾斜作为所有罗斯贝波必备性质。</li>
+<li><strong>基本流对波。</strong> 平均风平流改变对地频率与传播速度，水平/垂直切变改变背景位涡梯度、折射和稳定性，波导及临界层影响传播和吸收。在不稳定条件下，扰动可从基本流动能或有效位能取能；均匀基本流上的中性线性波不会仅因名为罗斯贝波就自行指数增长。</li>
+<li><strong>波对平均风的反馈。</strong> 在二维无辐散、纬向周期的简化模型中，对动量方程纬向平均，将平流写成通量散度。纬向导数平均为零，扰动贡献为$\partial_tU=-\partial_y\overline{u&#x27;v&#x27;}$（另有平均环流、摩擦时须加上）。因此动量通量的辐合加速平均流，辐散使其减速；不能只看$\overline{u&#x27;v&#x27;}$本身的正负判断局地加速度。</li>
+<li><strong>能量交换的符号。</strong> 上式乘$U$：$\partial_t(U^2/2)=-U\partial_y\overline{u&#x27;v&#x27;}=-\partial_y(U\overline{u&#x27;v&#x27;})+\overline{u&#x27;v&#x27;}U_y$。第一项为能量输送，第二项为平均动能所得；因此扰动从平均流取得的对应项为$-\overline{u&#x27;v&#x27;}U_y$。二者符号相反，符合能量内部交换守恒。</li>
+<li><strong>热输送与斜压反馈。</strong> 扰动热通量可削弱平均南北温度差，同时从平均有效位能取能；适当相位关系下暖上升、冷下沉将扰动有效位能转为动能。以气压坐标表达，该压力功转换为$-\overline{\alpha&#x27;\omega&#x27;}$，暖上升时$\alpha&#x27;&gt;0,\omega&#x27;&lt;0$给正贡献。</li>
+<li><strong>典型发展过程。</strong> 小扰动在不稳定基本态上增长，输送热量与动量；振幅大后可发生波破碎和混合，重塑平均位涡及急流；随后能量来源减弱或被耗散、吸收而衰减。波包能量还可向下游传播，使下游发展。以上是常见相互作用链，不是每一列中性罗斯贝波都必须完成的固定生命史。</li>
+</ol>
+<h2>原卷第四部分</h2>
+<p>推导题</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2025.md#L926">核对原文</a></p>
+<h3>2025-二-5 · 完整解答</h3>
+<p>地转偏差对大气运动的演变作用</p>
+<p><strong>修改意见（2026-10-04）：</strong></p>
+<p>原偏差风公式正确；按题意突出加速度、质量调整和能量转换，补β平面地转散度限制，并指出本地笔记摩擦项符号问题。</p>
+<p><strong>核对依据：</strong> <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1/%E8%87%AA%E7%94%B1%E5%A4%A7%E6%B0%94%E4%B8%AD%E7%9A%84%E5%B9%B3%E8%A1%A1%E6%B5%81%E5%9C%BA%E3%80%81%E7%8E%AF%E6%B5%81%E5%AE%9A%E7%90%86%E5%92%8C%E6%B6%A1%E5%BA%A6%E6%96%B9%E7%A8%8B/%E5%B9%B3%E8%A1%A1%E6%B5%81%E5%9C%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81%E4%B8%8E%E6%80%A7%E8%B4%A8.md">平衡流场的基本特征与性质</a>。本地资料为学习笔记，不视作官方标准答案；冲突处依据下列方程推导与量纲检查作出判断。</p>
+<p><strong>复核后详细解答：</strong></p>
+<ol>
+<li><strong>定义。</strong> 水平实际风与同一质量场对应的地转风之差为$\mathbf V_a=\mathbf V-\mathbf V_g$。采用气压坐标，$f\mathbf k\times\mathbf V_g=-\nabla_p\Phi$。</li>
+<li><strong>由动量方程求偏差。</strong> 实际运动满足$D\mathbf V/Dt+f\mathbf k\times\mathbf V=-\nabla_p\Phi+\mathbf F$，其中$\mathbf F$为摩擦加速度。减去地转关系得$D\mathbf V/Dt+f\mathbf k\times\mathbf V_a=\mathbf F$。左乘$\mathbf k\times$，利用水平向量恒等式$\mathbf k\times(\mathbf k\times\mathbf V_a)=-\mathbf V_a$：
+$$\boxed{\mathbf V_a=\frac1f\mathbf k\times\left(\frac{D\mathbf V}{Dt}-\mathbf F\right)}.$$
+无摩擦时偏差风在加速度左侧（北半球）；定常无惯性时为$-\mathbf k\times\mathbf F/f$，在摩擦力右侧。参考笔记的摩擦公式若写正号，应按其力定义核对；按“作用于空气的摩擦力”约定须为上述负号。</li>
+<li><strong>质量与垂直运动。</strong> 常数$f$下$u_g=-\Phi_y/f,v_g=\Phi_x/f$，混合偏导相消，$\nabla_p\cdot\mathbf V_g=0$。于是实际散度来自偏差风，连续方程$\nabla_p\cdot\mathbf V+\omega_p=0$把它与垂直运动联系。给定边界及整层散度后才能确定$\omega$，不能只凭一个层次的辐散断定全柱上升。</li>
+<li><strong>热力与系统演变。</strong> 垂直运动改变绝热冷却增温及水汽凝结，反过来调整温度和位势场；急流加减速、曲率和摩擦可产生次级环流，因此近地转的大尺度系统仍能发展。</li>
+<li><strong>能量联系。</strong> 水平气压梯度功率为$-\mathbf V\cdot\nabla_p\Phi$。地转风与$\nabla_p\Phi$垂直，其贡献为零；故压力功由$-\mathbf V_a\cdot\nabla_p\Phi$承担，非地转分量联系质量场与动能转换。</li>
+<li><strong>适用限制。</strong> 在β平面，$\nabla_p\cdot\mathbf V_g=-\beta v_g/f$一般不为零；“地转风无散度”须注明$f$平面或相应近似阶次。近赤道$f$趋零时，不可直接套用含$1/f$的中纬度近似。</li>
+</ol>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2025.md#L701">核对原文</a></p>
+<h3>2023-三-2 · 完整解答</h3>
+<p>正压不稳定和斜压不稳定的特征以及区别，简述斜压不稳定波动的空间结构。</p>
+<p><strong>修改意见（2026-10-04）：</strong></p>
+<p>原答案偏重正压必要条件长推导；改为对照回答两类能量来源，并把斜压波的高度倾斜、热量输送、垂直运动和成长阶段逐项对应。</p>
+<p><strong>核对依据：</strong> <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1/%E4%B8%8D%E7%A8%B3%E5%AE%9A%E7%90%86%E8%AE%BA/%E6%AD%A3%E5%8E%8B%E5%92%8C%E6%96%9C%E5%8E%8B%E4%B8%8D%E7%A8%B3%E5%AE%9A.md">正压和斜压不稳定</a>。本地资料为学习笔记，不视作官方标准答案；冲突处依据下列方程推导与量纲检查作出判断。</p>
+<p><strong>复核后详细解答：</strong></p>
+<ol>
+<li><strong>共同定义。</strong> 不稳定指基本态上的扰动能够增长；“正压/斜压”两类区分的核心是主要取能机制，不应只背某个固定天气系统或增长天数。</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>比较项</th>
+<th>正压不稳定</th>
+<th>斜压不稳定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主要基本态特征</td>
+<td>水平风切变</td>
+<td>水平温度梯度及相应地转风垂直切变</td>
+</tr>
+<tr>
+<td>主要能量来源</td>
+<td>基本流动能</td>
+<td>基本流有效位能</td>
+</tr>
+<tr>
+<td>主要转换联系</td>
+<td>动量通量与平均水平切变</td>
+<td>热量输送及扰动压力功</td>
+</tr>
+<tr>
+<td>典型约束</td>
+<td>理想平行流中$\beta-U_{yy}$变号为必要条件</td>
+<td>需结合内部位涡梯度、边界热力梯度及模型条件</td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li><strong>正压取能符号。</strong> 对$U(y)$，纬向扰动方程含$v&#x27;U_y$；乘$u&#x27;$并构造扰动动能收支，移项得到$C_{\mathrm{BT}}=-\overline{u&#x27;v&#x27;}U_y$。合适积分后该项为正，才表示基本流向扰动提供动能。不能按参考笔记某段的正号误写为速度协方差与切变同号即取能。</li>
+<li><strong>斜压取能的两步。</strong> 在北冷南暖背景下，暖空气偏向极地、冷空气偏向赤道的输送，使平均温差所储有效位能转入扰动有效位能；扰动中的暖升冷沉再使扰动有效位能转为动能。气压坐标下转换项$C_E=-\int\alpha&#x27;\omega&#x27;\,dm$：暖区$\alpha&#x27;&gt;0,\omega&#x27;&lt;0$，冷区$\alpha&#x27;&lt;0,\omega&#x27;&gt;0$，两者均给$-\alpha&#x27;\omega&#x27;&gt;0$。</li>
+<li><strong>垂直结构。</strong> 典型中纬度西风带成长斜压波的位势高度槽脊轴随高度向西倾斜，即高层槽位于低层槽以西。温度扰动与高度扰动存在支持热输送和压力功的相位关系，不能将各物理量的槽轴都画成完全重合。</li>
+<li><strong>水平配置与垂直运动。</strong> 在常见成长阶段，槽前暖平流、暖空气上升与槽后冷平流、冷空气下沉相配合；这是有条件的典型结构，不是仅凭“槽前”二字即可诊断任一个例降水的充分条件。</li>
+<li><strong>演变与限制。</strong> 波动成熟后垂直倾斜和能量转换可改变；可用能被释放、耗散及向平均流反馈会限制增长。静力稳定大气仍可斜压不稳定；实际扰动可同时含正压和斜压转换，不能机械地判作互斥。</li>
+</ol>
+<p>两种能量来源的区分亦与<a href="https://npg.copernicus.org/articles/27/147/2020/npg-27-147-2020.html">Read等关于正压、斜压不稳定能量学的研究</a>相符。这里不采用未给基本态、边界及参数时的固定临界波长或增长率。</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2023.md#L855">核对原文</a></p>
+<h3>2005_1-二-2 · 完整解答</h3>
+<p>证明 "浅水模式" 具有位涡度守恒的性质。</p>
+<p><strong>第一步：竖直积分。</strong> 设底面 $z=0$，自由面 $z=h(x,y,t)$，均匀密度 $\rho_0$，表面压力固定。由 $p_z=-\rho_0g$ 得 $p=p_s+\rho_0g(h-z)$，所以水平压力梯度力为 $-g\nabla_hh$。采用柱状水平速度，得
+$$D_tu-fv=-gh_x,\qquad D_tv+fu=-gh_y,\qquad D_t=\partial_t+u\partial_x+v\partial_y.$$
+<strong>第二步：连续方程。</strong> 由 $u_x+v_y+w_z=0$ 和 $w(0)=0$，有 $w(h)=-h(u_x+v_y)$。自由面的运动学条件为 $w(h)=h_t+uh_x+vh_y$，两式合并：$D_th=-hD$，其中 $D=u_x+v_y$。这三式构成浅水模式。</p>
+<p><strong>第三步：取旋度。</strong> 对第二个动量方程取 $x$ 导数，减去第一个方程的 $y$ 导数。加速度交叉项产生 $\zeta D$，科氏项产生 $fD+\beta v$，压力梯度交叉导数相消，得 $D_t\zeta+(\zeta+f)D+\beta v=0$。</p>
+<p><strong>第四步：组合成位涡。</strong> 因 $D_tf=\beta v$，有 $D_t(\zeta+f)=-(\zeta+f)D$。于是
+$$D_t\frac{\zeta+f}{h}=\frac{-h(\zeta+f)D-(\zeta+f)(-hD)}{h^2}=0.$$
+因此 $\boxed{q=(\zeta+f)/h\text{ 沿气柱守恒}}$，适用于上述无摩擦、无质量源汇的浅水模型。</p>
+<p><strong>第五步：有基本流时的线性化。</strong> 令 $u=U+u&#x27;$、$v=v&#x27;$、$h=H(y)+h&#x27;$，$U$ 为常数且 $gH_y=-f_0U$。代入后减去基本态，再删去两个扰动量相乘的二阶项，得到
+$$\begin{aligned}(\partial_t+U\partial_x)u&#x27;-f_0v&#x27;&amp;=-gh&#x27;_x,\\(\partial_t+U\partial_x)v&#x27;+f_0u&#x27;&amp;=-gh&#x27;_y,\\(\partial_t+U\partial_x)h&#x27;+H(u&#x27;_x+v&#x27;_y)+H_yv&#x27;&amp;=0.\end{aligned}$$
+相应局地β平面涡度式为 $(\partial_t+U\partial_x)\zeta&#x27;+\beta v&#x27;+f_0D&#x27;=0$。若原题把层厚写成 $H(x)$ 却要求 $H_y$ 平衡，需改正为 $H(y)$ 后才可使用这一基本态。</p>
+<h2>原卷第三部分</h2>
+<p>举例说明大气波动演变中有些哪些动力不稳定机制。</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2005_1.md#L329">核对原文</a></p>
+<h3>2003_1-四-2 · 完整解答</h3>
+<p>证明 "浅水模式" 具有位涡度守恒的性质。</p>
+<p><strong>第一步：竖直积分。</strong> 设底面 $z=0$，自由面 $z=h(x,y,t)$，均匀密度 $\rho_0$，表面压力固定。由 $p_z=-\rho_0g$ 得 $p=p_s+\rho_0g(h-z)$，所以水平压力梯度力为 $-g\nabla_hh$。采用柱状水平速度，得
+$$D_tu-fv=-gh_x,\qquad D_tv+fu=-gh_y,\qquad D_t=\partial_t+u\partial_x+v\partial_y.$$
+<strong>第二步：连续方程。</strong> 由 $u_x+v_y+w_z=0$ 和 $w(0)=0$，有 $w(h)=-h(u_x+v_y)$。自由面的运动学条件为 $w(h)=h_t+uh_x+vh_y$，两式合并：$D_th=-hD$，其中 $D=u_x+v_y$。这三式构成浅水模式。</p>
+<p><strong>第三步：取旋度。</strong> 对第二个动量方程取 $x$ 导数，减去第一个方程的 $y$ 导数。加速度交叉项产生 $\zeta D$，科氏项产生 $fD+\beta v$，压力梯度交叉导数相消，得 $D_t\zeta+(\zeta+f)D+\beta v=0$。</p>
+<p><strong>第四步：组合成位涡。</strong> 因 $D_tf=\beta v$，有 $D_t(\zeta+f)=-(\zeta+f)D$。于是
+$$D_t\frac{\zeta+f}{h}=\frac{-h(\zeta+f)D-(\zeta+f)(-hD)}{h^2}=0.$$
+因此 $\boxed{q=(\zeta+f)/h\text{ 沿气柱守恒}}$，适用于上述无摩擦、无质量源汇的浅水模型。</p>
+<p><strong>第五步：有基本流时的线性化。</strong> 令 $u=U+u&#x27;$、$v=v&#x27;$、$h=H(y)+h&#x27;$，$U$ 为常数且 $gH_y=-f_0U$。代入后减去基本态，再删去两个扰动量相乘的二阶项，得到
+$$\begin{aligned}(\partial_t+U\partial_x)u&#x27;-f_0v&#x27;&amp;=-gh&#x27;_x,\\(\partial_t+U\partial_x)v&#x27;+f_0u&#x27;&amp;=-gh&#x27;_y,\\(\partial_t+U\partial_x)h&#x27;+H(u&#x27;_x+v&#x27;_y)+H_yv&#x27;&amp;=0.\end{aligned}$$
+相应局地β平面涡度式为 $(\partial_t+U\partial_x)\zeta&#x27;+\beta v&#x27;+f_0D&#x27;=0$。若原题把层厚写成 $H(x)$ 却要求 $H_y$ 平衡，需改正为 $H(y)$ 后才可使用这一基本态。</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2003_1.md#L540">核对原文</a></p>
+<h2>当日验收</h2>
+<ul>
+<li>[ ] 本日每题均完成至少一次闭卷提取。</li>
+<li>[ ] 精选题写清假设、符号与中间步骤；无漏负号、下标和单位。</li>
+<li>[ ] 能用自己的话解释至少两条跨章节联系。</li>
+<li>[ ] 错题记录包含题号、错因、修正答案及下一次复习日期。</li>
+</ul></article></main><footer>学习整理版 · 非官方评分标准 · 来源见各题链接</footer></body></html>

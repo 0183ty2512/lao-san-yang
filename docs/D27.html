@@ -1,0 +1,395 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>地转风、热成风、温度平流：公式及天气联系</title><link rel="stylesheet" href="style.css"><script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'}};</script><script defer src="mathjax/tex-svg.js"></script></head><body><header><a href="index.html">大气科学 · 50日复习</a><nav><a href="D26.html">← 上一天</a><a href="md/D27.md" download>下载 MD</a><a href="D28.html">下一天 →</a></nav></header><main><article><h1>D27 · 地转风、热成风、温度平流：公式及天气联系</h1>
+<p>日期：2026-11-24｜建议投入：4小时｜动力40% · 天气40% · 物理20%</p>
+<blockquote>
+<p>本学习包依据原50日PDF与仓库学习资料整理。参考答案不是官方评分标准；未完成学科审校及缺题标记均保留。公式采用 GitHub 数学 Markdown，请在 GitHub 正文或 Obsidian 阅读视图打开。</p>
+</blockquote>
+<h2>今日目标与记忆标准</h2>
+<p>闭卷说清概念、适用条件、符号与单位；推导必须写出起始方程、近似及关键步骤。先答题，再展开核对。</p>
+<h2>四小时执行</h2>
+<ol>
+<li>20分钟：回忆此前第1、3、7、14天的重点，尚未开始的日期跳过。</li>
+<li>80分钟：逐题闭卷提取，核对以下简答与来源。</li>
+<li>70分钟：精选5题完整书写。名词解释90秒、简答7分钟、论述12分钟为训练目标。</li>
+<li>40分钟：把本日知识按“假设→方程→物理机制→天气表现”串成2—4条知识链。</li>
+<li>30分钟：记录遗漏点、用时与次日/3日/7日/14日复习日期。</li>
+</ol>
+<h2>逐题回忆与简答</h2>
+<h3>2019-二-1</h3>
+<p>地转风运动、惯性运动、旋衡运动都是由什么力平衡的</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2019.md#L310">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2019.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>地转风：</strong> 中纬度大尺度缓变、摩擦可忽略时，水平气压梯度力与科氏力近似平衡：$u_g=-\Phi_y/f$、$v_g=\Phi_x/f$。风平行等高线，北半球低值在风向左侧。近赤道、摩擦层和强曲率快速运动中须检验适用性。</p>
+<p><strong>惯性运动：</strong> 无水平压力梯度和摩擦、常数f时，$\dot u-fv=0$、$\dot v+fu=0$，故 $\ddot u+f^2u=0$。周期为 $2\pi/|f|$，半径 $V/|f|$；北半球顺时针、南半球逆时针。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>在局地直角坐标中，忽略摩擦时水平动量方程为 $Du/Dt-fv=-\Phi_x$、$Dv/Dt+fu=-\Phi_y$，这里的导数取在等压面上。</li>
+<li>对中纬度大尺度缓变运动，$Ro=U/(fL)\ll1$，惯性项相对较小，得到 $-fv_g=-\Phi_x$、$fu_g=-\Phi_y$。</li>
+<li>解得 $\boxed{u_g=-\Phi_y/f,\quad v_g=\Phi_x/f}$，即 $\mathbf V_g=\mathbf k\times\nabla_p\Phi/f$；大小为 $|\nabla_p\Phi|/|f|$。</li>
+<li>因叉积垂直于梯度，地转风平行于等高线；北半球背风而立时低值在左、高值在右，南半球相反。等高线越密风越强，但还受纬度 $f$ 影响。</li>
+<li>
+<p>近赤道 $f\to0$、摩擦层、强曲率或快速变化的小尺度系统中不能直接采用地转近似。等高面上应改用 $\nabla_zp/\rho$，不要把两种坐标的梯度混用。</p>
+</li>
+<li>
+<p>无水平气压梯度、无摩擦、常数 $f$ 时，$\dot u-fv=0$、$\dot v+fu=0$。第一式再对时间求导并用第二式消去 $v$，得 $\ddot u+f^2u=0$。</p>
+</li>
+<li>
+<p>初值 $u(0)=U_0,v(0)=0$ 给 $u=U_0\cos ft$、$v=-U_0\sin ft$。积分得惯性圆半径 $U_0/|f|$，周期 $2\pi/|f|$。北半球顺时针、南半球逆时针；旋转坐标中科氏力提供曲线运动的法向加速度。</p>
+</li>
+<li>
+<p>忽略曲率项即地转平衡；小尺度强涡旋若科氏项远小于曲率项，则 $V^2/r=p_r/\rho$，为旋衡平衡。惯性运动则无压力梯度。三种近似依尺度和受力大小选择。</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>北半球情况</th>
+<th>指向中心的作用</th>
+<th>指离中心的作用（旋转随流受力图）</th>
+<th>正常支风速</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>低压气旋</td>
+<td>压力梯度力</td>
+<td>科氏力、曲率离心惯性项</td>
+<td>梯度风小于地转风</td>
+</tr>
+<tr>
+<td>高压反气旋</td>
+<td>科氏力</td>
+<td>压力梯度力、曲率离心惯性项</td>
+<td>梯度风大于地转风</td>
+</tr>
+</tbody>
+</table>
+<p>曲率离心项是随流受力图中的惯性表示；在地球坐标动量方程中对应向心加速度，不能作为额外真实力重复加入。</p>
+<h3>2021-一-2</h3>
+<p>热成风</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2021.md#L51">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2021.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>热成风：</strong> 热成风是上下两层地转风之差。由静力关系 $\Phi_{\ln p}=-RT$ 与地转关系得 $\partial u_g/\partial\ln p=(R/f)T_y$、$\partial v_g/\partial\ln p=-(R/f)T_x$。北半球向上的热成风冷侧在左，表示温度梯度对应垂直风切变。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>热成风是两个高度或等压面之间的<strong>地转风差</strong>，不是独立的一股实际风。</li>
+<li>静力关系给出 $\Phi_{\ln p}=-RT$。对 $u_g=-\Phi_y/f$、$v_g=\Phi_x/f$ 分别作 $\ln p$ 导数（局地取 $f$ 固定），得
+$$\frac{\partial u_g}{\partial\ln p}=\frac RfT_y,\qquad \frac{\partial v_g}{\partial\ln p}=-\frac RfT_x.$$</li>
+<li>从下层 $p_b$ 积到上层 $p_t&lt;p_b$，若用对数气压平均温度 $\bar T$，则 $u_t-u_b=-(R/f)\ln(p_b/p_t)\bar T_y$、$v_t-v_b=(R/f)\ln(p_b/p_t)\bar T_x$。</li>
+<li>北半球向上的热成风沿平均等温线，冷空气在其左侧。温度向北降低时，西风一般随高度增强。该关系把水平温度梯度和垂直风切变连接起来。</li>
+</ol>
+<h3>2026-二-5</h3>
+<p>简述温度平流，及温度场的局地变化（包括暖平流和冷平流）</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2026.md#L690">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2026.md">原始年度题干</a></p>
+<p><strong>审校状态：已逐题复核（按所列模型与条件）。</strong></p>
+<p><strong>针对本题的考场作答版（非官方评分标准）：</strong></p>
+<p>温度平流贡献$A_T=-\mathbf V_h\cdot\nabla_pT$，暖平流为正、冷平流为负。局地变温还含$\omega(\kappa T/p-T_p)$与$\dot Q/c_p$，所以暖平流不保证局地增温。</p>
+<blockquote>
+<p>推导题须保留必要推演，简答与论述须按小问展开；精简版只用于回忆作答主线。</p>
+</blockquote>
+<h3>2025-二-5</h3>
+<p>地转偏差对大气运动的演变作用</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2025.md#L701">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2025.md">原始年度题干</a></p>
+<p><strong>审校状态：已逐题复核（按所列模型与条件）。</strong></p>
+<p><strong>针对本题的考场作答版（非官方评分标准）：</strong></p>
+<p>地转偏差$\mathbf V_a=\mathbf V-\mathbf V_g$满足$\mathbf V_a=\mathbf k\times(D\mathbf V/Dt-\mathbf F)/f$。它联系加速度与摩擦，产生辐合辐散及垂直运动，调整质量、温度场，并使气压梯度力能够做功。</p>
+<blockquote>
+<p>推导题须保留必要推演，简答与论述须按小问展开；精简版只用于回忆作答主线。</p>
+</blockquote>
+<h3>2014-一-7</h3>
+<p>热成风</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2014.md#L238">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2014.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>热成风：</strong> 热成风是上下两层地转风之差。由静力关系 $\Phi_{\ln p}=-RT$ 与地转关系得 $\partial u_g/\partial\ln p=(R/f)T_y$、$\partial v_g/\partial\ln p=-(R/f)T_x$。北半球向上的热成风冷侧在左，表示温度梯度对应垂直风切变。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>热成风是两个高度或等压面之间的<strong>地转风差</strong>，不是独立的一股实际风。</li>
+<li>静力关系给出 $\Phi_{\ln p}=-RT$。对 $u_g=-\Phi_y/f$、$v_g=\Phi_x/f$ 分别作 $\ln p$ 导数（局地取 $f$ 固定），得
+$$\frac{\partial u_g}{\partial\ln p}=\frac RfT_y,\qquad \frac{\partial v_g}{\partial\ln p}=-\frac RfT_x.$$</li>
+<li>从下层 $p_b$ 积到上层 $p_t&lt;p_b$，若用对数气压平均温度 $\bar T$，则 $u_t-u_b=-(R/f)\ln(p_b/p_t)\bar T_y$、$v_t-v_b=(R/f)\ln(p_b/p_t)\bar T_x$。</li>
+<li>北半球向上的热成风沿平均等温线，冷空气在其左侧。温度向北降低时，西风一般随高度增强。该关系把水平温度梯度和垂直风切变连接起来。</li>
+</ol>
+<h3>2005_1-一-6</h3>
+<p>地转风和热成风，并写出其表达式</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2005_1.md#L232">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2005_1.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>地转风：</strong> 中纬度大尺度缓变、摩擦可忽略时，水平气压梯度力与科氏力近似平衡：$u_g=-\Phi_y/f$、$v_g=\Phi_x/f$。风平行等高线，北半球低值在风向左侧。近赤道、摩擦层和强曲率快速运动中须检验适用性。</p>
+<p><strong>热成风：</strong> 热成风是上下两层地转风之差。由静力关系 $\Phi_{\ln p}=-RT$ 与地转关系得 $\partial u_g/\partial\ln p=(R/f)T_y$、$\partial v_g/\partial\ln p=-(R/f)T_x$。北半球向上的热成风冷侧在左，表示温度梯度对应垂直风切变。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>在局地直角坐标中，忽略摩擦时水平动量方程为 $Du/Dt-fv=-\Phi_x$、$Dv/Dt+fu=-\Phi_y$，这里的导数取在等压面上。</li>
+<li>对中纬度大尺度缓变运动，$Ro=U/(fL)\ll1$，惯性项相对较小，得到 $-fv_g=-\Phi_x$、$fu_g=-\Phi_y$。</li>
+<li>解得 $\boxed{u_g=-\Phi_y/f,\quad v_g=\Phi_x/f}$，即 $\mathbf V_g=\mathbf k\times\nabla_p\Phi/f$；大小为 $|\nabla_p\Phi|/|f|$。</li>
+<li>因叉积垂直于梯度，地转风平行于等高线；北半球背风而立时低值在左、高值在右，南半球相反。等高线越密风越强，但还受纬度 $f$ 影响。</li>
+<li>
+<p>近赤道 $f\to0$、摩擦层、强曲率或快速变化的小尺度系统中不能直接采用地转近似。等高面上应改用 $\nabla_zp/\rho$，不要把两种坐标的梯度混用。</p>
+</li>
+<li>
+<p>热成风是两个高度或等压面之间的<strong>地转风差</strong>，不是独立的一股实际风。</p>
+</li>
+<li>静力关系给出 $\Phi_{\ln p}=-RT$。对 $u_g=-\Phi_y/f$、$v_g=\Phi_x/f$ 分别作 $\ln p$ 导数（局地取 $f$ 固定），得
+$$\frac{\partial u_g}{\partial\ln p}=\frac RfT_y,\qquad \frac{\partial v_g}{\partial\ln p}=-\frac RfT_x.$$</li>
+<li>从下层 $p_b$ 积到上层 $p_t&lt;p_b$，若用对数气压平均温度 $\bar T$，则 $u_t-u_b=-(R/f)\ln(p_b/p_t)\bar T_y$、$v_t-v_b=(R/f)\ln(p_b/p_t)\bar T_x$。</li>
+<li>北半球向上的热成风沿平均等温线，冷空气在其左侧。温度向北降低时，西风一般随高度增强。该关系把水平温度梯度和垂直风切变连接起来。</li>
+</ol>
+<h2>原卷第二部分</h2>
+<p>假定大气满足静力平衡，而且是均匀不可压缩流体，下边界为平坦地面，上边界为自由表面，自由表面高度$h = h(x, y, t)$（如图所示）：</p>
+<h3>2003_1-一-2</h3>
+<p>地转风和热成风</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2003_1.md#L50">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2003_1.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>地转风：</strong> 中纬度大尺度缓变、摩擦可忽略时，水平气压梯度力与科氏力近似平衡：$u_g=-\Phi_y/f$、$v_g=\Phi_x/f$。风平行等高线，北半球低值在风向左侧。近赤道、摩擦层和强曲率快速运动中须检验适用性。</p>
+<p><strong>热成风：</strong> 热成风是上下两层地转风之差。由静力关系 $\Phi_{\ln p}=-RT$ 与地转关系得 $\partial u_g/\partial\ln p=(R/f)T_y$、$\partial v_g/\partial\ln p=-(R/f)T_x$。北半球向上的热成风冷侧在左，表示温度梯度对应垂直风切变。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>在局地直角坐标中，忽略摩擦时水平动量方程为 $Du/Dt-fv=-\Phi_x$、$Dv/Dt+fu=-\Phi_y$，这里的导数取在等压面上。</li>
+<li>对中纬度大尺度缓变运动，$Ro=U/(fL)\ll1$，惯性项相对较小，得到 $-fv_g=-\Phi_x$、$fu_g=-\Phi_y$。</li>
+<li>解得 $\boxed{u_g=-\Phi_y/f,\quad v_g=\Phi_x/f}$，即 $\mathbf V_g=\mathbf k\times\nabla_p\Phi/f$；大小为 $|\nabla_p\Phi|/|f|$。</li>
+<li>因叉积垂直于梯度，地转风平行于等高线；北半球背风而立时低值在左、高值在右，南半球相反。等高线越密风越强，但还受纬度 $f$ 影响。</li>
+<li>
+<p>近赤道 $f\to0$、摩擦层、强曲率或快速变化的小尺度系统中不能直接采用地转近似。等高面上应改用 $\nabla_zp/\rho$，不要把两种坐标的梯度混用。</p>
+</li>
+<li>
+<p>热成风是两个高度或等压面之间的<strong>地转风差</strong>，不是独立的一股实际风。</p>
+</li>
+<li>静力关系给出 $\Phi_{\ln p}=-RT$。对 $u_g=-\Phi_y/f$、$v_g=\Phi_x/f$ 分别作 $\ln p$ 导数（局地取 $f$ 固定），得
+$$\frac{\partial u_g}{\partial\ln p}=\frac RfT_y,\qquad \frac{\partial v_g}{\partial\ln p}=-\frac RfT_x.$$</li>
+<li>从下层 $p_b$ 积到上层 $p_t&lt;p_b$，若用对数气压平均温度 $\bar T$，则 $u_t-u_b=-(R/f)\ln(p_b/p_t)\bar T_y$、$v_t-v_b=(R/f)\ln(p_b/p_t)\bar T_x$。</li>
+<li>北半球向上的热成风沿平均等温线，冷空气在其左侧。温度向北降低时，西风一般随高度增强。该关系把水平温度梯度和垂直风切变连接起来。</li>
+</ol>
+<h3>1994-一-2</h3>
+<p>地转风是指水平运动中<strong>气压梯度</strong>力与<strong>科里奥利（地转偏向）</strong>力相互平衡的运动，地转风与<strong>等高</strong>线平行，热成风与<strong>等温</strong>线平行。</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/1994.md#L53">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/1994.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>地转风：</strong> 中纬度大尺度缓变、摩擦可忽略时，水平气压梯度力与科氏力近似平衡：$u_g=-\Phi_y/f$、$v_g=\Phi_x/f$。风平行等高线，北半球低值在风向左侧。近赤道、摩擦层和强曲率快速运动中须检验适用性。</p>
+<p><strong>热成风：</strong> 热成风是上下两层地转风之差。由静力关系 $\Phi_{\ln p}=-RT$ 与地转关系得 $\partial u_g/\partial\ln p=(R/f)T_y$、$\partial v_g/\partial\ln p=-(R/f)T_x$。北半球向上的热成风冷侧在左，表示温度梯度对应垂直风切变。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<p><strong>原记录填空值：</strong> 气压梯度；科里奥利（地转偏向）；等高；等温。下文核对其物理含义；出现修改意见时，以修改后的说明为准。</p>
+<ol>
+<li>在局地直角坐标中，忽略摩擦时水平动量方程为 $Du/Dt-fv=-\Phi_x$、$Dv/Dt+fu=-\Phi_y$，这里的导数取在等压面上。</li>
+<li>对中纬度大尺度缓变运动，$Ro=U/(fL)\ll1$，惯性项相对较小，得到 $-fv_g=-\Phi_x$、$fu_g=-\Phi_y$。</li>
+<li>解得 $\boxed{u_g=-\Phi_y/f,\quad v_g=\Phi_x/f}$，即 $\mathbf V_g=\mathbf k\times\nabla_p\Phi/f$；大小为 $|\nabla_p\Phi|/|f|$。</li>
+<li>因叉积垂直于梯度，地转风平行于等高线；北半球背风而立时低值在左、高值在右，南半球相反。等高线越密风越强，但还受纬度 $f$ 影响。</li>
+<li>
+<p>近赤道 $f\to0$、摩擦层、强曲率或快速变化的小尺度系统中不能直接采用地转近似。等高面上应改用 $\nabla_zp/\rho$，不要把两种坐标的梯度混用。</p>
+</li>
+<li>
+<p>热成风是两个高度或等压面之间的<strong>地转风差</strong>，不是独立的一股实际风。</p>
+</li>
+<li>静力关系给出 $\Phi_{\ln p}=-RT$。对 $u_g=-\Phi_y/f$、$v_g=\Phi_x/f$ 分别作 $\ln p$ 导数（局地取 $f$ 固定），得
+$$\frac{\partial u_g}{\partial\ln p}=\frac RfT_y,\qquad \frac{\partial v_g}{\partial\ln p}=-\frac RfT_x.$$</li>
+<li>从下层 $p_b$ 积到上层 $p_t&lt;p_b$，若用对数气压平均温度 $\bar T$，则 $u_t-u_b=-(R/f)\ln(p_b/p_t)\bar T_y$、$v_t-v_b=(R/f)\ln(p_b/p_t)\bar T_x$。</li>
+<li>北半球向上的热成风沿平均等温线，冷空气在其左侧。温度向北降低时，西风一般随高度增强。该关系把水平温度梯度和垂直风切变连接起来。</li>
+</ol>
+<h3>1997-二-2</h3>
+<p>热成风</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/1997.md#L210">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/1997.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>热成风：</strong> 热成风是上下两层地转风之差。由静力关系 $\Phi_{\ln p}=-RT$ 与地转关系得 $\partial u_g/\partial\ln p=(R/f)T_y$、$\partial v_g/\partial\ln p=-(R/f)T_x$。北半球向上的热成风冷侧在左，表示温度梯度对应垂直风切变。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>热成风是两个高度或等压面之间的<strong>地转风差</strong>，不是独立的一股实际风。</li>
+<li>静力关系给出 $\Phi_{\ln p}=-RT$。对 $u_g=-\Phi_y/f$、$v_g=\Phi_x/f$ 分别作 $\ln p$ 导数（局地取 $f$ 固定），得
+$$\frac{\partial u_g}{\partial\ln p}=\frac RfT_y,\qquad \frac{\partial v_g}{\partial\ln p}=-\frac RfT_x.$$</li>
+<li>从下层 $p_b$ 积到上层 $p_t&lt;p_b$，若用对数气压平均温度 $\bar T$，则 $u_t-u_b=-(R/f)\ln(p_b/p_t)\bar T_y$、$v_t-v_b=(R/f)\ln(p_b/p_t)\bar T_x$。</li>
+<li>北半球向上的热成风沿平均等温线，冷空气在其左侧。温度向北降低时，西风一般随高度增强。该关系把水平温度梯度和垂直风切变连接起来。</li>
+</ol>
+<h3>1996-一-3</h3>
+<p>热成风的风向与等压面上的<strong>等温</strong>线平行。</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/1996.md#L106">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/1996.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>热成风：</strong> 热成风是上下两层地转风之差。由静力关系 $\Phi_{\ln p}=-RT$ 与地转关系得 $\partial u_g/\partial\ln p=(R/f)T_y$、$\partial v_g/\partial\ln p=-(R/f)T_x$。北半球向上的热成风冷侧在左，表示温度梯度对应垂直风切变。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<p><strong>原记录填空值：</strong> 等温。下文核对其物理含义；出现修改意见时，以修改后的说明为准。</p>
+<ol>
+<li>热成风是两个高度或等压面之间的<strong>地转风差</strong>，不是独立的一股实际风。</li>
+<li>静力关系给出 $\Phi_{\ln p}=-RT$。对 $u_g=-\Phi_y/f$、$v_g=\Phi_x/f$ 分别作 $\ln p$ 导数（局地取 $f$ 固定），得
+$$\frac{\partial u_g}{\partial\ln p}=\frac RfT_y,\qquad \frac{\partial v_g}{\partial\ln p}=-\frac RfT_x.$$</li>
+<li>从下层 $p_b$ 积到上层 $p_t&lt;p_b$，若用对数气压平均温度 $\bar T$，则 $u_t-u_b=-(R/f)\ln(p_b/p_t)\bar T_y$、$v_t-v_b=(R/f)\ln(p_b/p_t)\bar T_x$。</li>
+<li>北半球向上的热成风沿平均等温线，冷空气在其左侧。温度向北降低时，西风一般随高度增强。该关系把水平温度梯度和垂直风切变连接起来。</li>
+</ol>
+<h3>1992-二-2</h3>
+<p>热成风</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/1992.md#L256">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/1992.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>热成风：</strong> 热成风是上下两层地转风之差。由静力关系 $\Phi_{\ln p}=-RT$ 与地转关系得 $\partial u_g/\partial\ln p=(R/f)T_y$、$\partial v_g/\partial\ln p=-(R/f)T_x$。北半球向上的热成风冷侧在左，表示温度梯度对应垂直风切变。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>热成风是两个高度或等压面之间的<strong>地转风差</strong>，不是独立的一股实际风。</li>
+<li>静力关系给出 $\Phi_{\ln p}=-RT$。对 $u_g=-\Phi_y/f$、$v_g=\Phi_x/f$ 分别作 $\ln p$ 导数（局地取 $f$ 固定），得
+$$\frac{\partial u_g}{\partial\ln p}=\frac RfT_y,\qquad \frac{\partial v_g}{\partial\ln p}=-\frac RfT_x.$$</li>
+<li>从下层 $p_b$ 积到上层 $p_t&lt;p_b$，若用对数气压平均温度 $\bar T$，则 $u_t-u_b=-(R/f)\ln(p_b/p_t)\bar T_y$、$v_t-v_b=(R/f)\ln(p_b/p_t)\bar T_x$。</li>
+<li>北半球向上的热成风沿平均等温线，冷空气在其左侧。温度向北降低时，西风一般随高度增强。该关系把水平温度梯度和垂直风切变连接起来。</li>
+</ol>
+<h3>2010-四-1</h3>
+<p>地转风</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2010.md#L418">解析来源（对应题目行）</a> · <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E5%88%86%E6%9E%90/2010.md">原始年度题干</a></p>
+<p><strong>审校状态：尚未逐题学科审校。</strong></p>
+<p><strong>相关高频考点复习摘要（须按本题设问取舍，不替代完整解答）：</strong></p>
+<p><strong>地转风：</strong> 中纬度大尺度缓变、摩擦可忽略时，水平气压梯度力与科氏力近似平衡：$u_g=-\Phi_y/f$、$v_g=\Phi_x/f$。风平行等高线，北半球低值在风向左侧。近赤道、摩擦层和强曲率快速运动中须检验适用性。</p>
+<blockquote>
+<p>以上摘要用于回忆答题主线，不是官方评分标准；推导、计算和多小问仍须完成下方步骤。</p>
+</blockquote>
+<ol>
+<li>在局地直角坐标中，忽略摩擦时水平动量方程为 $Du/Dt-fv=-\Phi_x$、$Dv/Dt+fu=-\Phi_y$，这里的导数取在等压面上。</li>
+<li>对中纬度大尺度缓变运动，$Ro=U/(fL)\ll1$，惯性项相对较小，得到 $-fv_g=-\Phi_x$、$fu_g=-\Phi_y$。</li>
+<li>解得 $\boxed{u_g=-\Phi_y/f,\quad v_g=\Phi_x/f}$，即 $\mathbf V_g=\mathbf k\times\nabla_p\Phi/f$；大小为 $|\nabla_p\Phi|/|f|$。</li>
+<li>因叉积垂直于梯度，地转风平行于等高线；北半球背风而立时低值在左、高值在右，南半球相反。等高线越密风越强，但还受纬度 $f$ 影响。</li>
+<li>近赤道 $f\to0$、摩擦层、强曲率或快速变化的小尺度系统中不能直接采用地转近似。等高面上应改用 $\nabla_zp/\rho$，不要把两种坐标的梯度混用。</li>
+</ol>
+<h2>精选完整解析与公式推导</h2>
+<p>以下保留资料中的条件、步骤和审校信息。先完成手写，再核对。</p>
+<h3>2025-二-5 · 完整解答</h3>
+<p>地转偏差对大气运动的演变作用</p>
+<p><strong>修改意见（2026-10-04）：</strong></p>
+<p>原偏差风公式正确；按题意突出加速度、质量调整和能量转换，补β平面地转散度限制，并指出本地笔记摩擦项符号问题。</p>
+<p><strong>核对依据：</strong> <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1/%E8%87%AA%E7%94%B1%E5%A4%A7%E6%B0%94%E4%B8%AD%E7%9A%84%E5%B9%B3%E8%A1%A1%E6%B5%81%E5%9C%BA%E3%80%81%E7%8E%AF%E6%B5%81%E5%AE%9A%E7%90%86%E5%92%8C%E6%B6%A1%E5%BA%A6%E6%96%B9%E7%A8%8B/%E5%B9%B3%E8%A1%A1%E6%B5%81%E5%9C%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81%E4%B8%8E%E6%80%A7%E8%B4%A8.md">平衡流场的基本特征与性质</a>。本地资料为学习笔记，不视作官方标准答案；冲突处依据下列方程推导与量纲检查作出判断。</p>
+<p><strong>复核后详细解答：</strong></p>
+<ol>
+<li><strong>定义。</strong> 水平实际风与同一质量场对应的地转风之差为$\mathbf V_a=\mathbf V-\mathbf V_g$。采用气压坐标，$f\mathbf k\times\mathbf V_g=-\nabla_p\Phi$。</li>
+<li><strong>由动量方程求偏差。</strong> 实际运动满足$D\mathbf V/Dt+f\mathbf k\times\mathbf V=-\nabla_p\Phi+\mathbf F$，其中$\mathbf F$为摩擦加速度。减去地转关系得$D\mathbf V/Dt+f\mathbf k\times\mathbf V_a=\mathbf F$。左乘$\mathbf k\times$，利用水平向量恒等式$\mathbf k\times(\mathbf k\times\mathbf V_a)=-\mathbf V_a$：
+$$\boxed{\mathbf V_a=\frac1f\mathbf k\times\left(\frac{D\mathbf V}{Dt}-\mathbf F\right)}.$$
+无摩擦时偏差风在加速度左侧（北半球）；定常无惯性时为$-\mathbf k\times\mathbf F/f$，在摩擦力右侧。参考笔记的摩擦公式若写正号，应按其力定义核对；按“作用于空气的摩擦力”约定须为上述负号。</li>
+<li><strong>质量与垂直运动。</strong> 常数$f$下$u_g=-\Phi_y/f,v_g=\Phi_x/f$，混合偏导相消，$\nabla_p\cdot\mathbf V_g=0$。于是实际散度来自偏差风，连续方程$\nabla_p\cdot\mathbf V+\omega_p=0$把它与垂直运动联系。给定边界及整层散度后才能确定$\omega$，不能只凭一个层次的辐散断定全柱上升。</li>
+<li><strong>热力与系统演变。</strong> 垂直运动改变绝热冷却增温及水汽凝结，反过来调整温度和位势场；急流加减速、曲率和摩擦可产生次级环流，因此近地转的大尺度系统仍能发展。</li>
+<li><strong>能量联系。</strong> 水平气压梯度功率为$-\mathbf V\cdot\nabla_p\Phi$。地转风与$\nabla_p\Phi$垂直，其贡献为零；故压力功由$-\mathbf V_a\cdot\nabla_p\Phi$承担，非地转分量联系质量场与动能转换。</li>
+<li><strong>适用限制。</strong> 在β平面，$\nabla_p\cdot\mathbf V_g=-\beta v_g/f$一般不为零；“地转风无散度”须注明$f$平面或相应近似阶次。近赤道$f$趋零时，不可直接套用含$1/f$的中纬度近似。</li>
+</ol>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2025.md#L701">核对原文</a></p>
+<h3>2026-二-5 · 完整解答</h3>
+<p>简述温度平流，及温度场的局地变化（包括暖平流和冷平流）</p>
+<p><strong>修改意见（2026-10-04）：</strong></p>
+<p>原气压坐标展开式正确；补足稳定层结符号判定，并指出参考笔记中稳定度参数的两种定义不能混用。</p>
+<p><strong>核对依据：</strong> <a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1/%E5%A4%A7%E6%B0%94%E8%BF%90%E5%8A%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B%E7%BB%84/%E7%83%AD%E5%8A%9B%E5%AD%A6%E8%83%BD%E9%87%8F%E6%96%B9%E7%A8%8B%E5%8F%8A%E5%85%B6%E5%9C%A8%E7%90%83%E5%9D%90%E6%A0%87%E7%B3%BB%E5%92%8C%E5%B1%80%E5%9C%B0%E7%9B%B4%E8%A7%92%E5%9D%90%E6%A0%87%E7%B3%BB%E4%B8%AD%E7%9A%84%E8%A1%A8%E8%BF%B0.md">热力学能量方程及其在球坐标系和局地直角坐标系中的表述</a>。本地资料为学习笔记，不视作官方标准答案；冲突处依据下列方程推导与量纲检查作出判断。</p>
+<p><strong>复核后详细解答：</strong></p>
+<ol>
+<li><strong>定义与符号。</strong> 水平温度平流指水平运动输送温度所产生的变温贡献：$A_T=-(uT_x+vT_y)$，这里水平导数取在等压面上。沿风向由暖到冷，沿程温度下降，$\mathbf V_h\cdot\nabla_pT&lt;0$，故$A_T&gt;0$，为暖平流；由冷到暖则$A_T&lt;0$，为冷平流。风平行等温线时此项为零。</li>
+<li><strong>从第一定律出发。</strong> 对理想干空气，$c_pDT/Dt-\alpha Dp/Dt=\dot Q$。令$\omega=Dp/Dt$、$\alpha=R_dT/p$、$\kappa=R_d/c_p$，除以$c_p$：
+$$\frac{DT}{Dt}-\frac{\kappa T}{p}\omega=\frac{\dot Q}{c_p}.$$</li>
+<li><strong>展开物质导数。</strong> 气压坐标中$DT/Dt=\partial_tT+uT_x+vT_y+\omega T_p$，代入并移项：
+$$\boxed{\partial_tT=-\mathbf V_h\cdot\nabla_pT+\omega\left(\frac{\kappa T}{p}-T_p\right)+\frac{\dot Q}{c_p}}.$$</li>
+<li><strong>稳定层结的检查。</strong> 由$\ln\theta=\ln T-\kappa\ln p+\text{常数}$，有$\kappa T/p-T_p=-T\partial_p\ln\theta$。静力稳定时$\partial_z\theta&gt;0$、$\partial_zp&lt;0$，因此$\partial_p\theta&lt;0$，该括号为正。上升通常$\omega&lt;0$，垂直项为负；下沉反之。这一项是垂直平流与绝热压缩膨胀的合成作用。</li>
+<li><strong>局地与随体不同。</strong> $\partial_tT$是在固定等压坐标位置的变温，$DT/Dt$是跟随气块的变温。例如暖平流$+2\ \mathrm{K/h}$、垂直项$-3\ \mathrm{K/h}$、非绝热项为零，局地仍以$-1\ \mathrm{K/h}$降温。该数值仅为解释用自拟例子。</li>
+<li><strong>参考笔记符号提醒。</strong> 若定义$S_T=-T\partial_p\ln\theta$，单位为$\mathrm{K/Pa}$，垂直项就是$S_T\omega$。若另定义$\sigma=-(R_dT/p)\partial_p\ln\theta$，则$\sigma=(R_d/p)S_T$，垂直项须写$(p/R_d)\sigma\omega$；不能把两者都记作同一$S_p$直接替换。</li>
+</ol>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2026.md#L690">核对原文</a></p>
+<h3>2005_1-一-6 · 完整解答</h3>
+<p>地转风和热成风，并写出其表达式</p>
+<ol>
+<li>在局地直角坐标中，忽略摩擦时水平动量方程为 $Du/Dt-fv=-\Phi_x$、$Dv/Dt+fu=-\Phi_y$，这里的导数取在等压面上。</li>
+<li>对中纬度大尺度缓变运动，$Ro=U/(fL)\ll1$，惯性项相对较小，得到 $-fv_g=-\Phi_x$、$fu_g=-\Phi_y$。</li>
+<li>解得 $\boxed{u_g=-\Phi_y/f,\quad v_g=\Phi_x/f}$，即 $\mathbf V_g=\mathbf k\times\nabla_p\Phi/f$；大小为 $|\nabla_p\Phi|/|f|$。</li>
+<li>因叉积垂直于梯度，地转风平行于等高线；北半球背风而立时低值在左、高值在右，南半球相反。等高线越密风越强，但还受纬度 $f$ 影响。</li>
+<li>
+<p>近赤道 $f\to0$、摩擦层、强曲率或快速变化的小尺度系统中不能直接采用地转近似。等高面上应改用 $\nabla_zp/\rho$，不要把两种坐标的梯度混用。</p>
+</li>
+<li>
+<p>热成风是两个高度或等压面之间的<strong>地转风差</strong>，不是独立的一股实际风。</p>
+</li>
+<li>静力关系给出 $\Phi_{\ln p}=-RT$。对 $u_g=-\Phi_y/f$、$v_g=\Phi_x/f$ 分别作 $\ln p$ 导数（局地取 $f$ 固定），得
+$$\frac{\partial u_g}{\partial\ln p}=\frac RfT_y,\qquad \frac{\partial v_g}{\partial\ln p}=-\frac RfT_x.$$</li>
+<li>从下层 $p_b$ 积到上层 $p_t&lt;p_b$，若用对数气压平均温度 $\bar T$，则 $u_t-u_b=-(R/f)\ln(p_b/p_t)\bar T_y$、$v_t-v_b=(R/f)\ln(p_b/p_t)\bar T_x$。</li>
+<li>北半球向上的热成风沿平均等温线，冷空气在其左侧。温度向北降低时，西风一般随高度增强。该关系把水平温度梯度和垂直风切变连接起来。</li>
+</ol>
+<h2>原卷第二部分</h2>
+<p>假定大气满足静力平衡，而且是均匀不可压缩流体，下边界为平坦地面，上边界为自由表面，自由表面高度$h = h(x, y, t)$（如图所示）：</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2005_1.md#L232">核对原文</a></p>
+<h3>2019-二-1 · 完整解答</h3>
+<p>地转风运动、惯性运动、旋衡运动都是由什么力平衡的</p>
+<ol>
+<li>在局地直角坐标中，忽略摩擦时水平动量方程为 $Du/Dt-fv=-\Phi_x$、$Dv/Dt+fu=-\Phi_y$，这里的导数取在等压面上。</li>
+<li>对中纬度大尺度缓变运动，$Ro=U/(fL)\ll1$，惯性项相对较小，得到 $-fv_g=-\Phi_x$、$fu_g=-\Phi_y$。</li>
+<li>解得 $\boxed{u_g=-\Phi_y/f,\quad v_g=\Phi_x/f}$，即 $\mathbf V_g=\mathbf k\times\nabla_p\Phi/f$；大小为 $|\nabla_p\Phi|/|f|$。</li>
+<li>因叉积垂直于梯度，地转风平行于等高线；北半球背风而立时低值在左、高值在右，南半球相反。等高线越密风越强，但还受纬度 $f$ 影响。</li>
+<li>
+<p>近赤道 $f\to0$、摩擦层、强曲率或快速变化的小尺度系统中不能直接采用地转近似。等高面上应改用 $\nabla_zp/\rho$，不要把两种坐标的梯度混用。</p>
+</li>
+<li>
+<p>无水平气压梯度、无摩擦、常数 $f$ 时，$\dot u-fv=0$、$\dot v+fu=0$。第一式再对时间求导并用第二式消去 $v$，得 $\ddot u+f^2u=0$。</p>
+</li>
+<li>
+<p>初值 $u(0)=U_0,v(0)=0$ 给 $u=U_0\cos ft$、$v=-U_0\sin ft$。积分得惯性圆半径 $U_0/|f|$，周期 $2\pi/|f|$。北半球顺时针、南半球逆时针；旋转坐标中科氏力提供曲线运动的法向加速度。</p>
+</li>
+<li>
+<p>忽略曲率项即地转平衡；小尺度强涡旋若科氏项远小于曲率项，则 $V^2/r=p_r/\rho$，为旋衡平衡。惯性运动则无压力梯度。三种近似依尺度和受力大小选择。</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>北半球情况</th>
+<th>指向中心的作用</th>
+<th>指离中心的作用（旋转随流受力图）</th>
+<th>正常支风速</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>低压气旋</td>
+<td>压力梯度力</td>
+<td>科氏力、曲率离心惯性项</td>
+<td>梯度风小于地转风</td>
+</tr>
+<tr>
+<td>高压反气旋</td>
+<td>科氏力</td>
+<td>压力梯度力、曲率离心惯性项</td>
+<td>梯度风大于地转风</td>
+</tr>
+</tbody>
+</table>
+<p>曲率离心项是随流受力图中的惯性表示；在地球坐标动量方程中对应向心加速度，不能作为额外真实力重复加入。</p>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/2019.md#L310">核对原文</a></p>
+<h3>1994-一-2 · 完整解答</h3>
+<p>地转风是指水平运动中<strong>气压梯度</strong>力与<strong>科里奥利（地转偏向）</strong>力相互平衡的运动，地转风与<strong>等高</strong>线平行，热成风与<strong>等温</strong>线平行。</p>
+<p><strong>原记录填空值：</strong> 气压梯度；科里奥利（地转偏向）；等高；等温。下文核对其物理含义；出现修改意见时，以修改后的说明为准。</p>
+<ol>
+<li>在局地直角坐标中，忽略摩擦时水平动量方程为 $Du/Dt-fv=-\Phi_x$、$Dv/Dt+fu=-\Phi_y$，这里的导数取在等压面上。</li>
+<li>对中纬度大尺度缓变运动，$Ro=U/(fL)\ll1$，惯性项相对较小，得到 $-fv_g=-\Phi_x$、$fu_g=-\Phi_y$。</li>
+<li>解得 $\boxed{u_g=-\Phi_y/f,\quad v_g=\Phi_x/f}$，即 $\mathbf V_g=\mathbf k\times\nabla_p\Phi/f$；大小为 $|\nabla_p\Phi|/|f|$。</li>
+<li>因叉积垂直于梯度，地转风平行于等高线；北半球背风而立时低值在左、高值在右，南半球相反。等高线越密风越强，但还受纬度 $f$ 影响。</li>
+<li>
+<p>近赤道 $f\to0$、摩擦层、强曲率或快速变化的小尺度系统中不能直接采用地转近似。等高面上应改用 $\nabla_zp/\rho$，不要把两种坐标的梯度混用。</p>
+</li>
+<li>
+<p>热成风是两个高度或等压面之间的<strong>地转风差</strong>，不是独立的一股实际风。</p>
+</li>
+<li>静力关系给出 $\Phi_{\ln p}=-RT$。对 $u_g=-\Phi_y/f$、$v_g=\Phi_x/f$ 分别作 $\ln p$ 导数（局地取 $f$ 固定），得
+$$\frac{\partial u_g}{\partial\ln p}=\frac RfT_y,\qquad \frac{\partial v_g}{\partial\ln p}=-\frac RfT_x.$$</li>
+<li>从下层 $p_b$ 积到上层 $p_t&lt;p_b$，若用对数气压平均温度 $\bar T$，则 $u_t-u_b=-(R/f)\ln(p_b/p_t)\bar T_y$、$v_t-v_b=(R/f)\ln(p_b/p_t)\bar T_x$。</li>
+<li>北半球向上的热成风沿平均等温线，冷空气在其左侧。温度向北降低时，西风一般随高度增强。该关系把水平温度梯度和垂直风切变连接起来。</li>
+</ol>
+<p><a href="https://github.com/0183ty2512/lao-san-yang/blob/main/%E5%8A%A8%E5%8A%9B%E6%B0%94%E8%B1%A1%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E8%AF%95%E9%A2%98%E8%A7%A3%E7%AD%94/%E5%BE%80%E5%B9%B4%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90/1994.md#L53">核对原文</a></p>
+<h2>当日验收</h2>
+<ul>
+<li>[ ] 本日每题均完成至少一次闭卷提取。</li>
+<li>[ ] 精选题写清假设、符号与中间步骤；无漏负号、下标和单位。</li>
+<li>[ ] 能用自己的话解释至少两条跨章节联系。</li>
+<li>[ ] 错题记录包含题号、错因、修正答案及下一次复习日期。</li>
+</ul></article></main><footer>学习整理版 · 非官方评分标准 · 来源见各题链接</footer></body></html>
