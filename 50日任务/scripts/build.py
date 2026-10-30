@@ -20,7 +20,7 @@ for p in sorted([p for p in folder.glob('*.md') if re.fullmatch(r'\d{4}(_1)?',p.
  for i,m in enumerate(ms):
   body=s[m.end():ms[i+1].start() if i+1<len(ms) else len(s)]
   def section(title):
-   match=re.search(r'### '+title+r'\s*\n(.*?)(?=\n### |\Z)',body,re.S); return match[1].strip() if match else ''
+   match=re.search(r'### '+title+r'\s*\n(.*?)(?=\n### |\n## |\Z)',body,re.S); return match[1].strip() if match else ''
   records.append(dict(id=m[1].strip(),p=p,line=s[:m.start()].count('\n')+1,question=section('原题'),short=section('考场精简版与审校状态'),detail=section('详细解答'),body=body))
 assert len(records)==536,len(records)
 import fitz
