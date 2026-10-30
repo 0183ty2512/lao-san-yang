@@ -1,0 +1,14 @@
+const fs=require('fs');
+const {mathjax}=require('./math-render/node_modules/mathjax-full/js/mathjax.js');
+const {TeX}=require('./math-render/node_modules/mathjax-full/js/input/tex.js');
+const {SVG}=require('./math-render/node_modules/mathjax-full/js/output/svg.js');
+const {liteAdaptor}=require('./math-render/node_modules/mathjax-full/js/adaptors/liteAdaptor.js');
+const {RegisterHTMLHandler}=require('./math-render/node_modules/mathjax-full/js/handlers/html.js');
+const {AllPackages}=require('./math-render/node_modules/mathjax-full/js/input/tex/AllPackages.js');
+const adaptor=liteAdaptor();RegisterHTMLHandler(adaptor);
+const doc=mathjax.document('',{InputJax:new TeX({packages:AllPackages}),OutputJax:new SVG({fontCache:'none'})});
+const input=JSON.parse(fs.readFileSync(__dirname+'/formulas.json','utf8'));let errors=[];
+const output=input.map((v,i)=>{let s=adaptor.outerHTML(doc.convert(v.tex,{display:v.display}));if(s.includes('data-mjx-error'))errors.push({i,tex:v.tex});return s;});
+fs.writeFileSync(__dirname+'/rendered.json',JSON.stringify(output));fs.writeFileSync(__dirname+'/math-errors.json',JSON.stringify(errors,null,2));
+console.log('Rendered',output.length,'formulas; errors:',errors.length);
+if(errors.length)process.exitCode=1;
