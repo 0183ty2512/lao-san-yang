@@ -1,0 +1,24 @@
+from pathlib import Path
+import re,json
+root=Path(__file__).resolve().parents[1]
+notes=['水平尺度应交代口径：波长、系统直径与风圈范围不是同一测量。所列为典型量级；龙卷可有超过1 km的个例，不能把小于1 km当物理上限。原解未直接解释超长波和副高，应保留原题范围作经验记忆。', 'Hadley、Ferrel名称及纬带对应正确。前者平均热力直接，后者平均热力间接并由天气涡旋维持；三圈是统计平均而非逐时逐经度实际闭合的三个圈。', '台风眼相对眼墙风弱、常下沉增温，但可有低云，不保证晴朗无云；弱热带气旋未必有清晰眼。暖心指相对同高度周围空气的温度异常，不是所有高度温度都高于地面。', '运动学法适用静力压力坐标：先求$D=\\frac{\\partial u}{\\partial x}+\\frac{\\partial v}{\\partial y}$，给定边界ω，再用$\\omega(p)=\\omega(p_b)-\\int_{p_b}^{p}D(p\\prime)\\,dp\\prime$逐层积分。答8分题须写资料层次、边界及误差累积；求得的是Pa/s，不能直接称m/s。', '定义须包含中高纬、持续准静止及阻挡西风带。建立后可使下游槽与冷暖空气交汇停滞，崩溃后环流恢复东移、冷空气可能释放；降水和寒潮并非必然，须说明阻高位置、水汽与冷源。', '应按要素回答：温度梯度相对弱但不为零；湿度和相当位温梯度强；低层切变、辐合与正涡度明显；暖湿输送及抬升维持雨带。原南段/北段概括已改为西部与东部地域差异，避免错误地把沿锋差异解释成跨锋南北差异。', '原解混入海平面系统，须纠正层次。北半球中高纬500 hPa冬季经向高度梯度较大、西风强偏南，东亚和北美东岸平均槽突出；夏季梯度减弱、西风北移，副高北抬扩展。大陆地面热低压不能直接当作500 hPa大陆低压，南亚高压也不应简单标在500 hPa。', '25分题不能只列四个阶段。应画地面冷暖锋与高空槽配置，写发展期上层槽在地面低压上游、斜压取能及随高度变化的涡度平流和暖平流促上升，潜热可增强发展；成熟后上下层趋于叠置、斜压取能减弱而填塞。这里是理想锋面气旋模型，实际个例可偏离；无关的冷反气旋路径可略。', '直接围绕500 hPa配置作答：西太副高北缘暖湿气流、中高纬阻塞及其间/下游槽引导冷空气，副高与槽脊相对稳定使长江雨带滞留，槽中短波活动可触发降水脉冲；副高北跳或槽脊调整可改变雨带。再用低层急流和上层辐散补充垂直配合，不把它们冒充500 hPa系统。阻塞双中心具体位置须按当年型与教材图说明。']
+source=root.parent/'动力气象课后习题/试题解答/往年试题解析/2003.md'
+ids=re.findall(r'^## 题目 (.+)$',source.read_text(encoding='utf-8'),re.M)
+assert len(ids)==len(notes)
+review=dict(zip(ids,notes))
+(root/'scripts/review_2003.json').write_text(json.dumps(review,ensure_ascii=False,indent=2),encoding='utf-8')
+for p in (root/'每日内容').glob('D*.md'):
+ s=p.read_text(encoding='utf-8')
+ for q,note in review.items():
+  pattern=r'^(### '+re.escape(q)+r'[^\n]*)\n(?:\n\*\*本次复核提示（2026-10-31）：\*\* [^\n]*\n)?'
+  s=re.sub(pattern,lambda m:m[1]+'\n\n**本次复核提示（2026-10-31）：** '+note+'\n',s,flags=re.M)
+ p.write_text(s,encoding='utf-8')
+p=root/'逐题复核记录.md';s=p.read_text(encoding='utf-8').replace('2001、2002年共156条记录','2001、2002、2003年共165条记录').replace('其余380题','其余371题')
+lines=[]
+for line in s.splitlines():
+ m=re.match(r'\| \[([^\]]+)\]',line)
+ if m and m[1] in review:
+  line=line.replace('结构核对完成；学科内容待复核','内容复核（2026-10-31）').replace('仅核对题号、题干/解答段落，未据此宣称答案正确。',review[m[1]].replace('|',r'\|'))
+ lines.append(line)
+p.write_text('\n'.join(lines)+'\n',encoding='utf-8')
+print('Reviewed',len(review),'questions')
