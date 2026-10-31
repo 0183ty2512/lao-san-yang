@@ -1,0 +1,39 @@
+from pathlib import Path
+import re,json
+root=Path(__file__).resolve().parents[1]
+notes=[
+'200 hPa约12 km是代表性高度，气压面高度随温度场变化；70—80 m/s为题设量级，不是观测风速上限。原题130°E的位置与“日本上空”概括应按教材图例理解。',
+'850—700 hPa、12—15 m/s是本题给定的经验尺度，不是所有低空急流的统一定义。暴雨还需水汽、抬升和不稳定条件配合，不能由急流存在单独推出。',
+'原填空存在错误：阿拉伯海属于北印度洋热带气旋活动洋盆，南大西洋也不能表述为绝对无热带气旋。“台风”是地区命名，不能用于排除其他洋盆的同类系统。参考：[NOAA热带气旋洋盆说明](https://www.noaa.gov/jetstream/tropical/tropical-cyclone-introduction)、[NOAA热带气旋问答](https://www.aoml.noaa.gov/hrd/tcfaq/G1.html)。',
+'位涡守恒推导及柱厚比正确；迎风反气旋性、背风气旋性变化的解释限定北半球、固定纬度和固定上界的理想气柱。南半球涡度符号相反，不宜省略半球条件。',
+'直接作答：大气活动中心是多年平均气压场中经常或季节性存在的主要高、低压区域，如冬季西伯利亚高压、阿留申低压及副热带高压。它们可随季节迁移和变强弱，不是每一天固定不动的天气系统；原解开头环流分型可略。',
+'地转风差定义、静力关系和对数气压积分符号正确。有限层厚采用层平均温度，北半球冷空气在向上热成风左侧；上下层下标t、b不表示时间导数。',
+'CISK指积云对流加热与较大尺度低层辐合相互增强的耦合不稳定，区别于单气块条件不稳定。原链条适合作理想化说明；不能据此断言每个扰动都会发展为台风或忽略海面焓通量。',
+'飑线应先定义为有组织的线状对流系统，区别于仅有风向突变的地面飑。冷池、风切变和持续抬升有助维持；冰雹、后部层状雨及每站剧烈降温均非必备特征。',
+'高度差定义需注明气压层、纬带与经度平均范围；高度差单位m，换算的风速单位m/s。高低指数是环流状态概括，指数循环不是严格周期。',
+r'水平动量方程、地转解和半球左右规则核对一致；导数在等压面取值，$Ro=\frac{U}{|f|L}$。仅小平流罗斯贝数还不够，局地变化也应缓慢且摩擦弱；气流强曲率时可能需梯度风平衡。',
+'原解“南段弱、北段强”的地域表述不够准确。梅雨—Baiu锋的西部（中国至日本以西一带）常表现为强湿度/相当位温梯度和较弱温度梯度，东部日本以东斜压性可更强；具体随过程而变。与极锋比较应突出湿度梯度、低层切变和温度斜压性差别，而非说梅雨锋完全没有温差。参考：[西部Baiu锋低压结构研究](https://journals.ametsoc.org/view/journals/clim/36/8/JCLI-D-22-0515.1.xml)。',
+'直接比较成熟结构：台风通常深厚暖心、中心轴较直立、近中心较对称，无典型冷暖锋，强台风常有眼和眼墙，低层入流、高层外流；温带锋面气旋通常明显不对称，伴冷暖锋或锢囚锋，温度梯度强，发展期上下层中心倾斜。温带气旋成熟锢囚后可能趋于垂直，不能把倾斜当作始终不变的特征。龙卷和反气旋分类不属于本题必答内容。',
+'本题要求判断并解释。冬季冷空气过程可重点讨论阻高与大槽对蓄积、路径及爆发的控制，并补充急流动力配置；夏季重点讨论西太副高对水汽、雨带和高温的控制。应给出所讨论季节与天气范围，不把三者排成适用于全国所有过程的固定名次。',
+r'补全输送闭环：在统计稳态下，东风带地表摩擦向大气提供向东角动量，西风带摩擦从大气移走向东角动量；平均经圈环流、定常及瞬变涡旋的经向和垂直输送连接两类区域，山地压力转矩也可参与收支。$M=a\cos\varphi(\Omega a\cos\varphi+u)$为单位质量轴向绝对角动量。$-\overline{u\prime v\prime}\frac{\partial U}{\partial y}$是局地平行基本流中的动能转换，不等于完整球面角动量通量辐合；原波动生命周期图不能替代上述闭环。'
+]
+source=root.parent/'动力气象课后习题/试题解答/往年试题解析/1997.md'
+ids=re.findall(r'^## 题目 (.+)$',source.read_text(encoding='utf-8'),re.M)
+assert len(ids)==len(notes)
+review=dict(zip(ids,notes))
+(root/'scripts/review_1997.json').write_text(json.dumps(review,ensure_ascii=False,indent=2),encoding='utf-8')
+for p in (root/'每日内容').glob('D*.md'):
+ s=p.read_text(encoding='utf-8')
+ for q,note in review.items():
+  pattern=r'^(### '+re.escape(q)+r'[^\n]*)\n(?:\n\*\*本次复核提示（2026-10-31）：\*\* [^\n]*\n)?'
+  s=re.sub(pattern,lambda m:m[1]+'\n\n**本次复核提示（2026-10-31）：** '+note+'\n',s,flags=re.M)
+ p.write_text(s,encoding='utf-8')
+p=root/'逐题复核记录.md';s=p.read_text(encoding='utf-8').replace('1994、1996年共81题','1994、1996、1997年共95题').replace('其余455题','其余441题')
+lines=[]
+for line in s.splitlines():
+ m=re.match(r'\| \[([^\]]+)\]',line)
+ if m and m[1] in review:
+  line=line.replace('结构核对完成；学科内容待复核','内容复核（2026-10-31）').replace('仅核对题号、题干/解答段落，未据此宣称答案正确。',review[m[1]].replace('|',r'\|'))
+ lines.append(line)
+p.write_text('\n'.join(lines)+'\n',encoding='utf-8')
+print('Reviewed',len(review),'questions')
