@@ -1,0 +1,24 @@
+from pathlib import Path
+import re,json
+root=Path(__file__).resolve().parents[1]
+notes=['持续、准静止和阻挡中高纬西风带是定义核心。原解列出的天气效应是依季节位置发生的可能影响，不能将阻高崩溃直接等同我国寒潮。', '正压不稳定取能与Rayleigh–Kuo必要条件的积分证明符号正确；波数取非零，模态需满足指定边界。位涡梯度变号不是充分条件，余弦流幅度例子也不是通用临界风速。', '赤道Kelvin波v为零、内禀东传且高斯束缚；沿岸Kelvin波靠实体边界和横向平衡束缚，北半球岸在传播方向右侧。原解混合波及罗斯贝波是其他模态，不属于本题定义。', 'ENSO为海气耦合年际变率，正反馈可增强异常，波动和热含量调整帮助终止或转相；循环不是固定周期，厄尔尼诺后也不必立即出现拉尼娜。应区分海温异常与南方涛动气压指标。', '净长波冷却与灰体表面修正式正确；向上长波应包含反射的大气辐射，不能只算地表自身发射。E向上为正、Rn向下为正的符号约定要保留。', '教材术语待核：一维均匀西风的群速式解释下游发展，但并未给出课程所称“上游效应”的独立定义。二维群速方向还依波数，不能据此断言所有影响只向东传播；保留术语疑点。', '高空西风急流的狭长结构、强切变、冬强南移夏弱北移及热成风联系正确。原解“题中70—80 m/s”并非本题数据；副热带与极锋急流的维持机制不能完全等同。', '环境引导气流、β漂移、双涡作用及地形影响均已涵盖。引导层厚需依台风深度结构选择，不能固定只看500 hPa；副高边缘只是背景配置，不唯一决定登陆位置。', '原解多为锋区特征，补充形成链：季风暖湿气流与较冷较干空气交汇，变形、辐合及切变加强湿度/相当位温梯度，持续水汽输送与凝结加热反馈维持锋区；中高纬槽脊和副高配置使交汇带滞留。不能只列梅雨天气充当成因。', 'CO₂在红外谱带吸收和发射，浓度增加可减少固定温度场下的向外散热，系统增温调整能量收支；不是长波永久无法逃逸。原路径积分解符号与光学厚度定义一致，条件是局地热力平衡且忽略散射。补充来源：[NASA AIRS观测说明](https://airs.jpl.nasa.gov/news/288/confirming-a-critical-foundation-of-the-science-of-global-warming/)。', '原题待核：若u为速度，uζ与物质导数项量纲不同；假定应为单位s⁻¹的μ并取均匀U，才有$(\\frac{\\partial}{\\partial t}+U\\frac{\\partial}{\\partial x})\\zeta\\prime+\\mu\\zeta\\prime=0$。这是假定修正后的解，不是已确认原卷；刚性侧壁与y无关扰动的可容许性仍需边界定义。', '沿用阻尼修正模型，$\\omega=kU-i\\mu$及时间因子$e^{-\\mu t}$核对一致，μ非负时无指数增长。若题意求切变不稳定，必须补充基本流及边界；不能从当前残缺条件得到唯一正增长率。', '原卷标略，本条仅核对任务范围，保留为拓展阅读，不新增必做任务。原海气通量和环流扩展内容尚未在本轮逐项独立核验。', '动力阻挡绕流、下游定常波与热力高架热源的区分合理；强调对急流、季风和上下层压力配置的作用。南亚高压不只由高原感热决定，季风凝结加热也重要；原解“四种以上”非本题要求。']
+source=root.parent/'动力气象课后习题/试题解答/往年试题解析/2013.md'
+ids=re.findall(r'^## 题目 (.+)$',source.read_text(encoding='utf-8'),re.M)
+assert len(ids)==len(notes)
+review=dict(zip(ids,notes))
+(root/'scripts/review_2013.json').write_text(json.dumps(review,ensure_ascii=False,indent=2),encoding='utf-8')
+for p in (root/'每日内容').glob('D*.md'):
+ s=p.read_text(encoding='utf-8')
+ for q,note in review.items():
+  pattern=r'^(### '+re.escape(q)+r'[^\n]*)\n(?:\n\*\*本次复核提示（2026-11-01）：\*\* [^\n]*\n)?'
+  s=re.sub(pattern,lambda m:m[1]+'\n\n**本次复核提示（2026-11-01）：** '+note+'\n',s,flags=re.M)
+ p.write_text(s,encoding='utf-8')
+p=root/'逐题复核记录.md';s=p.read_text(encoding='utf-8').replace('2011及2012年共274条记录','2011、2012及2013年共288条记录').replace('其中15题','其中18题').replace('3条原卷标略','4条原卷标略').replace('其余262题','其余248题')
+lines=[]
+for line in s.splitlines():
+ m=re.match(r'\| \[([^\]]+)\]',line)
+ if m and m[1] in review:
+  line=line.replace('结构核对完成；学科内容待复核','原卷标略：仅核对任务范围' if m[1]=='2013-四-1' else '内容复核；原卷/教材待核' if m[1] in ['2013-一-6','2013-三-1','2013-三-2'] else '内容复核（2026-11-01）').replace('仅核对题号、题干/解答段落，未据此宣称答案正确。',review[m[1]].replace('|',r'\|'))
+ lines.append(line)
+p.write_text('\n'.join(lines)+'\n',encoding='utf-8')
+print('Reviewed',len(review),'questions')
