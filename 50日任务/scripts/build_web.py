@@ -28,7 +28,7 @@ for m in manifest:
  for i,v in enumerate(saved):content=content.replace('MATHPLACEHOLDER'+str(i)+'TOKEN',v)
  count+=len(saved)
  nav=(f'<a href="D{d-1:02}.html">← 上一天</a>' if d>1 else '')+f'<a href="md/D{d:02}.md" download>下载 MD</a>'+(f'<a href="D{d+1:02}.html">下一天 →</a>' if d<50 else '')
- (out/f'D{d:02}.html').write_text(page(m['title'],'<article><aside>说明：“逐题复核 / 尚未逐题学科审校”是原资料作者的整理标记，本站保留来源状态，不表示官方审定，也不表示本站已经重新审核每道题。以下公式已预先排版，无需等待浏览器加载数学脚本。</aside>'+content+'</article>',nav),encoding='utf-8')
+ (out/f'D{d:02}.html').write_text(page(m['title'],'<article><aside>本轮已检查全部536条记录：479条完成内容复核，28条保留原卷或教材疑点，1条缺题，28条原卷标略仅核对范围。请优先阅读各题复核提示。公式已预先排版，长公式可左右滚动。</aside>'+content+'</article>',nav),encoding='utf-8')
  (out/'md').mkdir(exist_ok=True);shutil.copyfile(root/m['file'],out/'md'/f'D{d:02}.md')
 cards=''.join(f'<a class="card" href="D{m["day"]:02}.html"><small>D{m["day"]:02} / {m["date"]}</small>{html.escape(m["title"])}</a>' for m in manifest)
 body='<h1>每天四小时，把知识写成答案。</h1><p>2026.10.29 — 12.17 · 50天学习计划<br>真题、解析、公式推导与来源，在这里逐日阅读。</p><input id="search" aria-label="搜索学习内容" placeholder="搜索天数、日期或知识点…"><div class="grid">'+cards+'</div><script>document.querySelector("#search").addEventListener("input",e=>document.querySelectorAll(".card").forEach(c=>c.hidden=!c.textContent.toLowerCase().includes(e.target.value.toLowerCase())));</script>'
