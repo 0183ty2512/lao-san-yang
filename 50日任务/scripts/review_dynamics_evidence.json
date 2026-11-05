@@ -1,0 +1,70 @@
+{
+  "2026-三-3": {
+    "note": "课件第63—64页已确认连续式中的λ及两条件λ=0、N=0，热力式速度应为w。λ=0直接得到$\\frac{\\partial w}{\\partial z}=0$；结合非零竖直波数或固定无穿透边界才排除竖直运动。保留退化模态限制，刚盖或静力不自动滤除内波。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/%E5%A4%8D%E6%A0%B8%E4%BE%9D%E6%8D%AE/%E5%8A%A8%E5%8A%9B%E8%AF%BE%E4%BB%B6%E5%A4%8D%E6%A0%B8.md#dyn01)",
+    "status": "内容复核（2026-11-04；课件口径已核）"
+  },
+  "2025-四-1": {
+    "note": "稳态无摩擦伯努利积分、正压压力势和干绝热焓特例已核。课件能确认能量定义，不能恢复原卷缺录的三个起始式；当前仍是注明条件的解答。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/%E5%A4%8D%E6%A0%B8%E4%BE%9D%E6%8D%AE/%E5%8A%A8%E5%8A%9B%E8%AF%BE%E4%BB%B6%E5%A4%8D%E6%A0%B8.md#dyn02)",
+    "status": "内容复核；原卷/教材待核"
+  },
+  "2025-四-2": {
+    "note": "能量组合代数与局地压力项已核；干式守恒需无源汇且局地压力不变，湿式还需稀薄水汽及忽略降水能量等近似。课件整柱积分关系不能当作任意气块gz=RT。原卷三个起始式仍缺录。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/%E5%A4%8D%E6%A0%B8%E4%BE%9D%E6%8D%AE/%E5%8A%A8%E5%8A%9B%E8%AF%BE%E4%BB%B6%E5%A4%8D%E6%A0%B8.md#dyn02)",
+    "status": "内容复核；原卷/教材待核"
+  },
+  "2025-四-3": {
+    "note": "机械伯努利、干湿焓与静力能适用条件已核，静力本身不保证守恒。原卷起始式缺录，教材的能量名称无法确定原卷唯一要求的范围。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/%E5%A4%8D%E6%A0%B8%E4%BE%9D%E6%8D%AE/%E5%8A%A8%E5%8A%9B%E8%AF%BE%E4%BB%B6%E5%A4%8D%E6%A0%B8.md#dyn02)",
+    "status": "内容复核；原卷/教材待核"
+  },
+  "2023-四-1": {
+    "note": "课件尺度分析的科氏项是fU，量纲为加速度；若原题β是$\\frac{\\partial f}{\\partial y}$，则βU量纲不符。将β按f解释仍属修正假设，不能用课件例题替代缺失原卷数据。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/%E5%A4%8D%E6%A0%B8%E4%BE%9D%E6%8D%AE/%E5%8A%A8%E5%8A%9B%E8%AF%BE%E4%BB%B6%E5%A4%8D%E6%A0%B8.md#dyn03)",
+    "status": "内容复核；原卷/教材待核"
+  },
+  "2023-四-2": {
+    "note": "已核对准地转W=εUH/L及βL/f₀=εb的零阶、一阶展开，并将压力偏导简写展开。课件有教学尺度示例，但原卷表格和数据未保存，故保留原卷待核。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/%E5%A4%8D%E6%A0%B8%E4%BE%9D%E6%8D%AE/%E5%8A%A8%E5%8A%9B%E8%AF%BE%E4%BB%B6%E5%A4%8D%E6%A0%B8.md#dyn03)",
+    "status": "内容复核；原卷/教材待核"
+  },
+  "2018-四-整题": {
+    "note": "课件与积分推导均确认Rayleigh–Kuo变号条件仅为必要条件。原题未给基本流剖面、波数或边界，不能求唯一临界风速；余弦流例子只是额外模型的变号门槛。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/%E5%A4%8D%E6%A0%B8%E4%BE%9D%E6%8D%AE/%E5%8A%A8%E5%8A%9B%E8%AF%BE%E4%BB%B6%E5%A4%8D%E6%A0%B8.md#dyn04)",
+    "status": "内容复核；原卷/教材待核"
+  },
+  "2017-一-8": {
+    "note": "课件分别定义无量纲Rossby数Ro与有量纲β参数，但原题“罗斯贝参数”未提供语境，不能确定唯一所指；保留两种定义与单位，不混称。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/%E5%A4%8D%E6%A0%B8%E4%BE%9D%E6%8D%AE/%E5%8A%A8%E5%8A%9B%E8%AF%BE%E4%BB%B6%E5%A4%8D%E6%A0%B8.md#dyn05)",
+    "status": "内容复核；原卷/教材待核"
+  },
+  "2016-四-整题": {
+    "note": "长波课件支持均匀基本流、正压无辐散β平面模型的色散推导；原题只称“给出公式”而未录实际原式，含变形半径或切变的模型不等价，故仍待原卷确认。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/%E5%A4%8D%E6%A0%B8%E4%BE%9D%E6%8D%AE/%E5%8A%A8%E5%8A%9B%E8%AF%BE%E4%BB%B6%E5%A4%8D%E6%A0%B8.md#dyn06)",
+    "status": "内容复核；原卷/教材待核"
+  },
+  "2013-三-1": {
+    "note": "若u为速度，uζ与Dζ/Dt量纲不一致；将其按阻尼率μ解释并取均匀U可核得线性阻尼式，但未找到原卷完整式。侧壁与y无关模态的可容许性也须原边界确认。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/%E5%A4%8D%E6%A0%B8%E4%BE%9D%E6%8D%AE/%E5%8A%A8%E5%8A%9B%E8%AF%BE%E4%BB%B6%E5%A4%8D%E6%A0%B8.md#dyn07)",
+    "status": "内容复核；原卷/教材待核"
+  },
+  "2013-三-2": {
+    "note": "在明确修正为常系数阻尼μ、均匀U的模型中，ω=kU−iμ，振幅增长率为−μ；μ≥0时无指数增长。该条件解不能代替缺失基本流和边界下的切变不稳定答案。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/%E5%A4%8D%E6%A0%B8%E4%BE%9D%E6%8D%AE/%E5%8A%A8%E5%8A%9B%E8%AF%BE%E4%BB%B6%E5%A4%8D%E6%A0%B8.md#dyn07)",
+    "status": "内容复核；原卷/教材待核"
+  },
+  "2010-二-2": {
+    "note": "滤波课件明确使用H(y)，支持修正所存H₀(x)的方向错误；一致β平面基本态满足$g\\frac{\\partial H}{\\partial y}=-f(y)U$。原卷截断模型仍不完整，不能从精确常f动量式直接导出βv项。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/%E5%A4%8D%E6%A0%B8%E4%BE%9D%E6%8D%AE/%E5%8A%A8%E5%8A%9B%E8%AF%BE%E4%BB%B6%E5%A4%8D%E6%A0%B8.md#dyn08)",
+    "status": "内容复核；原卷/教材待核"
+  },
+  "2010-二-3": {
+    "note": "H(y)方向已由课件确认。所列频率式只对应注明的局地系数与散度式截断；它与另一套三方程滤波模型的高频β修正不同，不能拼作全域变系数系统的精确解，原卷模型仍待核。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/%E5%A4%8D%E6%A0%B8%E4%BE%9D%E6%8D%AE/%E5%8A%A8%E5%8A%9B%E8%AF%BE%E4%BB%B6%E5%A4%8D%E6%A0%B8.md#dyn08)",
+    "status": "内容复核；原卷/教材待核"
+  },
+  "2006_1-二-1": {
+    "note": "常f的两条精确动量式与额外βv涡度式一般不相容。课件支持使用选定三方程的局地滤波模型；当前三次式代数已核，但它不是所存四式的精确一般解，原卷截断层级仍待确认。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/%E5%A4%8D%E6%A0%B8%E4%BE%9D%E6%8D%AE/%E5%8A%A8%E5%8A%9B%E8%AF%BE%E4%BB%B6%E5%A4%8D%E6%A0%B8.md#dyn08)",
+    "status": "内容复核；原卷/教材待核"
+  },
+  "2004_1-二-1": {
+    "note": "常f的两条精确动量式与额外βv涡度式一般不相容。课件支持使用选定三方程的局地滤波模型；当前三次式代数已核，但它不是所存四式的精确一般解，原卷截断层级仍待确认。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/%E5%A4%8D%E6%A0%B8%E4%BE%9D%E6%8D%AE/%E5%8A%A8%E5%8A%9B%E8%AF%BE%E4%BB%B6%E5%A4%8D%E6%A0%B8.md#dyn08)",
+    "status": "内容复核；原卷/教材待核"
+  },
+  "2006_1-二-2": {
+    "note": "在上一问声明的局地滤波近似下，区分慢罗斯贝波与快惯性重力波；快波含正负两支，慢波有位涡梯度回复。分类可核，但原卷常f与β项相容性疑点仍适用。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/%E5%A4%8D%E6%A0%B8%E4%BE%9D%E6%8D%AE/%E5%8A%A8%E5%8A%9B%E8%AF%BE%E4%BB%B6%E5%A4%8D%E6%A0%B8.md#dyn08)",
+    "status": "内容复核；原卷/教材待核"
+  },
+  "2004_1-二-2": {
+    "note": "在上一问声明的局地滤波近似下，区分慢罗斯贝波与快惯性重力波；快波含正负两支，慢波有位涡梯度回复。分类可核，但原卷常f与β项相容性疑点仍适用。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/%E5%A4%8D%E6%A0%B8%E4%BE%9D%E6%8D%AE/%E5%8A%A8%E5%8A%9B%E8%AF%BE%E4%BB%B6%E5%A4%8D%E6%A0%B8.md#dyn08)",
+    "status": "内容复核；原卷/教材待核"
+  }
+}

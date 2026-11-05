@@ -1,7 +1,20 @@
 from pathlib import Path
 import json,re,html,markdown,shutil,subprocess
+from urllib.parse import quote
 root=Path(__file__).resolve().parents[1]; out=root.parent/'docs'; out.mkdir(exist_ok=True)
 manifest=json.loads((root/'manifest.json').read_text(encoding='utf-8'))
+review_rows=[line for line in (root/'逐题复核记录.md').read_text(encoding='utf-8').splitlines() if line.startswith('| [')]
+statuses=[line.split(' | ')[1] for line in review_rows]
+pending=sum('待核' in s for s in statuses)
+missing=sum('缺题' in s for s in statuses)
+omitted=sum('仅核对任务范围' in s for s in statuses)
+unread=sum('学科内容待复核' in s for s in statuses)
+reviewed=len(statuses)-pending-missing-omitted-unread
+review_url='https://github.com/0183ty2512/lao-san-yang/blob/main/'+quote('50日任务/逐题复核记录.md')
+review_summary=f'年度题共{len(statuses)}条：{reviewed}条完成内容复核（含28条拓展选读），{pending}条保留原卷或教材疑点，{missing}条缺题。模拟卷另列复核记录。'
+if omitted:review_summary+=f'{omitted}条原卷标略仅核对范围。'
+if unread:review_summary+=f'另有{unread}条未完成内容复核。'
+review_banner=review_summary+'请优先阅读各题复核提示。<a href="'+review_url+'">查看逐题记录与依据</a>。公式已预先排版，长公式可左右滚动。'
 css='''mjx-container{display:inline-block;direction:ltr;text-indent:0;line-height:0}mjx-container[display="true"]{display:block;text-align:center;margin:1em 0}mjx-container svg{overflow:visible;min-width:1px}aside{font-size:14px;color:#52657a;padding:14px;background:#f1f6fb;border-radius:8px;margin-bottom:24px}[hidden]{display:none!important}*{box-sizing:border-box}body{margin:0;background:#f3f5f8;color:#253248;font:17px/1.85 system-ui,"Microsoft YaHei",sans-serif}header,main,footer{max-width:1040px;margin:auto;padding:24px}header{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}a{color:#245dac;text-decoration:none}a:hover{text-decoration:underline}article{background:white;padding:clamp(20px,5vw,64px);border-radius:16px;box-shadow:0 8px 35px #20305009}h1{font-size:clamp(26px,4vw,38px);line-height:1.45}h2{margin-top:48px;border-bottom:1px solid #dce3eb;padding-bottom:12px}h3{margin-top:32px}blockquote{border-left:3px solid #6c90b9;margin:20px 0;padding:10px 20px;background:#f1f6fb}table{display:block;overflow:auto;border-collapse:collapse}td,th{border:1px solid #d9e1eb;padding:9px}mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;padding:10px 0}nav{display:flex;gap:20px;flex-wrap:wrap}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}.card{display:block;padding:22px;background:white;border-radius:12px;border:1px solid #dce3eb}.card small{display:block;color:#64748b}input{padding:12px;font:inherit;width:100%;margin-bottom:25px;border:1px solid #cbd5e1;border-radius:8px}@media print{header,footer{display:none}body{background:white}article{box-shadow:none;padding:0}}'''
 css += '''button{font:inherit;cursor:pointer;border:1px solid #8a9bb0;border-radius:8px;padding:6px 14px;background:#fff;color:#253248}html[data-theme=dark]{color-scheme:dark}html[data-theme=dark] body{background:#101722;color:#dce5ef}html[data-theme=dark] article,html[data-theme=dark] .card{background:#1b2635;border-color:#425269}html[data-theme=dark] a{color:#8fc3ff}html[data-theme=dark] aside,html[data-theme=dark] blockquote{background:#243449;color:#c3d2e4}html[data-theme=dark] input,html[data-theme=dark] button{background:#243449;color:#e6edf5;border-color:#61748e}html[data-theme=dark] .card small{color:#aebed0}html[data-theme=dark] td,html[data-theme=dark] th,html[data-theme=dark] h2{border-color:#425269}@media print{html[data-theme=dark] body,html[data-theme=dark] article{background:white;color:black}}'''
 css += 'article img{max-width:100%;height:auto}article{min-width:0;overflow-wrap:anywhere} .math-scroll{display:inline-block;max-width:100%;overflow-x:auto;overflow-y:hidden;vertical-align:middle;padding:5px 2px} .math-scroll.block{display:block} .math-scroll mjx-container[display="true"]{width:max-content;min-width:100%;overflow:visible} .math-scroll:focus{outline:2px solid #679ace}'
@@ -16,7 +29,7 @@ count=0
 for m in manifest:
  d=m['day']; source=(root/m['file']).read_text(encoding='utf-8'); saved=[]
  source=source.replace('公式采用 GitHub 数学 Markdown，请在 GitHub 正文或 Obsidian 阅读视图打开。','公式已排版显示；下载的Markdown可在Obsidian阅读视图打开。')
- source=source.replace('**审校状态：', '**原资料审校标记（未由本站重新逐题验证）：')
+ source=source.replace('**审校状态：', '**题目审校信息：')
  def protect(match):
   raw=match[0]
   display=raw.startswith('$$') or raw.startswith(r'\[')
@@ -28,10 +41,11 @@ for m in manifest:
  for i,v in enumerate(saved):content=content.replace('MATHPLACEHOLDER'+str(i)+'TOKEN',v)
  count+=len(saved)
  nav=(f'<a href="D{d-1:02}.html">← 上一天</a>' if d>1 else '')+f'<a href="md/D{d:02}.md" download>下载 MD</a>'+(f'<a href="D{d+1:02}.html">下一天 →</a>' if d<50 else '')
- (out/f'D{d:02}.html').write_text(page(m['title'],'<article><aside>本轮已检查全部536条记录：479条完成内容复核，28条保留原卷或教材疑点，1条缺题，28条原卷标略仅核对范围。请优先阅读各题复核提示。公式已预先排版，长公式可左右滚动。</aside>'+content+'</article>',nav),encoding='utf-8')
+ (out/f'D{d:02}.html').write_text(page(m['title'],'<article><aside>'+review_banner+'</aside>'+content+'</article>',nav),encoding='utf-8')
  (out/'md').mkdir(exist_ok=True);shutil.copyfile(root/m['file'],out/'md'/f'D{d:02}.md')
 cards=''.join(f'<a class="card" href="D{m["day"]:02}.html"><small>D{m["day"]:02} / {m["date"]}</small>{html.escape(m["title"])}</a>' for m in manifest)
 body='<h1>每天四小时，把知识写成答案。</h1><p>2026.10.29 — 12.17 · 50天学习计划<br>真题、解析、公式推导与来源，在这里逐日阅读。</p><input id="search" aria-label="搜索学习内容" placeholder="搜索天数、日期或知识点…"><div class="grid">'+cards+'</div><script>document.querySelector("#search").addEventListener("input",e=>document.querySelectorAll(".card").forEach(c=>c.hidden=!c.textContent.toLowerCase().includes(e.target.value.toLowerCase())));</script>'
+body=body.replace('<input id="search"','<p>'+review_summary+' <a href="'+review_url+'">逐题复核记录</a></p><input id="search"')
 (out/'index.html').write_text(page('50日大气科学复习',body),encoding='utf-8');(out/'.nojekyll').touch()
 print('Built 50 pages; protected math expressions:',count)
 

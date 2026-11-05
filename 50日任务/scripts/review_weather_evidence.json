@@ -1,0 +1,135 @@
+{
+  "2020-二-3": {
+    "note": "已找到教材“三类”的明确表述，修正原先按系统归类的答案：这里指锋前暖区暴雨触发，三类是边界层浅薄冷空气侵入、地形抬升/辐合、海陆分布及摩擦差异造成的辐合。地形和海陆边界触发在暖湿不稳定背景下促使气块抬升；不能改答成锋面、低涡/切变、暖区三个并列系统类别。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/scripts/weather_evidence.md#L5)。",
+    "status": "内容复核（2026-11-03）",
+    "evidence": {
+      "section": "W01",
+      "url": "https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/scripts/weather_evidence.md#L5"
+    },
+    "replace_in_question": [
+      {
+        "old": "按触发系统可归纳为锋面抬升、低涡/切变线辐合、暖区中尺度触发三类；暖区中又可有地形、海陆风和冷池边界。此分类不是唯一业务分类，原卷若指定教材三类，应以该命名对应物理机制。",
+        "new": "本题“三类”按本地教材的锋前暖区暴雨触发机制回答：边界层浅薄冷空气侵入；地形抬升或地形辐合（如喇叭口地形）；海陆分布及摩擦差异造成的辐合。暖湿不稳定环境提供能量条件，这些边界层抬升帮助触发对流。"
+      }
+    ]
+  },
+  "2005-四-整题": {
+    "note": "双阻型图已核实：西阻高在乌拉尔山附近、东阻高在雅库茨克附近，两阻间为宽广低槽，南侧约35°—40°N为平直强西风带，冷空气经巴尔喀什湖及贝加尔湖一带南下。再结合副高北缘暖湿输送、江淮低层切变/急流、地面梅雨锋及上层有利辐散说明持续降水；不以一般梅雨定义代替双阻位置。经纬度为典型图示，并非每次过程的硬阈值。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/scripts/weather_evidence.md#L13)。",
+    "status": "内容复核（2026-11-03）",
+    "evidence": {
+      "section": "W02",
+      "url": "https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/scripts/weather_evidence.md#L13"
+    },
+    "replace_in_question": [
+      {
+        "old": "双阻型通常在欧亚中高纬形成两处阻塞、其间冷槽南伸，与低纬副高北侧暖湿气流相遇；两阻的精确中心依原教材图例而定。",
+        "new": "双阻型的西阻高在乌拉尔山附近、东阻高在雅库茨克附近，两者之间为宽广低槽，南侧约35°—40°N为平直强西风带。冷空气可经巴尔喀什湖和贝加尔湖一带南下，与副高北侧暖湿气流持续交汇。"
+      }
+    ]
+  },
+  "2002-五-整题": {
+    "note": "本地课件已明确：通常造成最强寒潮的是西北路（中路），从关键区经蒙古高原至河套，再向长江中下游和江南推进；路径短、地势有利使冷空气较快南下。作答同时列西路、东路，并补东/西路汇合。这里是课件的通常强度倾向，不表示每一次灾害损失必以西北路最大。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/scripts/weather_evidence.md#L21)。",
+    "status": "内容复核（2026-11-03）",
+    "evidence": {
+      "section": "W03",
+      "url": "https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/scripts/weather_evidence.md#L21"
+    },
+    "replace_in_question": [
+      {
+        "old": "多路冷空气汇合时范围和强度可增大，但不存在不问强度、地形、水汽就永远“最严重”的一路。",
+        "new": "多路冷空气汇合时范围和强度可增大。按本地课件，通常造成最强寒潮的是西北路（中路）：从河套向较低纬地区路径短、地势有利，冷空气可迅速南下；这是一般强度倾向，具体灾害仍取决于冷空气、水汽和暴露条件。"
+      }
+    ]
+  },
+  "1999-一-1": {
+    "note": "已找到本地教学年份依据：《暴雨是如何形成的》第3页把1954和1991均列入长江流域暴雨洪水例子，也另举1991江淮暴雨。因此按本题较宽的东部地区洪涝口径，可保留“长江流域（中下游）；1954；1991”。仍须区分1991的江淮突出灾区与1954、1998的长江大洪水范围；教学举例不等于各次均为全流域同步洪水，也不冒称原卷官方评分表。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/scripts/weather_evidence.md#L29)。",
+    "status": "内容复核（2026-11-03）",
+    "evidence": {
+      "section": "W04",
+      "url": "https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/scripts/weather_evidence.md#L29"
+    },
+    "replace_in_question": []
+  },
+  "2021-三-3": {
+    "note": "已补足分类的证据边界：倒Ω型中期预报重点是两大洋异常暖脊；乌拉尔山脊的发展分补充、叠加、结合型；短中期斜压扰动过程分横槽、小槽发展、低槽东移型。共性是冷空气酝酿、槽脊调整和冷高压/冷锋南下，差异为组织方式与路径。题干未给“关键系统”的预报时效和上下文，不能把这三个层次混成唯一分类，原卷指代仍待核。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/scripts/weather_evidence.md#L37)。",
+    "status": "内容复核；原卷/教材待核",
+    "evidence": {
+      "section": "W05",
+      "url": "https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/scripts/weather_evidence.md#L37"
+    },
+    "replace_in_question": []
+  },
+  "1996-四-3": {
+    "note": "保留“第二类”待核，并已找到不能凭编号猜答的实证：本地两套课件对短中期三类排列不同，一套第二项为小槽发展型，另一套第二项为低槽东移型；中期过程的第二项又是极涡偏心型。物理演变可分别学习，但须原教材分类表才能指定本题第二类，不能把通用寒潮过程当作完整专指答案。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/scripts/weather_evidence.md#L37)。",
+    "status": "内容复核；原卷/教材待核",
+    "evidence": {
+      "section": "W05",
+      "url": "https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/scripts/weather_evidence.md#L37"
+    },
+    "replace_in_question": []
+  },
+  "1998-三-3": {
+    "note": "本地西风波动课件按高空流型相对纬圈的走向列出纬向、经向两种基本型：纬向型较平直，南北交换弱；经向型南北向气流强，可伴大型闭合高低压。同一时刻不同区域可并存、随时间可互转；“混合/过渡”是状态描述，该课件未把它列为第三个同等基本类型。原卷所指半球总体分类体系仍缺明确对应，不将原解三类口径直接认定为唯一答案。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/scripts/weather_evidence.md#L45)。",
+    "status": "内容复核；原卷/教材待核",
+    "evidence": {
+      "section": "W06",
+      "url": "https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/scripts/weather_evidence.md#L45"
+    },
+    "replace_in_question": [
+      {
+        "old": "环流分型可依槽脊数目、振幅、位置和优势流向分为纬向型、经向型及过渡/混合型；其他教材还按区域槽脊位置作更细分类。大气活动中心是多年平均气压场中持续或季节性出现的主要高低压区，位置和强度的变化组织区域天气。",
+        "new": "若按本地课件的高空西风波状流型分型，以气流相对纬圈的走向及槽脊经向振幅为依据，分纬向、经向两种基本型。纬向型较平直、南北交换弱；经向型南北气流强，可形成大型闭合高低压。两型可在不同区域并存，也可随时间互转。“混合/过渡”可描述这类状态，不能自动作为本课件规定的第三基本型；原题若另指半球总体分类体系，仍需该体系原表确认。"
+      }
+    ]
+  },
+  "1996-四-4": {
+    "note": "本地西风波动课件按高空流型相对纬圈的走向列出纬向、经向两种基本型：纬向型较平直，南北交换弱；经向型南北向气流强，可伴大型闭合高低压。同一时刻不同区域可并存、随时间可互转；“混合/过渡”是状态描述，该课件未把它列为第三个同等基本类型。原卷所指半球总体分类体系仍缺明确对应，不将原解三类口径直接认定为唯一答案。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/scripts/weather_evidence.md#L45)。",
+    "status": "内容复核；原卷/教材待核",
+    "evidence": {
+      "section": "W06",
+      "url": "https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/scripts/weather_evidence.md#L45"
+    },
+    "replace_in_question": [
+      {
+        "old": "环流分型可依槽脊数目、振幅、位置和优势流向分为纬向型、经向型及过渡/混合型；其他教材还按区域槽脊位置作更细分类。大气活动中心是多年平均气压场中持续或季节性出现的主要高低压区，位置和强度的变化组织区域天气。",
+        "new": "若按本地课件的高空西风波状流型分型，以气流相对纬圈的走向及槽脊经向振幅为依据，分纬向、经向两种基本型。纬向型较平直、南北交换弱；经向型南北气流强，可形成大型闭合高低压。两型可在不同区域并存，也可随时间互转。“混合/过渡”可描述这类状态，不能自动作为本课件规定的第三基本型；原题若另指半球总体分类体系，仍需该体系原表确认。"
+      }
+    ]
+  },
+  "2000-一-2": {
+    "note": "冬季高发区的指定三地区仍待核：一般阻塞形成机制不能验证空间频率表，需匹配冬季、纬带、阻塞判据和样本期的依据。原填“乌拉尔、鄂霍次克海、北大西洋东部”暂作原资料记录，不认定为已查证的唯一冬季列表；也不能据夏季阻高常见便断言鄂霍次克海冬季从不高发。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/scripts/weather_evidence.md#L53)。",
+    "status": "内容复核；原卷/教材待核",
+    "evidence": {
+      "section": "W07",
+      "url": "https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/scripts/weather_evidence.md#L53"
+    },
+    "replace_in_question": []
+  },
+  "1998-一-3": {
+    "note": "冬季高发区的指定三地区仍待核：一般阻塞形成机制不能验证空间频率表，需匹配冬季、纬带、阻塞判据和样本期的依据。原填“乌拉尔、鄂霍次克海、北大西洋东部”暂作原资料记录，不认定为已查证的唯一冬季列表；也不能据夏季阻高常见便断言鄂霍次克海冬季从不高发。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/scripts/weather_evidence.md#L53)。",
+    "status": "内容复核；原卷/教材待核",
+    "evidence": {
+      "section": "W07",
+      "url": "https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/scripts/weather_evidence.md#L53"
+    },
+    "replace_in_question": []
+  },
+  "1992-一-1": {
+    "note": "冬季高发区的指定三地区仍待核：一般阻塞形成机制不能验证空间频率表，需匹配冬季、纬带、阻塞判据和样本期的依据。原填“乌拉尔、鄂霍次克海、北大西洋东部”暂作原资料记录，不认定为已查证的唯一冬季列表；也不能据夏季阻高常见便断言鄂霍次克海冬季从不高发。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/scripts/weather_evidence.md#L53)。",
+    "status": "内容复核；原卷/教材待核",
+    "evidence": {
+      "section": "W07",
+      "url": "https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/scripts/weather_evidence.md#L53"
+    },
+    "replace_in_question": []
+  },
+  "2026-二-1": {
+    "note": "本地降水课件支持旺盛积雨云、过冷水、干湿增长及雹云内气流结构，但未找到固定“五个共同特征”表。因此现有五方面只能是机制性归纳，强雷电/阵风等伴随现象不是每个雹云的必备特征；指定五项原文仍待核，不能据物理上合理就标作唯一教材答案。 [课件页码与核对依据](https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/scripts/weather_evidence.md#L59)。",
+    "status": "内容复核；原卷/教材待核",
+    "evidence": {
+      "section": "W08",
+      "url": "https://github.com/0183ty2512/lao-san-yang/blob/main/50%E6%97%A5%E4%BB%BB%E5%8A%A1/scripts/weather_evidence.md#L59"
+    },
+    "replace_in_question": []
+  }
+}
