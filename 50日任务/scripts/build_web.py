@@ -1,59 +1,98 @@
+"""Build the GitHub Pages reader from the same Markdown files used for email."""
+from hashlib import sha256
+from html import escape
 from pathlib import Path
-import json,re,html,markdown,shutil,subprocess
 from urllib.parse import quote
-root=Path(__file__).resolve().parents[1]; out=root.parent/'docs'; out.mkdir(exist_ok=True)
-manifest=json.loads((root/'manifest.json').read_text(encoding='utf-8'))
-review_rows=[line for line in (root/'逐题复核记录.md').read_text(encoding='utf-8').splitlines() if line.startswith('| [')]
-statuses=[line.split(' | ')[1] for line in review_rows]
-pending=sum('待核' in s for s in statuses)
-missing=sum('缺题' in s for s in statuses)
-omitted=sum('仅核对任务范围' in s for s in statuses)
-unread=sum('学科内容待复核' in s for s in statuses)
-reviewed=len(statuses)-pending-missing-omitted-unread
-review_url='https://github.com/0183ty2512/lao-san-yang/blob/main/'+quote('50日任务/逐题复核记录.md')
-review_summary=f'年度题共{len(statuses)}条：{reviewed}条完成内容复核（含28条拓展选读），{pending}条保留原卷或教材疑点，{missing}条缺题。模拟卷另列复核记录。'
-if omitted:review_summary+=f'{omitted}条原卷标略仅核对范围。'
-if unread:review_summary+=f'另有{unread}条未完成内容复核。'
-review_banner=review_summary+'请优先阅读各题复核提示。<a href="'+review_url+'">查看逐题记录与依据</a>。公式已预先排版，长公式可左右滚动。'
-css='''mjx-container{display:inline-block;direction:ltr;text-indent:0;line-height:0}mjx-container[display="true"]{display:block;text-align:center;margin:1em 0}mjx-container svg{overflow:visible;min-width:1px}aside{font-size:14px;color:#52657a;padding:14px;background:#f1f6fb;border-radius:8px;margin-bottom:24px}[hidden]{display:none!important}*{box-sizing:border-box}body{margin:0;background:#f3f5f8;color:#253248;font:17px/1.85 system-ui,"Microsoft YaHei",sans-serif}header,main,footer{max-width:1040px;margin:auto;padding:24px}header{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}a{color:#245dac;text-decoration:none}a:hover{text-decoration:underline}article{background:white;padding:clamp(20px,5vw,64px);border-radius:16px;box-shadow:0 8px 35px #20305009}h1{font-size:clamp(26px,4vw,38px);line-height:1.45}h2{margin-top:48px;border-bottom:1px solid #dce3eb;padding-bottom:12px}h3{margin-top:32px}blockquote{border-left:3px solid #6c90b9;margin:20px 0;padding:10px 20px;background:#f1f6fb}table{display:block;overflow:auto;border-collapse:collapse}td,th{border:1px solid #d9e1eb;padding:9px}mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;padding:10px 0}nav{display:flex;gap:20px;flex-wrap:wrap}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}.card{display:block;padding:22px;background:white;border-radius:12px;border:1px solid #dce3eb}.card small{display:block;color:#64748b}input{padding:12px;font:inherit;width:100%;margin-bottom:25px;border:1px solid #cbd5e1;border-radius:8px}@media print{header,footer{display:none}body{background:white}article{box-shadow:none;padding:0}}'''
-css += '''button{font:inherit;cursor:pointer;border:1px solid #8a9bb0;border-radius:8px;padding:6px 14px;background:#fff;color:#253248}html[data-theme=dark]{color-scheme:dark}html[data-theme=dark] body{background:#101722;color:#dce5ef}html[data-theme=dark] article,html[data-theme=dark] .card{background:#1b2635;border-color:#425269}html[data-theme=dark] a{color:#8fc3ff}html[data-theme=dark] aside,html[data-theme=dark] blockquote{background:#243449;color:#c3d2e4}html[data-theme=dark] input,html[data-theme=dark] button{background:#243449;color:#e6edf5;border-color:#61748e}html[data-theme=dark] .card small{color:#aebed0}html[data-theme=dark] td,html[data-theme=dark] th,html[data-theme=dark] h2{border-color:#425269}@media print{html[data-theme=dark] body,html[data-theme=dark] article{background:white;color:black}}'''
-css += 'article img{max-width:100%;height:auto}article{min-width:0;overflow-wrap:anywhere} .math-scroll{display:inline-block;max-width:100%;overflow-x:auto;overflow-y:hidden;vertical-align:middle;padding:5px 2px} .math-scroll.block{display:block} .math-scroll mjx-container[display="true"]{width:max-content;min-width:100%;overflow:visible} .math-scroll:focus{outline:2px solid #679ace}'
-(out/'style.css').write_text(css,encoding='utf-8')
-(out/'theme.js').write_text('''(()=>{const key='study-theme';let saved;try{saved=localStorage.getItem(key)}catch{};let theme=saved==='dark'||saved==='light'?saved:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');function apply(){document.documentElement.dataset.theme=theme;const b=document.getElementById('theme-toggle');if(b){b.textContent=theme==='dark'?'☀ 明亮模式':'☾ 黑暗模式';b.setAttribute('aria-pressed',String(theme==='dark'))}}apply();document.addEventListener('DOMContentLoaded',()=>{apply();document.getElementById('theme-toggle').addEventListener('click',()=>{theme=theme==='dark'?'light':'dark';try{localStorage.setItem(key,theme)}catch{}apply()})})})();''',encoding='utf-8')
-math=''
-expressions=[]
+import json
+import re
+import shutil
+import subprocess
 
-def page(title,body,nav=''):
- return '<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+html.escape(title)+'</title><script src="theme.js"></script><link rel="stylesheet" href="style.css">'+math+'</head><body><header><a href="index.html">大气科学 · 50日复习</a><nav>'+nav+'<button id="theme-toggle" type="button" aria-label="切换明亮或黑暗模式">切换主题</button></nav></header><main>'+body+'</main><footer>学习整理版 · 非官方评分标准 · 来源见各题链接</footer></body></html>'
-count=0
-for m in manifest:
- d=m['day']; source=(root/m['file']).read_text(encoding='utf-8'); saved=[]
- source=source.replace('公式采用 GitHub 数学 Markdown，请在 GitHub 正文或 Obsidian 阅读视图打开。','公式已排版显示；下载的Markdown可在Obsidian阅读视图打开。')
- source=source.replace('**审校状态：', '**题目审校信息：')
- def protect(match):
-  raw=match[0]
-  display=raw.startswith('$$') or raw.startswith(r'\[')
-  trim=2 if raw.startswith(('$$',r'\(',r'\[')) else 1
-  idx=len(expressions);expressions.append({'tex':raw[trim:-trim], 'display':display})
-  saved.append('SVGFORMULA'+str(idx)+'END');return 'MATHPLACEHOLDER'+str(len(saved)-1)+'TOKEN'
- source=re.sub(r'\$\$[\s\S]*?\$\$|\\\([\s\S]*?\\\)|\\\[[\s\S]*?\\\]|(?<!\\)\$(?!\$)[^$]+?(?<!\\)\$',protect,source)
- content=markdown.markdown(source,extensions=['tables','fenced_code','sane_lists'])
- for i,v in enumerate(saved):content=content.replace('MATHPLACEHOLDER'+str(i)+'TOKEN',v)
- count+=len(saved)
- nav=(f'<a href="D{d-1:02}.html">← 上一天</a>' if d>1 else '')+f'<a href="md/D{d:02}.md" download>下载 MD</a>'+(f'<a href="D{d+1:02}.html">下一天 →</a>' if d<50 else '')
- (out/f'D{d:02}.html').write_text(page(m['title'],'<article><aside>'+review_banner+'</aside>'+content+'</article>',nav),encoding='utf-8')
- (out/'md').mkdir(exist_ok=True);shutil.copyfile(root/m['file'],out/'md'/f'D{d:02}.md')
-cards=''.join(f'<a class="card" href="D{m["day"]:02}.html"><small>D{m["day"]:02} / {m["date"]}</small>{html.escape(m["title"])}</a>' for m in manifest)
-body='<h1>每天四小时，把知识写成答案。</h1><p>2026.10.29 — 12.17 · 50天学习计划<br>真题、解析、公式推导与来源，在这里逐日阅读。</p><input id="search" aria-label="搜索学习内容" placeholder="搜索天数、日期或知识点…"><div class="grid">'+cards+'</div><script>document.querySelector("#search").addEventListener("input",e=>document.querySelectorAll(".card").forEach(c=>c.hidden=!c.textContent.toLowerCase().includes(e.target.value.toLowerCase())));</script>'
-body=body.replace('<input id="search"','<p>'+review_summary+' <a href="'+review_url+'">逐题复核记录</a></p><input id="search"')
-(out/'index.html').write_text(page('50日大气科学复习',body),encoding='utf-8');(out/'.nojekyll').touch()
-print('Built 50 pages; protected math expressions:',count)
+import markdown
+from web_layout import index_body, lesson_header, page
+from web_outline import prepare_outline
 
-(root/'scripts/formulas.json').write_text(json.dumps(expressions,ensure_ascii=False),encoding='utf-8')
-subprocess.run(['node',str(root/'scripts/render_math.cjs')],check=True)
-rendered=json.loads((root/'scripts/rendered.json').read_text(encoding='utf-8'))
-for p in out.glob('D*.html'):
- text=p.read_text(encoding='utf-8')
- text=re.sub(r'SVGFORMULA(\d+)END',lambda m: '<span class="math-scroll'+(' block' if expressions[int(m[1])]['display'] else '')+'" tabindex="0" role="region" aria-label="数学公式，可横向滚动">'+rendered[int(m[1])]+'</span>',text)
- p.write_text(text,encoding='utf-8')
-print('Embedded all formula SVGs')
+
+scripts = Path(__file__).resolve().parent
+root = scripts.parent
+out = root.parent / 'docs'
+manifest = json.loads((root / 'manifest.json').read_text(encoding='utf-8'))
+review_url = 'https://github.com/0183ty2512/lao-san-yang/blob/main/' + quote('50日任务/逐题复核记录.md')
+math_pattern = re.compile(r'\$\$[\s\S]*?\$\$|\\\([\s\S]*?\\\)|\\\[[\s\S]*?\\\]|(?<!\\)\$(?!\$)[^$]+?(?<!\\)\$')
+expressions = []
+
+
+def save_math(match):
+    raw = match[0]
+    paired = raw.startswith(('$$', r'\(', r'\['))
+    trim = 2 if paired else 1
+    number = len(expressions)
+    expressions.append({'tex': raw[trim:-trim], 'display': raw.startswith(('$$', r'\['))})
+    return f'SVGFORMULA{number}END'
+
+
+def review_note():
+    rows = (root / '逐题复核记录.md').read_text(encoding='utf-8').splitlines()
+    statuses = [row.split(' | ')[1] for row in rows if row.startswith('| [')]
+    pending = sum('待核' in value for value in statuses)
+    missing = sum('缺题' in value for value in statuses)
+    scoped = sum('仅核对任务范围' in value for value in statuses)
+    unchecked = sum('学科内容待复核' in value for value in statuses)
+    reviewed = len(statuses) - pending - missing - scoped - unchecked
+    summary = f'年度题共{len(statuses)}条，{reviewed}条完成内容复核，{pending}条待核，{missing}条缺题。'
+    if scoped or unchecked:
+        summary += f'{scoped}条仅核对任务范围，{unchecked}条尚待内容复核。'
+    return ('<details class="review-note"><summary>资料来源与复核记录</summary><p>课程依据原50日计划和仓库学习资料整理。'
+            + escape(summary) + f'模拟卷单列复核。 <a href="{review_url}">查看逐题记录与依据</a></p></details>')
+
+
+def prepare_lesson(item):
+    text = (root / item['file']).read_text(encoding='utf-8')
+    # The shared title, date, workload and source note are presented in the reader header.
+    first_section = re.search(r'^## ', text, re.M)
+    if not first_section:
+        raise ValueError(f"日课缺少章节：{item['file']}")
+    body = text[first_section.start():].replace('**审校状态：', '**题目审校信息：')
+    protected = math_pattern.sub(save_math, body)
+    content = markdown.markdown(protected, extensions=['tables', 'fenced_code', 'sane_lists'])
+    return prepare_outline(content, text)
+
+
+def main():
+    lessons = [prepare_lesson(item) for item in manifest]
+    (scripts / 'formulas.json').write_text(json.dumps(expressions, ensure_ascii=False), encoding='utf-8')
+    subprocess.run(['node', str(scripts / 'render_math.cjs')], check=True)
+    rendered = json.loads((scripts / 'rendered.json').read_text(encoding='utf-8'))
+    if len(rendered) != len(expressions):
+        raise ValueError('公式数量与排版结果不一致')
+
+    def formula(match):
+        number = int(match[1])
+        style = 'math-scroll block' if expressions[number]['display'] else 'math-scroll'
+        return (f'<span class="{style}" tabindex="0" role="region" aria-label="数学公式，可横向滚动">'
+                + rendered[number] + '</span>')
+
+    out.mkdir(exist_ok=True)
+    (out / 'md').mkdir(exist_ok=True)
+    css = (scripts / 'web/reader.css').read_bytes()
+    js = (scripts / 'web/reader.js').read_bytes()
+    version = sha256(css + js).hexdigest()[:12]
+    (out / 'style.css').write_bytes(css)
+    (out / 'theme.js').write_bytes(js)
+    review = review_note()
+    for item, (content, sections) in zip(manifest, lessons):
+        number = item['day']
+        content = re.sub(r'SVGFORMULA(\d+)END', formula, content)
+        body = (lesson_header(item, len(manifest)) +
+                '<article class="lesson-paper"><div class="lesson-content">' + content + '</div></article>' + review)
+        document = page(f"D{number:02} · {item['title']}", body, manifest, number, sections, version)
+        (out / f'D{number:02}.html').write_text(document, encoding='utf-8')
+        shutil.copyfile(root / item['file'], out / 'md' / f'D{number:02}.md')
+    index = page('大气科学50日复习计划', index_body(manifest, review), manifest, asset_version=version)
+    (out / 'index.html').write_text(index, encoding='utf-8')
+    (out / '.nojekyll').touch()
+    print(f'Built {len(manifest)} lessons, {sum(len(entries) for _, entries in lessons)} outline entries, {len(rendered)} formulas.')
+
+
+if __name__ == '__main__':
+    main()
