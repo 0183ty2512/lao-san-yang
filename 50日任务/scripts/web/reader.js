@@ -280,10 +280,74 @@
     }
   }
 
+  function setupReadingPosition() {
+    const key = 'study-reading-position';
+    const resume = document.getElementById('resume-reading');
+    function updateResume() {
+      if (!resume) return;
+      resume.hidden = true;
+      try {
+        const saved = JSON.parse(readSetting(key));
+        if (!saved || !/^D(?:0[1-9]|[1-4]\d|50)$/.test(saved.day)
+          || typeof saved.anchor !== 'string' || !saved.anchor || saved.anchor.length > 500
+          || typeof saved.label !== 'string' || !saved.label || saved.label.length > 500) return;
+        resume.href = saved.day + '.html#' + encodeURIComponent(saved.anchor);
+        resume.querySelector('[data-resume-day]').textContent = '继续上次阅读 · ' + saved.day;
+        resume.querySelector('[data-resume-label]').textContent = saved.label;
+        resume.hidden = false;
+      } catch {
+        // Invalid or unavailable browser storage leaves the shortcut hidden.
+      }
+    }
+    updateResume();
+    window.addEventListener('pageshow', updateResume);
+    window.addEventListener('storage', event => {
+      if (event.key === key || event.key === null) updateResume();
+    });
+
+    const day = location.pathname.match(/\/(D(?:0[1-9]|[1-4]\d|50))\.html$/);
+    if (!day) return;
+    const headings = [...document.querySelectorAll('#toc-sections .toc-entry')].map(link => {
+      const target = document.getElementById(decodeURIComponent(link.hash.slice(1)));
+      return { target, label: link.querySelector('.entry-label').textContent.trim() };
+    }).filter(item => item.target && item.target.closest('.lesson-content'));
+    let timer;
+    let engaged = false;
+    let lastSaved = '';
+    function savePosition() {
+      clearTimeout(timer);
+      if (!engaged) return;
+      const edge = document.querySelector('.site-header').getBoundingClientRect().bottom + 24;
+      let current;
+      for (const item of headings) {
+        if (item.target.getBoundingClientRect().top > edge) break;
+        current = item;
+      }
+      if (!current) return;
+      const value = JSON.stringify({ day: day[1], anchor: current.target.id, label: current.label });
+      if (value !== lastSaved) {
+        saveSetting(key, value);
+        lastSaved = value;
+      }
+    }
+    function scheduleSave() {
+      engaged = true;
+      clearTimeout(timer);
+      timer = setTimeout(savePosition, 180);
+    }
+    window.addEventListener('scroll', scheduleSave, { passive: true });
+    window.addEventListener('hashchange', scheduleSave);
+    window.addEventListener('pagehide', savePosition);
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') savePosition();
+    });
+  }
+
   function init() {
     setupPreferences();
     setupDirectory();
     setupCatalog();
+    setupReadingPosition();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
   else init();

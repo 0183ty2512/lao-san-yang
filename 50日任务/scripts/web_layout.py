@@ -111,7 +111,8 @@ def index_body(manifest, review):
 <span class="card-title">{escape(item["title"])}</span><span class="card-arrow">{icon("arrow")}</span></a>''')
     return f'''<section class="hero">{contours()}<p class="eyebrow">2026.10.29 — 12.17</p>
 <h1>大气科学<span>50日复习计划</span></h1><p class="hero-meta">每天四小时，复习动力气象、天气学与大气物理。</p>
-<a href="D01.html" class="hero-action" id="open-today"><span data-action-label>从 D01 开始</span>{icon("arrow")}</a></section>
+<a href="D01.html" class="hero-action" id="open-today"><span data-action-label>从 D01 开始</span>{icon("arrow")}</a>
+<a id="resume-reading" class="resume-reading" hidden><strong data-resume-day></strong><span data-resume-label></span>{icon("arrow")}</a></section>
 <section aria-labelledby="catalog-title"><div class="catalog-head"><h2 id="catalog-title">每日课程</h2>
 <input id="search" type="search" aria-label="搜索课程" placeholder="搜索天数、日期或知识点"></div>
 <div class="grid">{''.join(cards)}</div><p class="empty-state" id="catalog-empty" hidden>没有找到课程，试试其他日期或知识点。</p></section>{review}'''

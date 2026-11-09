@@ -97,6 +97,35 @@ with sync_playwright() as p:
     page.set_viewport_size({'width':390,'height':844})
     page.locator('.math-scroll').filter(has=page.locator('mjx-container')).last.scroll_into_view_if_needed()
     page.screenshot(path=str(root/'scripts/verification/D44-formula-mobile.png'))
+    # A real question jump survives another day's top and returns from the index.
+    page.goto(base+'/index.html')
+    page.evaluate("localStorage.removeItem('study-reading-position')")
+    page.reload()
+    assert page.locator('#resume-reading').is_hidden()
+    page.evaluate("localStorage.setItem('study-reading-position', '{broken')")
+    page.reload()
+    assert page.locator('#resume-reading').is_hidden()
+    page.goto(base+'/D08.html')
+    page.locator(target).evaluate('(e)=>e.scrollIntoView({block:"start"})')
+    page.wait_for_function('''anchor => {
+        try {return JSON.parse(localStorage.getItem('study-reading-position')).anchor === anchor}
+        catch {return false}
+    }''',arg=target[1:])
+    saved=page.evaluate("localStorage.getItem('study-reading-position')")
+    page.goto(base+'/D11.html')
+    page.locator('.brand').click()
+    assert page.evaluate("localStorage.getItem('study-reading-position')")==saved
+    assert page.locator('#resume-reading').is_visible()
+    assert 'D08' in page.locator('#resume-reading').inner_text()
+    for width in [320,1280]:
+        page.set_viewport_size({'width':width,'height':900})
+        assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1')
+        page.screenshot(path=str(root/f'scripts/verification/reader-resume-{width}.png'))
+    page.locator('#resume-reading').click()
+    page.wait_for_url('**/D08.html#*')
+    assert page.evaluate('decodeURIComponent(location.hash)')==target
+    box=page.locator(target).bounding_box()
+    assert page.locator('.site-header').bounding_box()['height']<=box['y']<page.viewport_size['height']
     browser.close()
 server.shutdown()
 bad=[r for r in results if r['overflow'] or r['errors'] or r['brokenImages'] or r['brokenAnchors'] or r['rawTex']]

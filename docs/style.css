@@ -225,6 +225,25 @@ html[data-theme="dark"] .theme-dark { display: inline-block; }
 }
 .hero-action:hover { color: #fff; background: #1b7169; }
 .hero-action:focus-visible, .lesson-hero a:focus-visible { outline-color: #d5eec9; }
+.resume-reading {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 44px;
+  margin-top: 14px;
+  padding: 8px 0;
+  color: var(--hero-text);
+  font-size: 14px;
+  text-decoration: none;
+}
+.resume-reading[hidden] { display: none; }
+.resume-reading span { color: var(--hero-muted); overflow-wrap: anywhere; }
+.resume-reading svg { width: 16px; height: 16px; flex-shrink: 0; }
+.resume-reading:hover strong { text-decoration: underline; text-underline-offset: 4px; }
+.resume-reading:focus-visible { outline-color: #d5eec9; }
 .hero p, .lesson-hero p { color: var(--hero-muted); }
 .hero :last-child, .lesson-hero :last-child { margin-bottom: 0; }
 .hero-meta { flex-wrap: wrap; gap: 6px 18px; color: var(--hero-muted); font-size: 14px; }
