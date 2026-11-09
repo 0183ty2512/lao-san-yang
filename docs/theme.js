@@ -313,7 +313,6 @@
     }).filter(item => item.target && item.target.closest('.lesson-content'));
     let timer;
     let engaged = false;
-    let lastSaved = '';
     function savePosition() {
       clearTimeout(timer);
       if (!engaged) return;
@@ -325,9 +324,8 @@
       }
       if (!current) return;
       const value = JSON.stringify({ day: day[1], anchor: current.target.id, label: current.label });
-      if (value !== lastSaved) {
+      if (value !== readSetting(key)) {
         saveSetting(key, value);
-        lastSaved = value;
       }
     }
     function scheduleSave() {

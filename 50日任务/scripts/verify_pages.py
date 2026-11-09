@@ -13,7 +13,8 @@ threading.Thread(target=server.serve_forever,daemon=True).start()
 results=[]
 with sync_playwright() as p:
     browser=p.chromium.launch(headless=True)
-    page=browser.new_page(viewport={'width':390,'height':844},device_scale_factor=1)
+    context=browser.new_context(viewport={'width':390,'height':844},device_scale_factor=1)
+    page=context.new_page()
     javascript_errors=[]
     page.on('pageerror',lambda error:javascript_errors.append(str(error)))
     for day in range(1,51):
@@ -112,6 +113,14 @@ with sync_playwright() as p:
         catch {return false}
     }''',arg=target[1:])
     saved=page.evaluate("localStorage.getItem('study-reading-position')")
+    # Returning to the same question after reading another tab updates the bookmark.
+    other=page.context.new_page()
+    other.goto(base+'/D11.html')
+    other.locator('.lesson-content h2').first.evaluate('(e)=>e.scrollIntoView({block:"start"})')
+    other.wait_for_function("JSON.parse(localStorage.getItem('study-reading-position')).day === 'D11'")
+    other.close()
+    page.evaluate('window.scrollBy(0,12)')
+    page.wait_for_function("saved => localStorage.getItem('study-reading-position') === saved",arg=saved)
     page.goto(base+'/D11.html')
     page.locator('.brand').click()
     assert page.evaluate("localStorage.getItem('study-reading-position')")==saved
